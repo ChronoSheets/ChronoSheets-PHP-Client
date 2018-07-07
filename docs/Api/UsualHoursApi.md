@@ -4,14 +4,14 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usualHoursGetUsualHours**](UsualHoursApi.md#usualHoursGetUsualHours) | **GET** /api/UsualHours/GetUsualHours | Get usual hours (rostered hours) for an employee
-[**usualHoursSetUsualHours**](UsualHoursApi.md#usualHoursSetUsualHours) | **POST** /api/UsualHours/SetUsualHours | Set usual hours (rostered hours) for an employee
+[**usualHoursGetUsualHours**](UsualHoursApi.md#usualHoursGetUsualHours) | **GET** /api/UsualHours/GetUsualHours | Get usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**usualHoursSetUsualHours**](UsualHoursApi.md#usualHoursSetUsualHours) | **POST** /api/UsualHours/SetUsualHours | Set usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; or &#39;ManageOrganisationUsers&#39; permissions.
 
 
 # **usualHoursGetUsualHours**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUsualHoursDay usualHoursGetUsualHours($userId, $xChronosheetsAuth)
 
-Get usual hours (rostered hours) for an employee
+Get usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationUsers' permissions.
 
 ### Example
 ```php
@@ -23,7 +23,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$userId = 56; // int | 
+$userId = 56; // int | The ID of the User for which you want to get UsualHours for
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int**|  |
+ **userId** | **int**| The ID of the User for which you want to get UsualHours for |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -60,7 +60,7 @@ No authorization required
 # **usualHoursSetUsualHours**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean usualHoursSetUsualHours($request, $xChronosheetsAuth)
 
-Set usual hours (rostered hours) for an employee
+Set usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationUsers' permissions.
 
 ### Example
 ```php
@@ -72,7 +72,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest | A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest**](../Model/CSSetUsualHoursRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest**](../Model/CSSetUsualHoursRequest.md)| A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

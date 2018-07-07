@@ -4,17 +4,17 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**jobCodesCreateJobCode**](JobCodesApi.md#jobCodesCreateJobCode) | **PUT** /api/JobCodes/CreateJobCode | Create a job code
-[**jobCodesDeleteJobCode**](JobCodesApi.md#jobCodesDeleteJobCode) | **DELETE** /api/JobCodes/DeleteJobCode | Delete a job code
-[**jobCodesGetJobCodeById**](JobCodesApi.md#jobCodesGetJobCodeById) | **GET** /api/JobCodes/GetJobCodeById | Get a particular job code by job code id
-[**jobCodesGetJobCodes**](JobCodesApi.md#jobCodesGetJobCodes) | **GET** /api/JobCodes/GetJobCodes | Get job codes for your organisation
-[**jobCodesUpdateJobCode**](JobCodesApi.md#jobCodesUpdateJobCode) | **POST** /api/JobCodes/UpdateJobCode | Update a job code
+[**jobCodesCreateJobCode**](JobCodesApi.md#jobCodesCreateJobCode) | **PUT** /api/JobCodes/CreateJobCode | Create a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**jobCodesDeleteJobCode**](JobCodesApi.md#jobCodesDeleteJobCode) | **DELETE** /api/JobCodes/DeleteJobCode | Delete a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**jobCodesGetJobCodeById**](JobCodesApi.md#jobCodesGetJobCodeById) | **GET** /api/JobCodes/GetJobCodeById | Get a particular job code by job code id.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
+[**jobCodesGetJobCodes**](JobCodesApi.md#jobCodesGetJobCodes) | **GET** /api/JobCodes/GetJobCodes | Get job codes for your organisation.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
+[**jobCodesUpdateJobCode**](JobCodesApi.md#jobCodesUpdateJobCode) | **POST** /api/JobCodes/UpdateJobCode | Update a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
 
 
 # **jobCodesCreateJobCode**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 jobCodesCreateJobCode($request, $xChronosheetsAuth)
 
-Create a job code
+Create a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -26,7 +26,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest | An Insert JobCode Request object containing values for the new JobCode to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest**](../Model/CSInsertJobCodeRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest**](../Model/CSInsertJobCodeRequest.md)| An Insert JobCode Request object containing values for the new JobCode to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -63,7 +63,7 @@ No authorization required
 # **jobCodesDeleteJobCode**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth)
 
-Delete a job code
+Delete a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -75,7 +75,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$jobCodeId = 56; // int | The ID of the job code your want to delete
+$jobCodeId = 56; // int | The ID of the job code you want to delete
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -91,7 +91,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jobCodeId** | **int**| The ID of the job code your want to delete |
+ **jobCodeId** | **int**| The ID of the job code you want to delete |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -112,7 +112,7 @@ No authorization required
 # **jobCodesGetJobCodeById**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseJobCode jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth)
 
-Get a particular job code by job code id
+Get a particular job code by job code id.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
 ### Example
 ```php
@@ -124,7 +124,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$jobCodeId = 56; // int | 
+$jobCodeId = 56; // int | The ID of the JobCode you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -140,7 +140,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jobCodeId** | **int**|  |
+ **jobCodeId** | **int**| The ID of the JobCode you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -161,7 +161,7 @@ No authorization required
 # **jobCodesGetJobCodes**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListJobCode jobCodesGetJobCodes($xChronosheetsAuth)
 
-Get job codes for your organisation
+Get job codes for your organisation.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
 ### Example
 ```php
@@ -208,7 +208,7 @@ No authorization required
 # **jobCodesUpdateJobCode**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean jobCodesUpdateJobCode($request, $xChronosheetsAuth)
 
-Update a job code
+Update a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -220,7 +220,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest | A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -236,7 +236,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest**](../Model/CSUpdateJobCodeRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest**](../Model/CSUpdateJobCodeRequest.md)| A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

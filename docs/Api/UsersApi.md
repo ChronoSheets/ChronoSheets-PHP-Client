@@ -4,16 +4,16 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usersCreateTimesheetUser**](UsersApi.md#usersCreateTimesheetUser) | **PUT** /api/Users/CreateTimesheetUser | Create a user in your organisation
-[**usersGetTimesheetUser**](UsersApi.md#usersGetTimesheetUser) | **GET** /api/Users/GetTimesheetUser | Get a particular user in your organisation
-[**usersGetTimesheetUsers**](UsersApi.md#usersGetTimesheetUsers) | **GET** /api/Users/GetTimesheetUsers | Get users for your organisation
-[**usersUpdateTimesheetUser**](UsersApi.md#usersUpdateTimesheetUser) | **POST** /api/Users/UpdateTimesheetUser | Update a user
+[**usersCreateTimesheetUser**](UsersApi.md#usersCreateTimesheetUser) | **PUT** /api/Users/CreateTimesheetUser | Create a user account in your organisation.  Requires the &#39;ManageOrganisationUsers&#39; permission.
+[**usersGetTimesheetUser**](UsersApi.md#usersGetTimesheetUser) | **GET** /api/Users/GetTimesheetUser | Get a particular user in your organisation.  Requires the &#39;ManageOrganisationUsers&#39; or &#39;ManageOrganisationGroups&#39; permissions.
+[**usersGetTimesheetUsers**](UsersApi.md#usersGetTimesheetUsers) | **GET** /api/Users/GetTimesheetUsers | Get users accounts in your organisation.  Requires the &#39;ManageOrganisationUsers&#39; or &#39;ManageOrganisationGroups&#39; permissions.
+[**usersUpdateTimesheetUser**](UsersApi.md#usersUpdateTimesheetUser) | **POST** /api/Users/UpdateTimesheetUser | Update a user account.  Requires the &#39;ManageOrganisationUsers&#39; permission.
 
 
 # **usersCreateTimesheetUser**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInsertUserResponse usersCreateTimesheetUser($request, $xChronosheetsAuth)
 
-Create a user in your organisation
+Create a user account in your organisation.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest | An Insert User Request object containing values for the new User to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest**](../Model/CSInsertUserRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest**](../Model/CSInsertUserRequest.md)| An Insert User Request object containing values for the new User to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -62,7 +62,7 @@ No authorization required
 # **usersGetTimesheetUser**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUserForManagement usersGetTimesheetUser($userId, $xChronosheetsAuth)
 
-Get a particular user in your organisation
+Get a particular user in your organisation.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationGroups' permissions.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$userId = 56; // int | 
+$userId = 56; // int | The User ID of the UserForManagement you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int**|  |
+ **userId** | **int**| The User ID of the UserForManagement you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -111,7 +111,7 @@ No authorization required
 # **usersGetTimesheetUsers**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserForManagement usersGetTimesheetUsers($xChronosheetsAuth)
 
-Get users for your organisation
+Get users accounts in your organisation.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationGroups' permissions.
 
 ### Example
 ```php
@@ -158,7 +158,7 @@ No authorization required
 # **usersUpdateTimesheetUser**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateUserResponse usersUpdateTimesheetUser($request, $xChronosheetsAuth)
 
-Update a user
+Update a user account.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
 ```php
@@ -170,7 +170,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest | A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -186,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest**](../Model/CSUpdateUserRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest**](../Model/CSUpdateUserRequest.md)| A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

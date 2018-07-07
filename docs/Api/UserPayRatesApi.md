@@ -4,14 +4,14 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userPayRatesCreatePayRate**](UserPayRatesApi.md#userPayRatesCreatePayRate) | **PUT** /api/UserPayRates/CreatePayRate | Create a new pay rate for a particular user, archiving the previous pay rate
-[**userPayRatesGetPayRates**](UserPayRatesApi.md#userPayRatesGetPayRates) | **GET** /api/UserPayRates/GetPayRates | Get a collection of pay rates for a particular user, specified by user id
+[**userPayRatesCreatePayRate**](UserPayRatesApi.md#userPayRatesCreatePayRate) | **PUT** /api/UserPayRates/CreatePayRate | Create a new pay rate for a particular user, archiving the previous pay rate.    Requires the &#39;ManageOrganisationUsers&#39; permission.
+[**userPayRatesGetPayRates**](UserPayRatesApi.md#userPayRatesGetPayRates) | **GET** /api/UserPayRates/GetPayRates | Get a collection of pay rates for a particular user, specified by user id.    Requires the &#39;ManageOrganisationUsers&#39; permission.
 
 
 # **userPayRatesCreatePayRate**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 userPayRatesCreatePayRate($request, $xChronosheetsAuth)
 
-Create a new pay rate for a particular user, archiving the previous pay rate
+Create a new pay rate for a particular user, archiving the previous pay rate.    Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
 ```php
@@ -23,7 +23,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserPayRatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest | An Insert UserHourlyRate Request object containing values for the new UserHourlyRate to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest**](../Model/CSInsertUserHourlyRateRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserHourlyRateRequest**](../Model/CSInsertUserHourlyRateRequest.md)| An Insert UserHourlyRate Request object containing values for the new UserHourlyRate to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -60,7 +60,7 @@ No authorization required
 # **userPayRatesGetPayRates**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserHourlyRate userPayRatesGetPayRates($userId, $xChronosheetsAuth)
 
-Get a collection of pay rates for a particular user, specified by user id
+Get a collection of pay rates for a particular user, specified by user id.    Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
 ```php
@@ -72,7 +72,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserPayRatesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$userId = 56; // int | 
+$userId = 56; // int | The ID of the User for which you want to get UserHourlyRate objects
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userId** | **int**|  |
+ **userId** | **int**| The ID of the User for which you want to get UserHourlyRate objects |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

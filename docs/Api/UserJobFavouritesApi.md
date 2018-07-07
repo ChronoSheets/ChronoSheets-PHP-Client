@@ -4,15 +4,15 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userJobFavouritesCreateJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesCreateJobFavourite) | **PUT** /api/UserJobFavourites/CreateJobFavourite | Create a job favourite
-[**userJobFavouritesDeleteJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesDeleteJobFavourite) | **DELETE** /api/UserJobFavourites/DeleteJobFavourite | Delete a job favourite
-[**userJobFavouritesGetJobFavourites**](UserJobFavouritesApi.md#userJobFavouritesGetJobFavourites) | **GET** /api/UserJobFavourites/GetJobFavourites | Get your job favourites
+[**userJobFavouritesCreateJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesCreateJobFavourite) | **PUT** /api/UserJobFavourites/CreateJobFavourite | Create a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**userJobFavouritesDeleteJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesDeleteJobFavourite) | **DELETE** /api/UserJobFavourites/DeleteJobFavourite | Delete a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**userJobFavouritesGetJobFavourites**](UserJobFavouritesApi.md#userJobFavouritesGetJobFavourites) | **GET** /api/UserJobFavourites/GetJobFavourites | Get your job favourites.    Requires the &#39;SubmitTimesheets&#39; permission.
 
 
 # **userJobFavouritesCreateJobFavourite**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 userJobFavouritesCreateJobFavourite($request, $xChronosheetsAuth)
 
-Create a job favourite
+Create a job favourite.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -24,7 +24,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserJobFavouritesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest | An Insert UserJobFavourite Request object containing values for the new UserJobFavourite to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest**](../Model/CSInsertUserJobFavouriteRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserJobFavouriteRequest**](../Model/CSInsertUserJobFavouriteRequest.md)| An Insert UserJobFavourite Request object containing values for the new UserJobFavourite to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -61,7 +61,7 @@ No authorization required
 # **userJobFavouritesDeleteJobFavourite**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean userJobFavouritesDeleteJobFavourite($jobId, $xChronosheetsAuth)
 
-Delete a job favourite
+Delete a job favourite.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -73,7 +73,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserJobFavouritesApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$jobId = 56; // int | The ID of the Job
+$jobId = 56; // int | The ID of the Job for the Job Favourite you want to delete.
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -89,7 +89,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **jobId** | **int**| The ID of the Job |
+ **jobId** | **int**| The ID of the Job for the Job Favourite you want to delete. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -110,7 +110,7 @@ No authorization required
 # **userJobFavouritesGetJobFavourites**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserJobFavourite userJobFavouritesGetJobFavourites($xChronosheetsAuth)
 
-Get your job favourites
+Get your job favourites.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php

@@ -4,16 +4,16 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**clientsCreateClient**](ClientsApi.md#clientsCreateClient) | **PUT** /api/Clients/CreateClient | Create a client
-[**clientsGetClient**](ClientsApi.md#clientsGetClient) | **GET** /api/Clients/GetClient | Get a particular client
-[**clientsGetClients**](ClientsApi.md#clientsGetClients) | **GET** /api/Clients/GetClients | Get a collection of clients that are under your organisation
-[**clientsUpdateClient**](ClientsApi.md#clientsUpdateClient) | **POST** /api/Clients/UpdateClient | Update a client
+[**clientsCreateClient**](ClientsApi.md#clientsCreateClient) | **PUT** /api/Clients/CreateClient | Create a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
+[**clientsGetClient**](ClientsApi.md#clientsGetClient) | **GET** /api/Clients/GetClient | Get a particular client.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**clientsGetClients**](ClientsApi.md#clientsGetClients) | **GET** /api/Clients/GetClients | Get a collection of clients that are under your organisation.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**clientsUpdateClient**](ClientsApi.md#clientsUpdateClient) | **POST** /api/Clients/UpdateClient | Update a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
 
 
 # **clientsCreateClient**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 clientsCreateClient($request, $xChronosheetsAuth)
 
-Create a client
+Create a client.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest | An Insert Client Request object containing values for the new Client to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest**](../Model/CSInsertClientRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertClientRequest**](../Model/CSInsertClientRequest.md)| An Insert Client Request object containing values for the new Client to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -62,7 +62,7 @@ No authorization required
 # **clientsGetClient**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseClient clientsGetClient($clientId, $xChronosheetsAuth)
 
-Get a particular client
+Get a particular client.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$clientId = 56; // int | The ID of the client you want to get
+$clientId = 56; // int | The ID of the Client you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **int**| The ID of the client you want to get |
+ **clientId** | **int**| The ID of the Client you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -111,7 +111,7 @@ No authorization required
 # **clientsGetClients**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListClient clientsGetClients($xChronosheetsAuth)
 
-Get a collection of clients that are under your organisation
+Get a collection of clients that are under your organisation.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -158,7 +158,7 @@ No authorization required
 # **clientsUpdateClient**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean clientsUpdateClient($request, $xChronosheetsAuth)
 
-Update a client
+Update a client.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
 ```php
@@ -170,7 +170,7 @@ $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest | A Save Client Request object containing updated fields.  Make sure to specify the Client Id in the request object so that ChronoSheets knows which Client to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -186,7 +186,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest**](../Model/CSSaveClientRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveClientRequest**](../Model/CSSaveClientRequest.md)| A Save Client Request object containing updated fields.  Make sure to specify the Client Id in the request object so that ChronoSheets knows which Client to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

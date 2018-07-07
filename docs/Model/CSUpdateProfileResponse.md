@@ -1,11 +1,11 @@
-# CSApiResponseSignupResponse
+# CSUpdateProfileResponse
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSignupResponse**](CSSignupResponse.md) |  | [optional] 
-**status** | **string** |  | [optional] 
-**message** | **string** |  | [optional] 
+**organisationId** | **int** |  | [optional] 
+**userId** | **int** |  | [optional] 
+**validationErrors** | **string[]** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -4,16 +4,16 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**timesheetsCreateSingleTimesheet**](TimesheetsApi.md#timesheetsCreateSingleTimesheet) | **PUT** /api/Timesheets/CreateSingleTimesheet | Inserts a single timesheet record
-[**timesheetsDeleteTimesheet**](TimesheetsApi.md#timesheetsDeleteTimesheet) | **DELETE** /api/Timesheets/DeleteTimesheet | Delete a timesheet
-[**timesheetsGetTimesheets**](TimesheetsApi.md#timesheetsGetTimesheets) | **GET** /api/Timesheets/GetTimesheets | Get timesheets between start and end dates
-[**timesheetsUpdateTimesheets**](TimesheetsApi.md#timesheetsUpdateTimesheets) | **POST** /api/Timesheets/UpdateTimesheets | Batch update timesheets
+[**timesheetsCreateSingleTimesheet**](TimesheetsApi.md#timesheetsCreateSingleTimesheet) | **PUT** /api/Timesheets/CreateSingleTimesheet | Inserts a single timesheet record.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsDeleteTimesheet**](TimesheetsApi.md#timesheetsDeleteTimesheet) | **DELETE** /api/Timesheets/DeleteTimesheet | Delete a timesheet.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsGetTimesheets**](TimesheetsApi.md#timesheetsGetTimesheets) | **GET** /api/Timesheets/GetTimesheets | Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsUpdateTimesheets**](TimesheetsApi.md#timesheetsUpdateTimesheets) | **POST** /api/Timesheets/UpdateTimesheets | Batch update timesheets.    Requires the &#39;SubmitTimesheets&#39; permission.
 
 
 # **timesheetsCreateSingleTimesheet**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 timesheetsCreateSingleTimesheet($request, $xChronosheetsAuth)
 
-Inserts a single timesheet record
+Inserts a single timesheet record.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet | The timesheet request object
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet | A Timesheet Request object containing values for the new Timesheet to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet**](../Model/CSTimesheet.md)| The timesheet request object |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet**](../Model/CSTimesheet.md)| A Timesheet Request object containing values for the new Timesheet to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -62,7 +62,7 @@ No authorization required
 # **timesheetsDeleteTimesheet**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth)
 
-Delete a timesheet
+Delete a timesheet.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$timesheetId = 56; // int | The ID of the timesheet to delete
+$timesheetId = 56; // int | The ID of the Timesheet you want to delete
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **timesheetId** | **int**| The ID of the timesheet to delete |
+ **timesheetId** | **int**| The ID of the Timesheet you want to delete |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -111,7 +111,7 @@ No authorization required
 # **timesheetsGetTimesheets**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheet timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth)
 
-Get timesheets between start and end dates
+Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -162,7 +162,7 @@ No authorization required
 # **timesheetsUpdateTimesheets**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListInt32 timesheetsUpdateTimesheets($request, $xChronosheetsAuth)
 
-Batch update timesheets
+Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -174,7 +174,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest | The batch update timesheets request
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest | A BatchUpdateTimesheet Request object containing values for the new Timesheets to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest**](../Model/CSBatchUpdateTimesheetRequest.md)| The batch update timesheets request |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest**](../Model/CSBatchUpdateTimesheetRequest.md)| A BatchUpdateTimesheet Request object containing values for the new Timesheets to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

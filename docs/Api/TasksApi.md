@@ -4,18 +4,18 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tasksCreateTask**](TasksApi.md#tasksCreateTask) | **PUT** /api/Tasks/CreateTask | Create a task
-[**tasksDeleteTask**](TasksApi.md#tasksDeleteTask) | **DELETE** /api/Tasks/DeleteTask | Delete a task
-[**tasksGetTaskById**](TasksApi.md#tasksGetTaskById) | **GET** /api/Tasks/GetTaskById | Get a particular task by id
-[**tasksGetTasks**](TasksApi.md#tasksGetTasks) | **GET** /api/Tasks/GetTasks | Get tasks in your organisation
-[**tasksGetTasksForJob**](TasksApi.md#tasksGetTasksForJob) | **GET** /api/Tasks/GetTasksForJob | Get tasks for a particular job
-[**tasksUpdateTask**](TasksApi.md#tasksUpdateTask) | **POST** /api/Tasks/UpdateTask | Update a task
+[**tasksCreateTask**](TasksApi.md#tasksCreateTask) | **PUT** /api/Tasks/CreateTask | Create a task.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**tasksDeleteTask**](TasksApi.md#tasksDeleteTask) | **DELETE** /api/Tasks/DeleteTask | Delete a task.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**tasksGetTaskById**](TasksApi.md#tasksGetTaskById) | **GET** /api/Tasks/GetTaskById | Get a particular task by Id.   Requires the &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**tasksGetTasks**](TasksApi.md#tasksGetTasks) | **GET** /api/Tasks/GetTasks | Get tasks in your organisation.   Requires the &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**tasksGetTasksForJob**](TasksApi.md#tasksGetTasksForJob) | **GET** /api/Tasks/GetTasksForJob | Get a collection of tasks for a particular Job, specified by JobId.    Requires the &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**tasksUpdateTask**](TasksApi.md#tasksUpdateTask) | **POST** /api/Tasks/UpdateTask | Update a task.    Requires the &#39;ManageJobsAndTask&#39; permission.
 
 
 # **tasksCreateTask**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 tasksCreateTask($request, $xChronosheetsAuth)
 
-Create a task
+Create a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -27,7 +27,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest | An Insert Task Request object containing values for the new Task to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest**](../Model/CSInsertTaskRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest**](../Model/CSInsertTaskRequest.md)| An Insert Task Request object containing values for the new Task to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -64,7 +64,7 @@ No authorization required
 # **tasksDeleteTask**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean tasksDeleteTask($taskId, $xChronosheetsAuth)
 
-Delete a task
+Delete a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -76,7 +76,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$taskId = 56; // int | 
+$taskId = 56; // int | The ID of the Task you want to delete
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -92,7 +92,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taskId** | **int**|  |
+ **taskId** | **int**| The ID of the Task you want to delete |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -113,7 +113,7 @@ No authorization required
 # **tasksGetTaskById**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetTask tasksGetTaskById($taskId, $xChronosheetsAuth)
 
-Get a particular task by id
+Get a particular task by Id.   Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -125,7 +125,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$taskId = 56; // int | 
+$taskId = 56; // int | The ID of the TimesheetTask you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -141,7 +141,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taskId** | **int**|  |
+ **taskId** | **int**| The ID of the TimesheetTask you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -162,7 +162,7 @@ No authorization required
 # **tasksGetTasks**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask tasksGetTasks($xChronosheetsAuth)
 
-Get tasks in your organisation
+Get tasks in your organisation.   Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -209,7 +209,7 @@ No authorization required
 # **tasksGetTasksForJob**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask tasksGetTasksForJob($jobId, $xChronosheetsAuth)
 
-Get tasks for a particular job
+Get a collection of tasks for a particular Job, specified by JobId.    Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -258,7 +258,7 @@ No authorization required
 # **tasksUpdateTask**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean tasksUpdateTask($request, $xChronosheetsAuth)
 
-Update a task
+Update a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
 ```php
@@ -270,7 +270,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest | An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -286,7 +286,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest**](../Model/CSUpdateTaskRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest**](../Model/CSUpdateTaskRequest.md)| An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

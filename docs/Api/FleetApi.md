@@ -4,16 +4,16 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fleetCreateVehicle**](FleetApi.md#fleetCreateVehicle) | **PUT** /api/Fleet/CreateVehicle | Create a vehicle
-[**fleetGetVehicleById**](FleetApi.md#fleetGetVehicleById) | **GET** /api/Fleet/GetVehicleById | Get a particular vehicle
-[**fleetGetVehicles**](FleetApi.md#fleetGetVehicles) | **GET** /api/Fleet/GetVehicles | Get a collection of vehicles that are under your organisation
-[**fleetUpdateVehicle**](FleetApi.md#fleetUpdateVehicle) | **POST** /api/Fleet/UpdateVehicle | Update a vehicle
+[**fleetCreateVehicle**](FleetApi.md#fleetCreateVehicle) | **PUT** /api/Fleet/CreateVehicle | Create a vehicle.    Requires the &#39;ManageFleet&#39; permission.
+[**fleetGetVehicleById**](FleetApi.md#fleetGetVehicleById) | **GET** /api/Fleet/GetVehicleById | Get a particular vehicle.  Does not require any special permission.
+[**fleetGetVehicles**](FleetApi.md#fleetGetVehicles) | **GET** /api/Fleet/GetVehicles | Get a collection of vehicles that are under your organisation.    Does not require any special permission.
+[**fleetUpdateVehicle**](FleetApi.md#fleetUpdateVehicle) | **POST** /api/Fleet/UpdateVehicle | Update a vehicle.    Requires the &#39;ManageFleet&#39; permission.
 
 
 # **fleetCreateVehicle**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 fleetCreateVehicle($request, $xChronosheetsAuth)
 
-Create a vehicle
+Create a vehicle.    Requires the 'ManageFleet' permission.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\FleetApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest | An Insert Vehicle Request object containing values for the new Vehicle to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest**](../Model/CSInsertVehicleRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertVehicleRequest**](../Model/CSInsertVehicleRequest.md)| An Insert Vehicle Request object containing values for the new Vehicle to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -62,7 +62,7 @@ No authorization required
 # **fleetGetVehicleById**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseFleetVehicle fleetGetVehicleById($vehicleId, $xChronosheetsAuth)
 
-Get a particular vehicle
+Get a particular vehicle.  Does not require any special permission.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new ChronoSheetsClient\Api\FleetApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$vehicleId = 56; // int | The ID of the vehicle you want to get
+$vehicleId = 56; // int | The ID of the Vehicle you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vehicleId** | **int**| The ID of the vehicle you want to get |
+ **vehicleId** | **int**| The ID of the Vehicle you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -111,7 +111,7 @@ No authorization required
 # **fleetGetVehicles**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle fleetGetVehicles($includeDeleted, $xChronosheetsAuth)
 
-Get a collection of vehicles that are under your organisation
+Get a collection of vehicles that are under your organisation.    Does not require any special permission.
 
 ### Example
 ```php
@@ -123,7 +123,7 @@ $apiInstance = new ChronoSheetsClient\Api\FleetApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeDeleted = true; // bool | 
+$includeDeleted = true; // bool | Whether or not to include deleted vehicles
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -139,7 +139,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeDeleted** | **bool**|  |
+ **includeDeleted** | **bool**| Whether or not to include deleted vehicles |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -160,7 +160,7 @@ No authorization required
 # **fleetUpdateVehicle**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean fleetUpdateVehicle($request, $xChronosheetsAuth)
 
-Update a vehicle
+Update a vehicle.    Requires the 'ManageFleet' permission.
 
 ### Example
 ```php
@@ -172,7 +172,7 @@ $apiInstance = new ChronoSheetsClient\Api\FleetApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest | A Save Vehicle Request object containing updated fields.  Make sure to specify the Vehicle Id in the request object so that ChronoSheets knows which Vehicle to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest**](../Model/CSSaveVehicleRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveVehicleRequest**](../Model/CSSaveVehicleRequest.md)| A Save Vehicle Request object containing updated fields.  Make sure to specify the Vehicle Id in the request object so that ChronoSheets knows which Vehicle to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

@@ -4,14 +4,14 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organisationGetOrganisation**](OrganisationApi.md#organisationGetOrganisation) | **GET** /api/Organisation/GetOrganisation | Get your organisation.  Requires &#39;OrganisationAdmin&#39; permission.
-[**organisationUpdateOrganisation**](OrganisationApi.md#organisationUpdateOrganisation) | **POST** /api/Organisation/UpdateOrganisation | Update an organisation.  Requires &#39;OrganisationAdmin&#39; permission.
+[**organisationGetOrganisation**](OrganisationApi.md#organisationGetOrganisation) | **GET** /api/Organisation/GetOrganisation | Get your organisation.    Requires &#39;OrganisationAdmin&#39; permission.
+[**organisationUpdateOrganisation**](OrganisationApi.md#organisationUpdateOrganisation) | **POST** /api/Organisation/UpdateOrganisation | Update an organisation.    Requires &#39;OrganisationAdmin&#39; permission.
 
 
 # **organisationGetOrganisation**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseOrganisation organisationGetOrganisation($xChronosheetsAuth)
 
-Get your organisation.  Requires 'OrganisationAdmin' permission.
+Get your organisation.    Requires 'OrganisationAdmin' permission.
 
 ### Example
 ```php
@@ -58,7 +58,7 @@ No authorization required
 # **organisationUpdateOrganisation**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateOrganisationResponse organisationUpdateOrganisation($request, $xChronosheetsAuth)
 
-Update an organisation.  Requires 'OrganisationAdmin' permission.
+Update an organisation.    Requires 'OrganisationAdmin' permission.
 
 ### Example
 ```php
@@ -70,7 +70,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest | An Update Organsation Request object containing updated fields.  Make sure to specify the Organsation Id in the request object so that ChronoSheets knows which Organsation to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -86,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest**](../Model/CSUpdateOrganisationRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateOrganisationRequest**](../Model/CSUpdateOrganisationRequest.md)| An Update Organsation Request object containing updated fields.  Make sure to specify the Organsation Id in the request object so that ChronoSheets knows which Organsation to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

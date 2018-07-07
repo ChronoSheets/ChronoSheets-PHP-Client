@@ -4,17 +4,17 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userProfileDoLogin**](UserProfileApi.md#userProfileDoLogin) | **POST** /api/UserProfile/DoLogin | 
-[**userProfileDoLogout**](UserProfileApi.md#userProfileDoLogout) | **DELETE** /api/UserProfile/DoLogout | 
-[**userProfileGetMyProfile**](UserProfileApi.md#userProfileGetMyProfile) | **GET** /api/UserProfile/GetMyProfile | 
-[**userProfileKeepSessionAlive**](UserProfileApi.md#userProfileKeepSessionAlive) | **GET** /api/UserProfile/KeepSessionAlive | 
-[**userProfileUpdateMyProfile**](UserProfileApi.md#userProfileUpdateMyProfile) | **POST** /api/UserProfile/UpdateMyProfile | 
+[**userProfileDoLogin**](UserProfileApi.md#userProfileDoLogin) | **POST** /api/UserProfile/DoLogin | Login to your ChronoSheets account and obtain an Auth Token which you can use for other ChronoSheets API methods.    Does not require any special permissions.
+[**userProfileDoLogout**](UserProfileApi.md#userProfileDoLogout) | **DELETE** /api/UserProfile/DoLogout | Logout of your ChronoSheets account.  This method ends and deletes your active session.    Does not require any special permissions.
+[**userProfileGetMyProfile**](UserProfileApi.md#userProfileGetMyProfile) | **GET** /api/UserProfile/GetMyProfile | Get your own profile.  Use this method to obtain detailed information about your ChronoSheets user profile.    Does not require any special permissions.
+[**userProfileKeepSessionAlive**](UserProfileApi.md#userProfileKeepSessionAlive) | **GET** /api/UserProfile/KeepSessionAlive | Keep a session alive.  Use this method to keep a session active.  You could use this to &#39;ping&#39; ChronoSheets every &#39;x&#39; minutes to make sure your Auth Token will keep working.    Does not require any special permissions.
+[**userProfileUpdateMyProfile**](UserProfileApi.md#userProfileUpdateMyProfile) | **POST** /api/UserProfile/UpdateMyProfile | Update your own profile.  Use this method to update your profile information or update/change your password.    Does not require any special permissions.
 
 
 # **userProfileDoLogin**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseDoLoginResponse userProfileDoLogin($request)
 
-
+Login to your ChronoSheets account and obtain an Auth Token which you can use for other ChronoSheets API methods.    Does not require any special permissions.
 
 ### Example
 ```php
@@ -26,7 +26,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserProfileApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest | A request object containing your username/email and password.
 
 try {
     $result = $apiInstance->userProfileDoLogin($request);
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest**](../Model/CSDoLoginRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSDoLoginRequest**](../Model/CSDoLoginRequest.md)| A request object containing your username/email and password. |
 
 ### Return type
 
@@ -61,7 +61,7 @@ No authorization required
 # **userProfileDoLogout**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean userProfileDoLogout($xChronosheetsAuth)
 
-
+Logout of your ChronoSheets account.  This method ends and deletes your active session.    Does not require any special permissions.
 
 ### Example
 ```php
@@ -108,7 +108,7 @@ No authorization required
 # **userProfileGetMyProfile**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUserProfile userProfileGetMyProfile($xChronosheetsAuth)
 
-
+Get your own profile.  Use this method to obtain detailed information about your ChronoSheets user profile.    Does not require any special permissions.
 
 ### Example
 ```php
@@ -155,7 +155,7 @@ No authorization required
 # **userProfileKeepSessionAlive**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean userProfileKeepSessionAlive($xChronosheetsAuth)
 
-
+Keep a session alive.  Use this method to keep a session active.  You could use this to 'ping' ChronoSheets every 'x' minutes to make sure your Auth Token will keep working.    Does not require any special permissions.
 
 ### Example
 ```php
@@ -200,9 +200,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **userProfileUpdateMyProfile**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseSignupResponse userProfileUpdateMyProfile($request, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateProfileResponse userProfileUpdateMyProfile($request, $xChronosheetsAuth)
 
-
+Update your own profile.  Use this method to update your profile information or update/change your password.    Does not require any special permissions.
 
 ### Example
 ```php
@@ -214,7 +214,7 @@ $apiInstance = new ChronoSheetsClient\Api\UserProfileApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest | An Update MyProfile Request object containing updated fields.
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -230,12 +230,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest**](../Model/CSUpdateMyProfileRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateMyProfileRequest**](../Model/CSUpdateMyProfileRequest.md)| An Update MyProfile Request object containing updated fields. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseSignupResponse**](../Model/CSApiResponseSignupResponse.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateProfileResponse**](../Model/CSApiResponseUpdateProfileResponse.md)
 
 ### Authorization
 

@@ -4,16 +4,16 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**projectsCreateProject**](ProjectsApi.md#projectsCreateProject) | **PUT** /api/Projects/CreateProject | Create a project
-[**projectsGetProjectById**](ProjectsApi.md#projectsGetProjectById) | **GET** /api/Projects/GetProjectById | Get project by Id
-[**projectsGetProjectsForClient**](ProjectsApi.md#projectsGetProjectsForClient) | **GET** /api/Projects/GetProjectsForClient | Get projects for a particular client
-[**projectsUpdateProject**](ProjectsApi.md#projectsUpdateProject) | **POST** /api/Projects/UpdateProject | Update a project
+[**projectsCreateProject**](ProjectsApi.md#projectsCreateProject) | **PUT** /api/Projects/CreateProject | Create a project.    Requires the &#39;ManageClientsAndProjects&#39; permission.
+[**projectsGetProjectById**](ProjectsApi.md#projectsGetProjectById) | **GET** /api/Projects/GetProjectById | Get a project by its Id.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**projectsGetProjectsForClient**](ProjectsApi.md#projectsGetProjectsForClient) | **GET** /api/Projects/GetProjectsForClient | Get projects for a particular client.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**projectsUpdateProject**](ProjectsApi.md#projectsUpdateProject) | **POST** /api/Projects/UpdateProject | Update a project.    Requires the &#39;ManageClientsAndProjects&#39; permission.
 
 
 # **projectsCreateProject**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 projectsCreateProject($request, $xChronosheetsAuth)
 
-Create a project
+Create a project.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
 ```php
@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest | An Insert Project Request object containing values for the new Project to create
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest**](../Model/CSInsertProjectRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest**](../Model/CSInsertProjectRequest.md)| An Insert Project Request object containing values for the new Project to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -62,7 +62,7 @@ No authorization required
 # **projectsGetProjectById**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseProject projectsGetProjectById($projectId, $xChronosheetsAuth)
 
-Get project by Id
+Get a project by its Id.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -74,7 +74,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$projectId = 56; // int | The ID of the project
+$projectId = 56; // int | The ID of the Project you want to get
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -90,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **projectId** | **int**| The ID of the project |
+ **projectId** | **int**| The ID of the Project you want to get |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
@@ -111,7 +111,7 @@ No authorization required
 # **projectsGetProjectsForClient**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProject projectsGetProjectsForClient($clientId, $xChronosheetsAuth)
 
-Get projects for a particular client
+Get projects for a particular client.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
 ```php
@@ -160,7 +160,7 @@ No authorization required
 # **projectsUpdateProject**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean projectsUpdateProject($request, $xChronosheetsAuth)
 
-Update a project
+Update a project.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
 ```php
@@ -172,7 +172,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest | 
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest | An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -188,7 +188,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest**](../Model/CSUpdateProjectRequest.md)|  |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest**](../Model/CSUpdateProjectRequest.md)| An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
