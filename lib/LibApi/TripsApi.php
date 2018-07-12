@@ -347,7 +347,7 @@ class TripsApi
 
         $query = \GuzzleHttp\Psr7\build_query($queryParams);
         return new Request(
-            'POST',
+            'PUT',
             $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
             $headers,
             $httpBody
