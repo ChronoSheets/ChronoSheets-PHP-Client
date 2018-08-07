@@ -1,16 +1,15 @@
-# CSProjectCostingReportItem
+# CSAggregateProject
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**projectId** | **int** |  | [optional] 
-**projectName** | **string** |  | [optional] 
+**id** | **int** |  | [optional] 
 **clientId** | **int** |  | [optional] 
 **organisationId** | **int** |  | [optional] 
-**clientName** | **string** |  | [optional] 
-**estimatedCost** | **double** |  | [optional] 
-**actualCostFiltered** | **double** |  | [optional] 
-**actualCost** | **double** |  | [optional] 
+**projectName** | **string** |  | [optional] 
+**costEstimation** | **double** |  | [optional] 
+**startDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**endDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

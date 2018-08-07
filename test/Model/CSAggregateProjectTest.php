@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItemTest
+ * CSAggregateProjectTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSProjectCostingReportItemTest Class Doc Comment
+ * CSAggregateProjectTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSProjectCostingReportItem
+// * @description CSAggregateProject
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
+class CSAggregateProjectTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,23 +71,16 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSProjectCostingReportItem"
+     * Test "CSAggregateProject"
      */
-    public function testCSProjectCostingReportItem()
+    public function testCSAggregateProject()
     {
     }
 
     /**
-     * Test attribute "projectId"
+     * Test attribute "id"
      */
-    public function testPropertyProjectId()
-    {
-    }
-
-    /**
-     * Test attribute "projectName"
-     */
-    public function testPropertyProjectName()
+    public function testPropertyId()
     {
     }
 
@@ -106,30 +99,30 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientName"
+     * Test attribute "projectName"
      */
-    public function testPropertyClientName()
+    public function testPropertyProjectName()
     {
     }
 
     /**
-     * Test attribute "estimatedCost"
+     * Test attribute "costEstimation"
      */
-    public function testPropertyEstimatedCost()
+    public function testPropertyCostEstimation()
     {
     }
 
     /**
-     * Test attribute "actualCostFiltered"
+     * Test attribute "startDate"
      */
-    public function testPropertyActualCostFiltered()
+    public function testPropertyStartDate()
     {
     }
 
     /**
-     * Test attribute "actualCost"
+     * Test attribute "endDate"
      */
-    public function testPropertyActualCost()
+    public function testPropertyEndDate()
     {
     }
 }

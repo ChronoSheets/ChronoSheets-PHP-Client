@@ -1,6 +1,6 @@
 <?php
 /**
- * CSOrgReportTimesheetFileAttachmentTest
+ * CSTimesheetFileAttachmentTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSOrgReportTimesheetFileAttachmentTest Class Doc Comment
+ * CSTimesheetFileAttachmentTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSOrgReportTimesheetFileAttachment
+// * @description CSTimesheetFileAttachment
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSOrgReportTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
+class CSTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,37 +71,9 @@ class CSOrgReportTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSOrgReportTimesheetFileAttachment"
+     * Test "CSTimesheetFileAttachment"
      */
-    public function testCSOrgReportTimesheetFileAttachment()
-    {
-    }
-
-    /**
-     * Test attribute "username"
-     */
-    public function testPropertyUsername()
-    {
-    }
-
-    /**
-     * Test attribute "emailAddress"
-     */
-    public function testPropertyEmailAddress()
-    {
-    }
-
-    /**
-     * Test attribute "firstName"
-     */
-    public function testPropertyFirstName()
-    {
-    }
-
-    /**
-     * Test attribute "lastName"
-     */
-    public function testPropertyLastName()
+    public function testCSTimesheetFileAttachment()
     {
     }
 

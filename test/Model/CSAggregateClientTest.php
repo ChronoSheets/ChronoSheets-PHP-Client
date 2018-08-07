@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItemTest
+ * CSAggregateClientTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSProjectCostingReportItemTest Class Doc Comment
+ * CSAggregateClientTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSProjectCostingReportItem
+// * @description CSAggregateClient
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
+class CSAggregateClientTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,23 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSProjectCostingReportItem"
+     * Test "CSAggregateClient"
      */
-    public function testCSProjectCostingReportItem()
+    public function testCSAggregateClient()
     {
     }
 
     /**
-     * Test attribute "projectId"
+     * Test attribute "clientProjects"
      */
-    public function testPropertyProjectId()
+    public function testPropertyClientProjects()
     {
     }
 
     /**
-     * Test attribute "projectName"
+     * Test attribute "id"
      */
-    public function testPropertyProjectName()
-    {
-    }
-
-    /**
-     * Test attribute "clientId"
-     */
-    public function testPropertyClientId()
+    public function testPropertyId()
     {
     }
 
@@ -113,23 +106,79 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "estimatedCost"
+     * Test attribute "clientAddressLine1"
      */
-    public function testPropertyEstimatedCost()
+    public function testPropertyClientAddressLine1()
     {
     }
 
     /**
-     * Test attribute "actualCostFiltered"
+     * Test attribute "clientAddressLine2"
      */
-    public function testPropertyActualCostFiltered()
+    public function testPropertyClientAddressLine2()
     {
     }
 
     /**
-     * Test attribute "actualCost"
+     * Test attribute "clientSuburb"
      */
-    public function testPropertyActualCost()
+    public function testPropertyClientSuburb()
+    {
+    }
+
+    /**
+     * Test attribute "clientState"
+     */
+    public function testPropertyClientState()
+    {
+    }
+
+    /**
+     * Test attribute "clientPostCode"
+     */
+    public function testPropertyClientPostCode()
+    {
+    }
+
+    /**
+     * Test attribute "personOfContact"
+     */
+    public function testPropertyPersonOfContact()
+    {
+    }
+
+    /**
+     * Test attribute "clientPhoneNumber"
+     */
+    public function testPropertyClientPhoneNumber()
+    {
+    }
+
+    /**
+     * Test attribute "clientMobileNumber"
+     */
+    public function testPropertyClientMobileNumber()
+    {
+    }
+
+    /**
+     * Test attribute "clientEmailAddress"
+     */
+    public function testPropertyClientEmailAddress()
+    {
+    }
+
+    /**
+     * Test attribute "clientWebURL"
+     */
+    public function testPropertyClientWebURL()
+    {
+    }
+
+    /**
+     * Test attribute "projectCount"
+     */
+    public function testPropertyProjectCount()
     {
     }
 }

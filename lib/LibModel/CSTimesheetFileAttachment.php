@@ -1,6 +1,6 @@
 <?php
 /**
- * CSOrgReportTimesheetFileAttachment
+ * CSTimesheetFileAttachment
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSOrgReportTimesheetFileAttachment Class Doc Comment
+ * CSTimesheetFileAttachment Class Doc Comment
  *
  * @category Class
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
+class CSTimesheetFileAttachment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrgReportTimesheetFileAttachment';
+    protected static $swaggerModelName = 'TimesheetFileAttachment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'username' => 'string',
-        'emailAddress' => 'string',
-        'firstName' => 'string',
-        'lastName' => 'string',
         'timesheetId' => 'int',
         'documentS3SignedUrl' => 'string',
         'imageLargeS3SignedUrl' => 'string',
@@ -92,10 +88,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'username' => null,
-        'emailAddress' => null,
-        'firstName' => null,
-        'lastName' => null,
         'timesheetId' => 'int32',
         'documentS3SignedUrl' => null,
         'imageLargeS3SignedUrl' => null,
@@ -148,10 +140,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'username' => 'Username',
-        'emailAddress' => 'EmailAddress',
-        'firstName' => 'FirstName',
-        'lastName' => 'LastName',
         'timesheetId' => 'TimesheetId',
         'documentS3SignedUrl' => 'DocumentS3SignedUrl',
         'imageLargeS3SignedUrl' => 'ImageLargeS3SignedUrl',
@@ -183,10 +171,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'username' => 'setUsername',
-        'emailAddress' => 'setEmailAddress',
-        'firstName' => 'setFirstName',
-        'lastName' => 'setLastName',
         'timesheetId' => 'setTimesheetId',
         'documentS3SignedUrl' => 'setDocumentS3SignedUrl',
         'imageLargeS3SignedUrl' => 'setImageLargeS3SignedUrl',
@@ -218,10 +202,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'username' => 'getUsername',
-        'emailAddress' => 'getEmailAddress',
-        'firstName' => 'getFirstName',
-        'lastName' => 'getLastName',
         'timesheetId' => 'getTimesheetId',
         'documentS3SignedUrl' => 'getDocumentS3SignedUrl',
         'imageLargeS3SignedUrl' => 'getImageLargeS3SignedUrl',
@@ -353,10 +333,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['username'] = isset($data['username']) ? $data['username'] : null;
-        $this->container['emailAddress'] = isset($data['emailAddress']) ? $data['emailAddress'] : null;
-        $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
-        $this->container['lastName'] = isset($data['lastName']) ? $data['lastName'] : null;
         $this->container['timesheetId'] = isset($data['timesheetId']) ? $data['timesheetId'] : null;
         $this->container['documentS3SignedUrl'] = isset($data['documentS3SignedUrl']) ? $data['documentS3SignedUrl'] : null;
         $this->container['imageLargeS3SignedUrl'] = isset($data['imageLargeS3SignedUrl']) ? $data['imageLargeS3SignedUrl'] : null;
@@ -430,102 +406,6 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
         return true;
     }
 
-
-    /**
-     * Gets username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->container['username'];
-    }
-
-    /**
-     * Sets username
-     *
-     * @param string $username username
-     *
-     * @return $this
-     */
-    public function setUsername($username)
-    {
-        $this->container['username'] = $username;
-
-        return $this;
-    }
-
-    /**
-     * Gets emailAddress
-     *
-     * @return string
-     */
-    public function getEmailAddress()
-    {
-        return $this->container['emailAddress'];
-    }
-
-    /**
-     * Sets emailAddress
-     *
-     * @param string $emailAddress emailAddress
-     *
-     * @return $this
-     */
-    public function setEmailAddress($emailAddress)
-    {
-        $this->container['emailAddress'] = $emailAddress;
-
-        return $this;
-    }
-
-    /**
-     * Gets firstName
-     *
-     * @return string
-     */
-    public function getFirstName()
-    {
-        return $this->container['firstName'];
-    }
-
-    /**
-     * Sets firstName
-     *
-     * @param string $firstName firstName
-     *
-     * @return $this
-     */
-    public function setFirstName($firstName)
-    {
-        $this->container['firstName'] = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Gets lastName
-     *
-     * @return string
-     */
-    public function getLastName()
-    {
-        return $this->container['lastName'];
-    }
-
-    /**
-     * Sets lastName
-     *
-     * @param string $lastName lastName
-     *
-     * @return $this
-     */
-    public function setLastName($lastName)
-    {
-        $this->container['lastName'] = $lastName;
-
-        return $this;
-    }
 
     /**
      * Gets timesheetId

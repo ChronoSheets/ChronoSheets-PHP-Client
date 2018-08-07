@@ -674,6 +674,309 @@ class ReportsApi
     }
 
     /**
+     * Operation reportsGetFleetSummaryAdmin
+     *
+     * Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \ChronoSheetsClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem
+     */
+    public function reportsGetFleetSummaryAdmin($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    {
+        list($response) = $this->reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        return $response;
+    }
+
+    /**
+     * Operation reportsGetFleetSummaryAdminWithHttpInfo
+     *
+     * Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \ChronoSheetsClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    {
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem';
+        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation reportsGetFleetSummaryAdminAsync
+     *
+     * Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function reportsGetFleetSummaryAdminAsync($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    {
+        return $this->reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation reportsGetFleetSummaryAdminAsyncWithHttpInfo
+     *
+     * Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    {
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem';
+        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'reportsGetFleetSummaryAdmin'
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    {
+        // verify the required parameter 'startDate' is set
+        if ($startDate === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $startDate when calling reportsGetFleetSummaryAdmin'
+            );
+        }
+        // verify the required parameter 'endDate' is set
+        if ($endDate === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endDate when calling reportsGetFleetSummaryAdmin'
+            );
+        }
+        // verify the required parameter 'userIds' is set
+        if ($userIds === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $userIds when calling reportsGetFleetSummaryAdmin'
+            );
+        }
+        // verify the required parameter 'xChronosheetsAuth' is set
+        if ($xChronosheetsAuth === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $xChronosheetsAuth when calling reportsGetFleetSummaryAdmin'
+            );
+        }
+
+        $resourcePath = '/api/Reports/GetFleetSummaryAdmin';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($startDate !== null) {
+            $queryParams['StartDate'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['EndDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
+        // query params
+        if ($userIds !== null) {
+            $queryParams['UserIds'] = ObjectSerializer::toQueryValue($userIds);
+        }
+        // header params
+        if ($xChronosheetsAuth !== null) {
+            $headerParams['x-chronosheets-auth'] = ObjectSerializer::toHeaderValue($xChronosheetsAuth);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
      * Operation reportsGetOrgTripById
      *
      * Get trip by Id, for reporting purposes.    Requires the 'ReportAdmin' permission.
@@ -949,7 +1252,7 @@ class ReportsApi
     /**
      * Operation reportsGetOrganisationTimesheetFileAttachments
      *
-     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records.    Requires the 'ReportAdmin' permission.
+     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
@@ -971,7 +1274,7 @@ class ReportsApi
     /**
      * Operation reportsGetOrganisationTimesheetFileAttachmentsWithHttpInfo
      *
-     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records.    Requires the 'ReportAdmin' permission.
+     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
@@ -1051,7 +1354,7 @@ class ReportsApi
     /**
      * Operation reportsGetOrganisationTimesheetFileAttachmentsAsync
      *
-     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records.    Requires the 'ReportAdmin' permission.
+     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
@@ -1076,7 +1379,7 @@ class ReportsApi
     /**
      * Operation reportsGetOrganisationTimesheetFileAttachmentsAsyncWithHttpInfo
      *
-     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records.    Requires the 'ReportAdmin' permission.
+     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
@@ -1208,6 +1511,354 @@ class ReportsApi
         // query params
         if ($userIds !== null) {
             $queryParams['UserIds'] = ObjectSerializer::toQueryValue($userIds);
+        }
+        // header params
+        if ($xChronosheetsAuth !== null) {
+            $headerParams['x-chronosheets-auth'] = ObjectSerializer::toHeaderValue($xChronosheetsAuth);
+        }
+
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation reportsGetOrganisationTranscripts
+     *
+     * Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  int $skip Skip this many items (required)
+     * @param  int $take Take this many items (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $keywords Search the transcripts by keyword(s) (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \ChronoSheetsClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript
+     */
+    public function reportsGetOrganisationTranscripts($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    {
+        list($response) = $this->reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+        return $response;
+    }
+
+    /**
+     * Operation reportsGetOrganisationTranscriptsWithHttpInfo
+     *
+     * Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  int $skip Skip this many items (required)
+     * @param  int $take Take this many items (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $keywords Search the transcripts by keyword(s) (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \ChronoSheetsClient\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    {
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
+        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            $responseBody = $response->getBody();
+            if ($returnType === '\SplFileObject') {
+                $content = $responseBody; //stream goes to serializer
+            } else {
+                $content = $responseBody->getContents();
+                if ($returnType !== 'string') {
+                    $content = json_decode($content);
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation reportsGetOrganisationTranscriptsAsync
+     *
+     * Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  int $skip Skip this many items (required)
+     * @param  int $take Take this many items (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $keywords Search the transcripts by keyword(s) (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function reportsGetOrganisationTranscriptsAsync($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    {
+        return $this->reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation reportsGetOrganisationTranscriptsAsyncWithHttpInfo
+     *
+     * Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  int $skip Skip this many items (required)
+     * @param  int $take Take this many items (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $keywords Search the transcripts by keyword(s) (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    {
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
+        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    $responseBody = $response->getBody();
+                    if ($returnType === '\SplFileObject') {
+                        $content = $responseBody; //stream goes to serializer
+                    } else {
+                        $content = $responseBody->getContents();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'reportsGetOrganisationTranscripts'
+     *
+     * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
+     * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
+     * @param  int $skip Skip this many items (required)
+     * @param  int $take Take this many items (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
+     * @param  string $keywords Search the transcripts by keyword(s) (required)
+     * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    {
+        // verify the required parameter 'startDate' is set
+        if ($startDate === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $startDate when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'endDate' is set
+        if ($endDate === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $endDate when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'skip' is set
+        if ($skip === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $skip when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'take' is set
+        if ($take === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $take when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'userIds' is set
+        if ($userIds === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $userIds when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'keywords' is set
+        if ($keywords === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $keywords when calling reportsGetOrganisationTranscripts'
+            );
+        }
+        // verify the required parameter 'xChronosheetsAuth' is set
+        if ($xChronosheetsAuth === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $xChronosheetsAuth when calling reportsGetOrganisationTranscripts'
+            );
+        }
+
+        $resourcePath = '/api/Reports/GetOrganisationTranscripts';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        if ($startDate !== null) {
+            $queryParams['StartDate'] = ObjectSerializer::toQueryValue($startDate);
+        }
+        // query params
+        if ($endDate !== null) {
+            $queryParams['EndDate'] = ObjectSerializer::toQueryValue($endDate);
+        }
+        // query params
+        if ($skip !== null) {
+            $queryParams['Skip'] = ObjectSerializer::toQueryValue($skip);
+        }
+        // query params
+        if ($take !== null) {
+            $queryParams['Take'] = ObjectSerializer::toQueryValue($take);
+        }
+        // query params
+        if ($userIds !== null) {
+            $queryParams['UserIds'] = ObjectSerializer::toQueryValue($userIds);
+        }
+        // query params
+        if ($keywords !== null) {
+            $queryParams['Keywords'] = ObjectSerializer::toQueryValue($keywords);
         }
         // header params
         if ($xChronosheetsAuth !== null) {

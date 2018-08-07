@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItemTest
+ * CSApiResponseForPaginatedListTimesheetFileAttachmentTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSProjectCostingReportItemTest Class Doc Comment
+ * CSApiResponseForPaginatedListTimesheetFileAttachmentTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSProjectCostingReportItem
+// * @description CSApiResponseForPaginatedListTimesheetFileAttachment
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
+class CSApiResponseForPaginatedListTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,37 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSProjectCostingReportItem"
+     * Test "CSApiResponseForPaginatedListTimesheetFileAttachment"
      */
-    public function testCSProjectCostingReportItem()
+    public function testCSApiResponseForPaginatedListTimesheetFileAttachment()
     {
     }
 
     /**
-     * Test attribute "projectId"
+     * Test attribute "totalSetCount"
      */
-    public function testPropertyProjectId()
+    public function testPropertyTotalSetCount()
     {
     }
 
     /**
-     * Test attribute "projectName"
+     * Test attribute "data"
      */
-    public function testPropertyProjectName()
+    public function testPropertyData()
     {
     }
 
     /**
-     * Test attribute "clientId"
+     * Test attribute "status"
      */
-    public function testPropertyClientId()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "organisationId"
+     * Test attribute "message"
      */
-    public function testPropertyOrganisationId()
-    {
-    }
-
-    /**
-     * Test attribute "clientName"
-     */
-    public function testPropertyClientName()
-    {
-    }
-
-    /**
-     * Test attribute "estimatedCost"
-     */
-    public function testPropertyEstimatedCost()
-    {
-    }
-
-    /**
-     * Test attribute "actualCostFiltered"
-     */
-    public function testPropertyActualCostFiltered()
-    {
-    }
-
-    /**
-     * Test attribute "actualCost"
-     */
-    public function testPropertyActualCost()
+    public function testPropertyMessage()
     {
     }
 }

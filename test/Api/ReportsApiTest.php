@@ -92,6 +92,16 @@ class ReportsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for reportsGetFleetSummaryAdmin
+     *
+     * Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission..
+     *
+     */
+    public function testReportsGetFleetSummaryAdmin()
+    {
+    }
+
+    /**
      * Test case for reportsGetOrgTripById
      *
      * Get trip by Id, for reporting purposes.    Requires the 'ReportAdmin' permission..
@@ -104,10 +114,20 @@ class ReportsApiTest extends \PHPUnit_Framework_TestCase
     /**
      * Test case for reportsGetOrganisationTimesheetFileAttachments
      *
-     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records.    Requires the 'ReportAdmin' permission..
+     * Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission..
      *
      */
     public function testReportsGetOrganisationTimesheetFileAttachments()
+    {
+    }
+
+    /**
+     * Test case for reportsGetOrganisationTranscripts
+     *
+     * Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission..
+     *
+     */
+    public function testReportsGetOrganisationTranscripts()
     {
     }
 

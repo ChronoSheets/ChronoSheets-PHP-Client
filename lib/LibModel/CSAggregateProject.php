@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItem
+ * CSAggregateProject
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSProjectCostingReportItem Class Doc Comment
+ * CSAggregateProject Class Doc Comment
  *
  * @category Class
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
+class CSAggregateProject implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProjectCostingReportItem';
+    protected static $swaggerModelName = 'AggregateProject';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'projectId' => 'int',
-        'projectName' => 'string',
+        'id' => 'int',
         'clientId' => 'int',
         'organisationId' => 'int',
-        'clientName' => 'string',
-        'estimatedCost' => 'double',
-        'actualCostFiltered' => 'double',
-        'actualCost' => 'double'
+        'projectName' => 'string',
+        'costEstimation' => 'double',
+        'startDate' => '\DateTime',
+        'endDate' => '\DateTime'
     ];
 
     /**
@@ -73,14 +72,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'projectId' => 'int32',
-        'projectName' => null,
+        'id' => 'int32',
         'clientId' => 'int32',
         'organisationId' => 'int32',
-        'clientName' => null,
-        'estimatedCost' => 'double',
-        'actualCostFiltered' => 'double',
-        'actualCost' => 'double'
+        'projectName' => null,
+        'costEstimation' => 'double',
+        'startDate' => 'date-time',
+        'endDate' => 'date-time'
     ];
 
     /**
@@ -110,14 +108,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'projectId' => 'ProjectId',
-        'projectName' => 'ProjectName',
+        'id' => 'Id',
         'clientId' => 'ClientId',
         'organisationId' => 'OrganisationId',
-        'clientName' => 'ClientName',
-        'estimatedCost' => 'EstimatedCost',
-        'actualCostFiltered' => 'ActualCostFiltered',
-        'actualCost' => 'ActualCost'
+        'projectName' => 'ProjectName',
+        'costEstimation' => 'CostEstimation',
+        'startDate' => 'StartDate',
+        'endDate' => 'EndDate'
     ];
 
     /**
@@ -126,14 +123,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'projectId' => 'setProjectId',
-        'projectName' => 'setProjectName',
+        'id' => 'setId',
         'clientId' => 'setClientId',
         'organisationId' => 'setOrganisationId',
-        'clientName' => 'setClientName',
-        'estimatedCost' => 'setEstimatedCost',
-        'actualCostFiltered' => 'setActualCostFiltered',
-        'actualCost' => 'setActualCost'
+        'projectName' => 'setProjectName',
+        'costEstimation' => 'setCostEstimation',
+        'startDate' => 'setStartDate',
+        'endDate' => 'setEndDate'
     ];
 
     /**
@@ -142,14 +138,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'projectId' => 'getProjectId',
-        'projectName' => 'getProjectName',
+        'id' => 'getId',
         'clientId' => 'getClientId',
         'organisationId' => 'getOrganisationId',
-        'clientName' => 'getClientName',
-        'estimatedCost' => 'getEstimatedCost',
-        'actualCostFiltered' => 'getActualCostFiltered',
-        'actualCost' => 'getActualCost'
+        'projectName' => 'getProjectName',
+        'costEstimation' => 'getCostEstimation',
+        'startDate' => 'getStartDate',
+        'endDate' => 'getEndDate'
     ];
 
     /**
@@ -212,14 +207,13 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['projectId'] = isset($data['projectId']) ? $data['projectId'] : null;
-        $this->container['projectName'] = isset($data['projectName']) ? $data['projectName'] : null;
+        $this->container['id'] = isset($data['id']) ? $data['id'] : null;
         $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
         $this->container['organisationId'] = isset($data['organisationId']) ? $data['organisationId'] : null;
-        $this->container['clientName'] = isset($data['clientName']) ? $data['clientName'] : null;
-        $this->container['estimatedCost'] = isset($data['estimatedCost']) ? $data['estimatedCost'] : null;
-        $this->container['actualCostFiltered'] = isset($data['actualCostFiltered']) ? $data['actualCostFiltered'] : null;
-        $this->container['actualCost'] = isset($data['actualCost']) ? $data['actualCost'] : null;
+        $this->container['projectName'] = isset($data['projectName']) ? $data['projectName'] : null;
+        $this->container['costEstimation'] = isset($data['costEstimation']) ? $data['costEstimation'] : null;
+        $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
+        $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
     }
 
     /**
@@ -248,49 +242,25 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
 
 
     /**
-     * Gets projectId
+     * Gets id
      *
      * @return int
      */
-    public function getProjectId()
+    public function getId()
     {
-        return $this->container['projectId'];
+        return $this->container['id'];
     }
 
     /**
-     * Sets projectId
+     * Sets id
      *
-     * @param int $projectId projectId
+     * @param int $id id
      *
      * @return $this
      */
-    public function setProjectId($projectId)
+    public function setId($id)
     {
-        $this->container['projectId'] = $projectId;
-
-        return $this;
-    }
-
-    /**
-     * Gets projectName
-     *
-     * @return string
-     */
-    public function getProjectName()
-    {
-        return $this->container['projectName'];
-    }
-
-    /**
-     * Sets projectName
-     *
-     * @param string $projectName projectName
-     *
-     * @return $this
-     */
-    public function setProjectName($projectName)
-    {
-        $this->container['projectName'] = $projectName;
+        $this->container['id'] = $id;
 
         return $this;
     }
@@ -344,97 +314,97 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets clientName
+     * Gets projectName
      *
      * @return string
      */
-    public function getClientName()
+    public function getProjectName()
     {
-        return $this->container['clientName'];
+        return $this->container['projectName'];
     }
 
     /**
-     * Sets clientName
+     * Sets projectName
      *
-     * @param string $clientName clientName
+     * @param string $projectName projectName
      *
      * @return $this
      */
-    public function setClientName($clientName)
+    public function setProjectName($projectName)
     {
-        $this->container['clientName'] = $clientName;
+        $this->container['projectName'] = $projectName;
 
         return $this;
     }
 
     /**
-     * Gets estimatedCost
+     * Gets costEstimation
      *
      * @return double
      */
-    public function getEstimatedCost()
+    public function getCostEstimation()
     {
-        return $this->container['estimatedCost'];
+        return $this->container['costEstimation'];
     }
 
     /**
-     * Sets estimatedCost
+     * Sets costEstimation
      *
-     * @param double $estimatedCost estimatedCost
+     * @param double $costEstimation costEstimation
      *
      * @return $this
      */
-    public function setEstimatedCost($estimatedCost)
+    public function setCostEstimation($costEstimation)
     {
-        $this->container['estimatedCost'] = $estimatedCost;
+        $this->container['costEstimation'] = $costEstimation;
 
         return $this;
     }
 
     /**
-     * Gets actualCostFiltered
+     * Gets startDate
      *
-     * @return double
+     * @return \DateTime
      */
-    public function getActualCostFiltered()
+    public function getStartDate()
     {
-        return $this->container['actualCostFiltered'];
+        return $this->container['startDate'];
     }
 
     /**
-     * Sets actualCostFiltered
+     * Sets startDate
      *
-     * @param double $actualCostFiltered actualCostFiltered
+     * @param \DateTime $startDate startDate
      *
      * @return $this
      */
-    public function setActualCostFiltered($actualCostFiltered)
+    public function setStartDate($startDate)
     {
-        $this->container['actualCostFiltered'] = $actualCostFiltered;
+        $this->container['startDate'] = $startDate;
 
         return $this;
     }
 
     /**
-     * Gets actualCost
+     * Gets endDate
      *
-     * @return double
+     * @return \DateTime
      */
-    public function getActualCost()
+    public function getEndDate()
     {
-        return $this->container['actualCost'];
+        return $this->container['endDate'];
     }
 
     /**
-     * Sets actualCost
+     * Sets endDate
      *
-     * @param double $actualCost actualCost
+     * @param \DateTime $endDate endDate
      *
      * @return $this
      */
-    public function setActualCost($actualCost)
+    public function setEndDate($endDate)
     {
-        $this->container['actualCost'] = $actualCost;
+        $this->container['endDate'] = $endDate;
 
         return $this;
     }

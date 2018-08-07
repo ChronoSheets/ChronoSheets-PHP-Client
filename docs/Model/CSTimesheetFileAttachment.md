@@ -1,12 +1,8 @@
-# CSOrgReportTimesheetFileAttachment
+# CSTimesheetFileAttachment
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**username** | **string** |  | [optional] 
-**emailAddress** | **string** |  | [optional] 
-**firstName** | **string** |  | [optional] 
-**lastName** | **string** |  | [optional] 
 **timesheetId** | **int** |  | [optional] 
 **documentS3SignedUrl** | **string** |  | [optional] 
 **imageLargeS3SignedUrl** | **string** |  | [optional] 

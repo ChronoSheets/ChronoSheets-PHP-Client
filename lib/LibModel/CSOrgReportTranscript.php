@@ -1,6 +1,6 @@
 <?php
 /**
- * CSOrgReportTimesheetFileAttachment
+ * CSOrgReportTranscript
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSOrgReportTimesheetFileAttachment Class Doc Comment
+ * CSOrgReportTranscript Class Doc Comment
  *
  * @category Class
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
+class CSOrgReportTranscript implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'OrgReportTimesheetFileAttachment';
+    protected static $swaggerModelName = 'OrgReportTranscript';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,6 +57,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
+        'finishedJob' => 'bool',
+        'completedProcessing' => '\DateTime',
+        'created' => '\DateTime',
+        'startedProcessing' => '\DateTime',
+        'transcriptionId' => 'int',
+        'jobName' => 'string',
+        'contents' => 'string',
+        'mediaType' => 'string',
+        'transcriptionStatus' => 'string',
         'username' => 'string',
         'emailAddress' => 'string',
         'firstName' => 'string',
@@ -92,6 +101,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
+        'finishedJob' => null,
+        'completedProcessing' => 'date-time',
+        'created' => 'date-time',
+        'startedProcessing' => 'date-time',
+        'transcriptionId' => 'int32',
+        'jobName' => null,
+        'contents' => null,
+        'mediaType' => null,
+        'transcriptionStatus' => null,
         'username' => null,
         'emailAddress' => null,
         'firstName' => null,
@@ -148,6 +166,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
+        'finishedJob' => 'FinishedJob',
+        'completedProcessing' => 'CompletedProcessing',
+        'created' => 'Created',
+        'startedProcessing' => 'StartedProcessing',
+        'transcriptionId' => 'TranscriptionId',
+        'jobName' => 'JobName',
+        'contents' => 'Contents',
+        'mediaType' => 'MediaType',
+        'transcriptionStatus' => 'TranscriptionStatus',
         'username' => 'Username',
         'emailAddress' => 'EmailAddress',
         'firstName' => 'FirstName',
@@ -183,6 +210,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
+        'finishedJob' => 'setFinishedJob',
+        'completedProcessing' => 'setCompletedProcessing',
+        'created' => 'setCreated',
+        'startedProcessing' => 'setStartedProcessing',
+        'transcriptionId' => 'setTranscriptionId',
+        'jobName' => 'setJobName',
+        'contents' => 'setContents',
+        'mediaType' => 'setMediaType',
+        'transcriptionStatus' => 'setTranscriptionStatus',
         'username' => 'setUsername',
         'emailAddress' => 'setEmailAddress',
         'firstName' => 'setFirstName',
@@ -218,6 +254,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
+        'finishedJob' => 'getFinishedJob',
+        'completedProcessing' => 'getCompletedProcessing',
+        'created' => 'getCreated',
+        'startedProcessing' => 'getStartedProcessing',
+        'transcriptionId' => 'getTranscriptionId',
+        'jobName' => 'getJobName',
+        'contents' => 'getContents',
+        'mediaType' => 'getMediaType',
+        'transcriptionStatus' => 'getTranscriptionStatus',
         'username' => 'getUsername',
         'emailAddress' => 'getEmailAddress',
         'firstName' => 'getFirstName',
@@ -288,6 +333,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const CS_MEDIA_TYPE_OTHER = 'Other';
+    const CS_MEDIA_TYPE_MP3 = 'Mp3';
+    const CS_MEDIA_TYPE_MP4 = 'Mp4';
+    const CS_MEDIA_TYPE_WAV = 'Wav';
+    const CS_MEDIA_TYPE_FLAC = 'Flac';
+    const CS_TRANSCRIPTION_STATUS_SAVED = 'Saved';
+    const CS_TRANSCRIPTION_STATUS_PROCESSING = 'Processing';
+    const CS_TRANSCRIPTION_STATUS_COMPLETED = 'Completed';
+    const CS_TRANSCRIPTION_STATUS_FAILED_WITH_ERROR = 'FailedWithError';
     const CS_MOBILE_PLATFORM_UNKNOWN = 'Unknown';
     const CS_MOBILE_PLATFORM_I_OS = 'iOS';
     const CS_MOBILE_PLATFORM_ANDROID = 'Android';
@@ -302,6 +356,37 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
     const CS_ATTACHMENT_TYPE_AUDIO = 'Audio';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getMediaTypeAllowableValues()
+    {
+        return [
+            self::CS_MEDIA_TYPE_OTHER,
+            self::CS_MEDIA_TYPE_MP3,
+            self::CS_MEDIA_TYPE_MP4,
+            self::CS_MEDIA_TYPE_WAV,
+            self::CS_MEDIA_TYPE_FLAC,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getTranscriptionStatusAllowableValues()
+    {
+        return [
+            self::CS_TRANSCRIPTION_STATUS_SAVED,
+            self::CS_TRANSCRIPTION_STATUS_PROCESSING,
+            self::CS_TRANSCRIPTION_STATUS_COMPLETED,
+            self::CS_TRANSCRIPTION_STATUS_FAILED_WITH_ERROR,
+        ];
+    }
     
     /**
      * Gets allowable values of the enum
@@ -353,6 +438,15 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['finishedJob'] = isset($data['finishedJob']) ? $data['finishedJob'] : null;
+        $this->container['completedProcessing'] = isset($data['completedProcessing']) ? $data['completedProcessing'] : null;
+        $this->container['created'] = isset($data['created']) ? $data['created'] : null;
+        $this->container['startedProcessing'] = isset($data['startedProcessing']) ? $data['startedProcessing'] : null;
+        $this->container['transcriptionId'] = isset($data['transcriptionId']) ? $data['transcriptionId'] : null;
+        $this->container['jobName'] = isset($data['jobName']) ? $data['jobName'] : null;
+        $this->container['contents'] = isset($data['contents']) ? $data['contents'] : null;
+        $this->container['mediaType'] = isset($data['mediaType']) ? $data['mediaType'] : null;
+        $this->container['transcriptionStatus'] = isset($data['transcriptionStatus']) ? $data['transcriptionStatus'] : null;
         $this->container['username'] = isset($data['username']) ? $data['username'] : null;
         $this->container['emailAddress'] = isset($data['emailAddress']) ? $data['emailAddress'] : null;
         $this->container['firstName'] = isset($data['firstName']) ? $data['firstName'] : null;
@@ -391,6 +485,22 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getMediaTypeAllowableValues();
+        if (!in_array($this->container['mediaType'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'mediaType', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getTranscriptionStatusAllowableValues();
+        if (!in_array($this->container['transcriptionStatus'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'transcriptionStatus', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         $allowedValues = $this->getMobilePlatformAllowableValues();
         if (!in_array($this->container['mobilePlatform'], $allowedValues)) {
             $invalidProperties[] = sprintf(
@@ -419,6 +529,14 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getMediaTypeAllowableValues();
+        if (!in_array($this->container['mediaType'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getTranscriptionStatusAllowableValues();
+        if (!in_array($this->container['transcriptionStatus'], $allowedValues)) {
+            return false;
+        }
         $allowedValues = $this->getMobilePlatformAllowableValues();
         if (!in_array($this->container['mobilePlatform'], $allowedValues)) {
             return false;
@@ -430,6 +548,240 @@ class CSOrgReportTimesheetFileAttachment implements ModelInterface, ArrayAccess
         return true;
     }
 
+
+    /**
+     * Gets finishedJob
+     *
+     * @return bool
+     */
+    public function getFinishedJob()
+    {
+        return $this->container['finishedJob'];
+    }
+
+    /**
+     * Sets finishedJob
+     *
+     * @param bool $finishedJob finishedJob
+     *
+     * @return $this
+     */
+    public function setFinishedJob($finishedJob)
+    {
+        $this->container['finishedJob'] = $finishedJob;
+
+        return $this;
+    }
+
+    /**
+     * Gets completedProcessing
+     *
+     * @return \DateTime
+     */
+    public function getCompletedProcessing()
+    {
+        return $this->container['completedProcessing'];
+    }
+
+    /**
+     * Sets completedProcessing
+     *
+     * @param \DateTime $completedProcessing completedProcessing
+     *
+     * @return $this
+     */
+    public function setCompletedProcessing($completedProcessing)
+    {
+        $this->container['completedProcessing'] = $completedProcessing;
+
+        return $this;
+    }
+
+    /**
+     * Gets created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->container['created'];
+    }
+
+    /**
+     * Sets created
+     *
+     * @param \DateTime $created created
+     *
+     * @return $this
+     */
+    public function setCreated($created)
+    {
+        $this->container['created'] = $created;
+
+        return $this;
+    }
+
+    /**
+     * Gets startedProcessing
+     *
+     * @return \DateTime
+     */
+    public function getStartedProcessing()
+    {
+        return $this->container['startedProcessing'];
+    }
+
+    /**
+     * Sets startedProcessing
+     *
+     * @param \DateTime $startedProcessing startedProcessing
+     *
+     * @return $this
+     */
+    public function setStartedProcessing($startedProcessing)
+    {
+        $this->container['startedProcessing'] = $startedProcessing;
+
+        return $this;
+    }
+
+    /**
+     * Gets transcriptionId
+     *
+     * @return int
+     */
+    public function getTranscriptionId()
+    {
+        return $this->container['transcriptionId'];
+    }
+
+    /**
+     * Sets transcriptionId
+     *
+     * @param int $transcriptionId transcriptionId
+     *
+     * @return $this
+     */
+    public function setTranscriptionId($transcriptionId)
+    {
+        $this->container['transcriptionId'] = $transcriptionId;
+
+        return $this;
+    }
+
+    /**
+     * Gets jobName
+     *
+     * @return string
+     */
+    public function getJobName()
+    {
+        return $this->container['jobName'];
+    }
+
+    /**
+     * Sets jobName
+     *
+     * @param string $jobName jobName
+     *
+     * @return $this
+     */
+    public function setJobName($jobName)
+    {
+        $this->container['jobName'] = $jobName;
+
+        return $this;
+    }
+
+    /**
+     * Gets contents
+     *
+     * @return string
+     */
+    public function getContents()
+    {
+        return $this->container['contents'];
+    }
+
+    /**
+     * Sets contents
+     *
+     * @param string $contents contents
+     *
+     * @return $this
+     */
+    public function setContents($contents)
+    {
+        $this->container['contents'] = $contents;
+
+        return $this;
+    }
+
+    /**
+     * Gets mediaType
+     *
+     * @return string
+     */
+    public function getMediaType()
+    {
+        return $this->container['mediaType'];
+    }
+
+    /**
+     * Sets mediaType
+     *
+     * @param string $mediaType mediaType
+     *
+     * @return $this
+     */
+    public function setMediaType($mediaType)
+    {
+        $allowedValues = $this->getMediaTypeAllowableValues();
+        if (!is_null($mediaType) && !in_array($mediaType, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'mediaType', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['mediaType'] = $mediaType;
+
+        return $this;
+    }
+
+    /**
+     * Gets transcriptionStatus
+     *
+     * @return string
+     */
+    public function getTranscriptionStatus()
+    {
+        return $this->container['transcriptionStatus'];
+    }
+
+    /**
+     * Sets transcriptionStatus
+     *
+     * @param string $transcriptionStatus transcriptionStatus
+     *
+     * @return $this
+     */
+    public function setTranscriptionStatus($transcriptionStatus)
+    {
+        $allowedValues = $this->getTranscriptionStatusAllowableValues();
+        if (!is_null($transcriptionStatus) && !in_array($transcriptionStatus, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'transcriptionStatus', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['transcriptionStatus'] = $transcriptionStatus;
+
+        return $this;
+    }
 
     /**
      * Gets username

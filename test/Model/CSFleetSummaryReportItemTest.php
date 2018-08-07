@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItemTest
+ * CSFleetSummaryReportItemTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSProjectCostingReportItemTest Class Doc Comment
+ * CSFleetSummaryReportItemTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSProjectCostingReportItem
+// * @description CSFleetSummaryReportItem
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
+class CSFleetSummaryReportItemTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,30 +71,44 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSProjectCostingReportItem"
+     * Test "CSFleetSummaryReportItem"
      */
-    public function testCSProjectCostingReportItem()
+    public function testCSFleetSummaryReportItem()
     {
     }
 
     /**
-     * Test attribute "projectId"
+     * Test attribute "totalDistanceMetersFiltered"
      */
-    public function testPropertyProjectId()
+    public function testPropertyTotalDistanceMetersFiltered()
     {
     }
 
     /**
-     * Test attribute "projectName"
+     * Test attribute "totalDistanceMeters"
      */
-    public function testPropertyProjectName()
+    public function testPropertyTotalDistanceMeters()
     {
     }
 
     /**
-     * Test attribute "clientId"
+     * Test attribute "totalRunningCostDollarsFiltered"
      */
-    public function testPropertyClientId()
+    public function testPropertyTotalRunningCostDollarsFiltered()
+    {
+    }
+
+    /**
+     * Test attribute "totalRunningCostDollars"
+     */
+    public function testPropertyTotalRunningCostDollars()
+    {
+    }
+
+    /**
+     * Test attribute "id"
+     */
+    public function testPropertyId()
     {
     }
 
@@ -106,30 +120,58 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "clientName"
+     * Test attribute "name"
      */
-    public function testPropertyClientName()
+    public function testPropertyName()
     {
     }
 
     /**
-     * Test attribute "estimatedCost"
+     * Test attribute "costPerKilometer"
      */
-    public function testPropertyEstimatedCost()
+    public function testPropertyCostPerKilometer()
     {
     }
 
     /**
-     * Test attribute "actualCostFiltered"
+     * Test attribute "make"
      */
-    public function testPropertyActualCostFiltered()
+    public function testPropertyMake()
     {
     }
 
     /**
-     * Test attribute "actualCost"
+     * Test attribute "model"
      */
-    public function testPropertyActualCost()
+    public function testPropertyModel()
+    {
+    }
+
+    /**
+     * Test attribute "year"
+     */
+    public function testPropertyYear()
+    {
+    }
+
+    /**
+     * Test attribute "licencePlateNumber"
+     */
+    public function testPropertyLicencePlateNumber()
+    {
+    }
+
+    /**
+     * Test attribute "isDeleted"
+     */
+    public function testPropertyIsDeleted()
+    {
+    }
+
+    /**
+     * Test attribute "permittedEmployees"
+     */
+    public function testPropertyPermittedEmployees()
     {
     }
 }

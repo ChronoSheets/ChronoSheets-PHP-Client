@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItem
+ * CSApiResponseListAggregateClient
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSProjectCostingReportItem Class Doc Comment
+ * CSApiResponseListAggregateClient Class Doc Comment
  *
  * @category Class
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
+class CSApiResponseListAggregateClient implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ProjectCostingReportItem';
+    protected static $swaggerModelName = 'ApiResponse[List[AggregateClient]]';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,14 +57,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'projectId' => 'int',
-        'projectName' => 'string',
-        'clientId' => 'int',
-        'organisationId' => 'int',
-        'clientName' => 'string',
-        'estimatedCost' => 'double',
-        'actualCostFiltered' => 'double',
-        'actualCost' => 'double'
+        'data' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateClient[]',
+        'status' => 'string',
+        'message' => 'string'
     ];
 
     /**
@@ -73,14 +68,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'projectId' => 'int32',
-        'projectName' => null,
-        'clientId' => 'int32',
-        'organisationId' => 'int32',
-        'clientName' => null,
-        'estimatedCost' => 'double',
-        'actualCostFiltered' => 'double',
-        'actualCost' => 'double'
+        'data' => null,
+        'status' => null,
+        'message' => null
     ];
 
     /**
@@ -110,14 +100,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'projectId' => 'ProjectId',
-        'projectName' => 'ProjectName',
-        'clientId' => 'ClientId',
-        'organisationId' => 'OrganisationId',
-        'clientName' => 'ClientName',
-        'estimatedCost' => 'EstimatedCost',
-        'actualCostFiltered' => 'ActualCostFiltered',
-        'actualCost' => 'ActualCost'
+        'data' => 'Data',
+        'status' => 'Status',
+        'message' => 'Message'
     ];
 
     /**
@@ -126,14 +111,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'projectId' => 'setProjectId',
-        'projectName' => 'setProjectName',
-        'clientId' => 'setClientId',
-        'organisationId' => 'setOrganisationId',
-        'clientName' => 'setClientName',
-        'estimatedCost' => 'setEstimatedCost',
-        'actualCostFiltered' => 'setActualCostFiltered',
-        'actualCost' => 'setActualCost'
+        'data' => 'setData',
+        'status' => 'setStatus',
+        'message' => 'setMessage'
     ];
 
     /**
@@ -142,14 +122,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'projectId' => 'getProjectId',
-        'projectName' => 'getProjectName',
-        'clientId' => 'getClientId',
-        'organisationId' => 'getOrganisationId',
-        'clientName' => 'getClientName',
-        'estimatedCost' => 'getEstimatedCost',
-        'actualCostFiltered' => 'getActualCostFiltered',
-        'actualCost' => 'getActualCost'
+        'data' => 'getData',
+        'status' => 'getStatus',
+        'message' => 'getMessage'
     ];
 
     /**
@@ -193,8 +168,31 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const CS_STATUS_SUCCEEDED = 'Succeeded';
+    const CS_STATUS_FATAL_EXCEPTION = 'FatalException';
+    const CS_STATUS_GENERAL_ERROR = 'GeneralError';
+    const CS_STATUS_VALIDATION_ERROR = 'ValidationError';
+    const CS_STATUS_UN_AUTHORIZED = 'UnAuthorized';
+    const CS_STATUS_SESSION_EXPIRED = 'SessionExpired';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getStatusAllowableValues()
+    {
+        return [
+            self::CS_STATUS_SUCCEEDED,
+            self::CS_STATUS_FATAL_EXCEPTION,
+            self::CS_STATUS_GENERAL_ERROR,
+            self::CS_STATUS_VALIDATION_ERROR,
+            self::CS_STATUS_UN_AUTHORIZED,
+            self::CS_STATUS_SESSION_EXPIRED,
+        ];
+    }
     
 
     /**
@@ -212,14 +210,9 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['projectId'] = isset($data['projectId']) ? $data['projectId'] : null;
-        $this->container['projectName'] = isset($data['projectName']) ? $data['projectName'] : null;
-        $this->container['clientId'] = isset($data['clientId']) ? $data['clientId'] : null;
-        $this->container['organisationId'] = isset($data['organisationId']) ? $data['organisationId'] : null;
-        $this->container['clientName'] = isset($data['clientName']) ? $data['clientName'] : null;
-        $this->container['estimatedCost'] = isset($data['estimatedCost']) ? $data['estimatedCost'] : null;
-        $this->container['actualCostFiltered'] = isset($data['actualCostFiltered']) ? $data['actualCostFiltered'] : null;
-        $this->container['actualCost'] = isset($data['actualCost']) ? $data['actualCost'] : null;
+        $this->container['data'] = isset($data['data']) ? $data['data'] : null;
+        $this->container['status'] = isset($data['status']) ? $data['status'] : null;
+        $this->container['message'] = isset($data['message']) ? $data['message'] : null;
     }
 
     /**
@@ -230,6 +223,14 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($this->container['status'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'status', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
 
         return $invalidProperties;
     }
@@ -243,198 +244,91 @@ class CSProjectCostingReportItem implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!in_array($this->container['status'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
 
     /**
-     * Gets projectId
+     * Gets data
      *
-     * @return int
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateClient[]
      */
-    public function getProjectId()
+    public function getData()
     {
-        return $this->container['projectId'];
+        return $this->container['data'];
     }
 
     /**
-     * Sets projectId
+     * Sets data
      *
-     * @param int $projectId projectId
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateClient[] $data data
      *
      * @return $this
      */
-    public function setProjectId($projectId)
+    public function setData($data)
     {
-        $this->container['projectId'] = $projectId;
+        $this->container['data'] = $data;
 
         return $this;
     }
 
     /**
-     * Gets projectName
+     * Gets status
      *
      * @return string
      */
-    public function getProjectName()
+    public function getStatus()
     {
-        return $this->container['projectName'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets projectName
+     * Sets status
      *
-     * @param string $projectName projectName
+     * @param string $status status
      *
      * @return $this
      */
-    public function setProjectName($projectName)
+    public function setStatus($status)
     {
-        $this->container['projectName'] = $projectName;
+        $allowedValues = $this->getStatusAllowableValues();
+        if (!is_null($status) && !in_array($status, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'status', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets clientId
-     *
-     * @return int
-     */
-    public function getClientId()
-    {
-        return $this->container['clientId'];
-    }
-
-    /**
-     * Sets clientId
-     *
-     * @param int $clientId clientId
-     *
-     * @return $this
-     */
-    public function setClientId($clientId)
-    {
-        $this->container['clientId'] = $clientId;
-
-        return $this;
-    }
-
-    /**
-     * Gets organisationId
-     *
-     * @return int
-     */
-    public function getOrganisationId()
-    {
-        return $this->container['organisationId'];
-    }
-
-    /**
-     * Sets organisationId
-     *
-     * @param int $organisationId organisationId
-     *
-     * @return $this
-     */
-    public function setOrganisationId($organisationId)
-    {
-        $this->container['organisationId'] = $organisationId;
-
-        return $this;
-    }
-
-    /**
-     * Gets clientName
+     * Gets message
      *
      * @return string
      */
-    public function getClientName()
+    public function getMessage()
     {
-        return $this->container['clientName'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets clientName
+     * Sets message
      *
-     * @param string $clientName clientName
+     * @param string $message message
      *
      * @return $this
      */
-    public function setClientName($clientName)
+    public function setMessage($message)
     {
-        $this->container['clientName'] = $clientName;
-
-        return $this;
-    }
-
-    /**
-     * Gets estimatedCost
-     *
-     * @return double
-     */
-    public function getEstimatedCost()
-    {
-        return $this->container['estimatedCost'];
-    }
-
-    /**
-     * Sets estimatedCost
-     *
-     * @param double $estimatedCost estimatedCost
-     *
-     * @return $this
-     */
-    public function setEstimatedCost($estimatedCost)
-    {
-        $this->container['estimatedCost'] = $estimatedCost;
-
-        return $this;
-    }
-
-    /**
-     * Gets actualCostFiltered
-     *
-     * @return double
-     */
-    public function getActualCostFiltered()
-    {
-        return $this->container['actualCostFiltered'];
-    }
-
-    /**
-     * Sets actualCostFiltered
-     *
-     * @param double $actualCostFiltered actualCostFiltered
-     *
-     * @return $this
-     */
-    public function setActualCostFiltered($actualCostFiltered)
-    {
-        $this->container['actualCostFiltered'] = $actualCostFiltered;
-
-        return $this;
-    }
-
-    /**
-     * Gets actualCost
-     *
-     * @return double
-     */
-    public function getActualCost()
-    {
-        return $this->container['actualCost'];
-    }
-
-    /**
-     * Sets actualCost
-     *
-     * @param double $actualCost actualCost
-     *
-     * @return $this
-     */
-    public function setActualCost($actualCost)
-    {
-        $this->container['actualCost'] = $actualCost;
+        $this->container['message'] = $message;
 
         return $this;
     }

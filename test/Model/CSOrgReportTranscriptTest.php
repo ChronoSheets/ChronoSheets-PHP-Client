@@ -1,6 +1,6 @@
 <?php
 /**
- * CSOrgReportTimesheetFileAttachmentTest
+ * CSOrgReportTranscriptTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSOrgReportTimesheetFileAttachmentTest Class Doc Comment
+ * CSOrgReportTranscriptTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSOrgReportTimesheetFileAttachment
+// * @description CSOrgReportTranscript
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSOrgReportTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
+class CSOrgReportTranscriptTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,72 @@ class CSOrgReportTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSOrgReportTimesheetFileAttachment"
+     * Test "CSOrgReportTranscript"
      */
-    public function testCSOrgReportTimesheetFileAttachment()
+    public function testCSOrgReportTranscript()
+    {
+    }
+
+    /**
+     * Test attribute "finishedJob"
+     */
+    public function testPropertyFinishedJob()
+    {
+    }
+
+    /**
+     * Test attribute "completedProcessing"
+     */
+    public function testPropertyCompletedProcessing()
+    {
+    }
+
+    /**
+     * Test attribute "created"
+     */
+    public function testPropertyCreated()
+    {
+    }
+
+    /**
+     * Test attribute "startedProcessing"
+     */
+    public function testPropertyStartedProcessing()
+    {
+    }
+
+    /**
+     * Test attribute "transcriptionId"
+     */
+    public function testPropertyTranscriptionId()
+    {
+    }
+
+    /**
+     * Test attribute "jobName"
+     */
+    public function testPropertyJobName()
+    {
+    }
+
+    /**
+     * Test attribute "contents"
+     */
+    public function testPropertyContents()
+    {
+    }
+
+    /**
+     * Test attribute "mediaType"
+     */
+    public function testPropertyMediaType()
+    {
+    }
+
+    /**
+     * Test attribute "transcriptionStatus"
+     */
+    public function testPropertyTranscriptionStatus()
     {
     }
 

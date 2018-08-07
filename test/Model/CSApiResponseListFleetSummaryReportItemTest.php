@@ -1,6 +1,6 @@
 <?php
 /**
- * CSProjectCostingReportItemTest
+ * CSApiResponseListFleetSummaryReportItemTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSProjectCostingReportItemTest Class Doc Comment
+ * CSApiResponseListFleetSummaryReportItemTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSProjectCostingReportItem
+// * @description CSApiResponseListFleetSummaryReportItem
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
+class CSApiResponseListFleetSummaryReportItemTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,65 +71,30 @@ class CSProjectCostingReportItemTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSProjectCostingReportItem"
+     * Test "CSApiResponseListFleetSummaryReportItem"
      */
-    public function testCSProjectCostingReportItem()
+    public function testCSApiResponseListFleetSummaryReportItem()
     {
     }
 
     /**
-     * Test attribute "projectId"
+     * Test attribute "data"
      */
-    public function testPropertyProjectId()
+    public function testPropertyData()
     {
     }
 
     /**
-     * Test attribute "projectName"
+     * Test attribute "status"
      */
-    public function testPropertyProjectName()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "clientId"
+     * Test attribute "message"
      */
-    public function testPropertyClientId()
-    {
-    }
-
-    /**
-     * Test attribute "organisationId"
-     */
-    public function testPropertyOrganisationId()
-    {
-    }
-
-    /**
-     * Test attribute "clientName"
-     */
-    public function testPropertyClientName()
-    {
-    }
-
-    /**
-     * Test attribute "estimatedCost"
-     */
-    public function testPropertyEstimatedCost()
-    {
-    }
-
-    /**
-     * Test attribute "actualCostFiltered"
-     */
-    public function testPropertyActualCostFiltered()
-    {
-    }
-
-    /**
-     * Test attribute "actualCost"
-     */
-    public function testPropertyActualCost()
+    public function testPropertyMessage()
     {
     }
 }
