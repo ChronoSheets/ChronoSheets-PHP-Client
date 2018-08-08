@@ -21,11 +21,11 @@ To install the bindings via [Composer](http://getcomposer.org/), add the followi
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/gitUserId/ChronoSheets-PHP-Client.git"
+      "url": "https://github.com/ChronoSheets/ChronoSheets-PHP-Client.git"
     }
   ],
   "require": {
-    "gitUserId/ChronoSheets-PHP-Client": "*@dev"
+    "ChronoSheets/ChronoSheets-PHP-Client": "*@dev"
   }
 }
 ```
