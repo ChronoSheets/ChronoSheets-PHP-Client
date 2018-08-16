@@ -69,9 +69,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'emailAddress' => 'string',
         'timezone' => 'string',
         'subscriptionCustomerId' => 'string',
-        'subscriptionPlanId' => 'string',
         'signupToken' => 'string',
-        'numberSeatsAvailable' => 'int'
+        'subscriptionCycleStart' => '\DateTime',
+        'subscriptionCycleEnd' => '\DateTime',
+        'pricingPlans' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]'
     ];
 
     /**
@@ -92,9 +93,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'emailAddress' => null,
         'timezone' => null,
         'subscriptionCustomerId' => null,
-        'subscriptionPlanId' => null,
         'signupToken' => null,
-        'numberSeatsAvailable' => 'int32'
+        'subscriptionCycleStart' => 'date-time',
+        'subscriptionCycleEnd' => 'date-time',
+        'pricingPlans' => null
     ];
 
     /**
@@ -136,9 +138,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'emailAddress' => 'EmailAddress',
         'timezone' => 'Timezone',
         'subscriptionCustomerId' => 'SubscriptionCustomerId',
-        'subscriptionPlanId' => 'SubscriptionPlanId',
         'signupToken' => 'SignupToken',
-        'numberSeatsAvailable' => 'NumberSeatsAvailable'
+        'subscriptionCycleStart' => 'SubscriptionCycleStart',
+        'subscriptionCycleEnd' => 'SubscriptionCycleEnd',
+        'pricingPlans' => 'PricingPlans'
     ];
 
     /**
@@ -159,9 +162,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'emailAddress' => 'setEmailAddress',
         'timezone' => 'setTimezone',
         'subscriptionCustomerId' => 'setSubscriptionCustomerId',
-        'subscriptionPlanId' => 'setSubscriptionPlanId',
         'signupToken' => 'setSignupToken',
-        'numberSeatsAvailable' => 'setNumberSeatsAvailable'
+        'subscriptionCycleStart' => 'setSubscriptionCycleStart',
+        'subscriptionCycleEnd' => 'setSubscriptionCycleEnd',
+        'pricingPlans' => 'setPricingPlans'
     ];
 
     /**
@@ -182,9 +186,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'emailAddress' => 'getEmailAddress',
         'timezone' => 'getTimezone',
         'subscriptionCustomerId' => 'getSubscriptionCustomerId',
-        'subscriptionPlanId' => 'getSubscriptionPlanId',
         'signupToken' => 'getSignupToken',
-        'numberSeatsAvailable' => 'getNumberSeatsAvailable'
+        'subscriptionCycleStart' => 'getSubscriptionCycleStart',
+        'subscriptionCycleEnd' => 'getSubscriptionCycleEnd',
+        'pricingPlans' => 'getPricingPlans'
     ];
 
     /**
@@ -259,9 +264,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         $this->container['emailAddress'] = isset($data['emailAddress']) ? $data['emailAddress'] : null;
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['subscriptionCustomerId'] = isset($data['subscriptionCustomerId']) ? $data['subscriptionCustomerId'] : null;
-        $this->container['subscriptionPlanId'] = isset($data['subscriptionPlanId']) ? $data['subscriptionPlanId'] : null;
         $this->container['signupToken'] = isset($data['signupToken']) ? $data['signupToken'] : null;
-        $this->container['numberSeatsAvailable'] = isset($data['numberSeatsAvailable']) ? $data['numberSeatsAvailable'] : null;
+        $this->container['subscriptionCycleStart'] = isset($data['subscriptionCycleStart']) ? $data['subscriptionCycleStart'] : null;
+        $this->container['subscriptionCycleEnd'] = isset($data['subscriptionCycleEnd']) ? $data['subscriptionCycleEnd'] : null;
+        $this->container['pricingPlans'] = isset($data['pricingPlans']) ? $data['pricingPlans'] : null;
     }
 
     /**
@@ -578,30 +584,6 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets subscriptionPlanId
-     *
-     * @return string
-     */
-    public function getSubscriptionPlanId()
-    {
-        return $this->container['subscriptionPlanId'];
-    }
-
-    /**
-     * Sets subscriptionPlanId
-     *
-     * @param string $subscriptionPlanId subscriptionPlanId
-     *
-     * @return $this
-     */
-    public function setSubscriptionPlanId($subscriptionPlanId)
-    {
-        $this->container['subscriptionPlanId'] = $subscriptionPlanId;
-
-        return $this;
-    }
-
-    /**
      * Gets signupToken
      *
      * @return string
@@ -626,25 +608,73 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     }
 
     /**
-     * Gets numberSeatsAvailable
+     * Gets subscriptionCycleStart
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getNumberSeatsAvailable()
+    public function getSubscriptionCycleStart()
     {
-        return $this->container['numberSeatsAvailable'];
+        return $this->container['subscriptionCycleStart'];
     }
 
     /**
-     * Sets numberSeatsAvailable
+     * Sets subscriptionCycleStart
      *
-     * @param int $numberSeatsAvailable numberSeatsAvailable
+     * @param \DateTime $subscriptionCycleStart subscriptionCycleStart
      *
      * @return $this
      */
-    public function setNumberSeatsAvailable($numberSeatsAvailable)
+    public function setSubscriptionCycleStart($subscriptionCycleStart)
     {
-        $this->container['numberSeatsAvailable'] = $numberSeatsAvailable;
+        $this->container['subscriptionCycleStart'] = $subscriptionCycleStart;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionCycleEnd
+     *
+     * @return \DateTime
+     */
+    public function getSubscriptionCycleEnd()
+    {
+        return $this->container['subscriptionCycleEnd'];
+    }
+
+    /**
+     * Sets subscriptionCycleEnd
+     *
+     * @param \DateTime $subscriptionCycleEnd subscriptionCycleEnd
+     *
+     * @return $this
+     */
+    public function setSubscriptionCycleEnd($subscriptionCycleEnd)
+    {
+        $this->container['subscriptionCycleEnd'] = $subscriptionCycleEnd;
+
+        return $this;
+    }
+
+    /**
+     * Gets pricingPlans
+     *
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]
+     */
+    public function getPricingPlans()
+    {
+        return $this->container['pricingPlans'];
+    }
+
+    /**
+     * Sets pricingPlans
+     *
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[] $pricingPlans pricingPlans
+     *
+     * @return $this
+     */
+    public function setPricingPlans($pricingPlans)
+    {
+        $this->container['pricingPlans'] = $pricingPlans;
 
         return $this;
     }

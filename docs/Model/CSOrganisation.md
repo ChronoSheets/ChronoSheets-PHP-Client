@@ -15,9 +15,10 @@ Name | Type | Description | Notes
 **emailAddress** | **string** |  | [optional] 
 **timezone** | **string** |  | [optional] 
 **subscriptionCustomerId** | **string** |  | [optional] 
-**subscriptionPlanId** | **string** |  | [optional] 
 **signupToken** | **string** |  | [optional] 
-**numberSeatsAvailable** | **int** |  | [optional] 
+**subscriptionCycleStart** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**subscriptionCycleEnd** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**pricingPlans** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]**](CSOrganisationPricingPlan.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

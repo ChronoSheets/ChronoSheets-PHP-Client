@@ -86,6 +86,7 @@ Class | Method | HTTP request | Description
 *ClientsApi* | [**clientsGetClient**](docs/Api/ClientsApi.md#clientsgetclient) | **GET** /api/Clients/GetClient | Get a particular client.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
 *ClientsApi* | [**clientsGetClients**](docs/Api/ClientsApi.md#clientsgetclients) | **GET** /api/Clients/GetClients | Get a collection of clients that are under your organisation.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
 *ClientsApi* | [**clientsUpdateClient**](docs/Api/ClientsApi.md#clientsupdateclient) | **PUT** /api/Clients/UpdateClient | Update a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
+*FileAttachmentsApi* | [**fileAttachmentsDeleteTimesheetFileAttachment**](docs/Api/FileAttachmentsApi.md#fileattachmentsdeletetimesheetfileattachment) | **DELETE** /api/FileAttachments/DeleteTimesheetFileAttachment | Delete a particular timesheet file attachment
 *FileAttachmentsApi* | [**fileAttachmentsGetMyFileAttachments**](docs/Api/FileAttachmentsApi.md#fileattachmentsgetmyfileattachments) | **GET** /api/FileAttachments/GetMyFileAttachments | Get my file attachments.  Get files you&#39;ve attached to timesheets.
 *FleetApi* | [**fleetCreateVehicle**](docs/Api/FleetApi.md#fleetcreatevehicle) | **POST** /api/Fleet/CreateVehicle | Create a vehicle.    Requires the &#39;ManageFleet&#39; permission.
 *FleetApi* | [**fleetGetVehicleById**](docs/Api/FleetApi.md#fleetgetvehiclebyid) | **GET** /api/Fleet/GetVehicleById | Get a particular vehicle.  Does not require any special permission.
@@ -228,6 +229,7 @@ Class | Method | HTTP request | Description
  - [CSOrgReportTrip](docs/Model/CSOrgReportTrip.md)
  - [CSOrganisation](docs/Model/CSOrganisation.md)
  - [CSOrganisationGroup](docs/Model/CSOrganisationGroup.md)
+ - [CSOrganisationPricingPlan](docs/Model/CSOrganisationPricingPlan.md)
  - [CSProject](docs/Model/CSProject.md)
  - [CSProjectCostingReportItem](docs/Model/CSProjectCostingReportItem.md)
  - [CSProjectSeriesReportItem](docs/Model/CSProjectSeriesReportItem.md)

@@ -39,6 +39,7 @@ Name | Type | Description | Notes
 **dateUploaded** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **dateImageCaptured** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **storageAllocationBytes** | **int** |  | [optional] 
+**audioDurationSeconds** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

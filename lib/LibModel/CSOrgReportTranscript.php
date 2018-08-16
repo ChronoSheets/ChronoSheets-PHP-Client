@@ -92,7 +92,8 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         'longitude' => 'double',
         'dateUploaded' => '\DateTime',
         'dateImageCaptured' => '\DateTime',
-        'storageAllocationBytes' => 'int'
+        'storageAllocationBytes' => 'int',
+        'audioDurationSeconds' => 'int'
     ];
 
     /**
@@ -136,7 +137,8 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         'longitude' => 'double',
         'dateUploaded' => 'date-time',
         'dateImageCaptured' => 'date-time',
-        'storageAllocationBytes' => 'int64'
+        'storageAllocationBytes' => 'int64',
+        'audioDurationSeconds' => 'int32'
     ];
 
     /**
@@ -201,7 +203,8 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         'longitude' => 'Longitude',
         'dateUploaded' => 'DateUploaded',
         'dateImageCaptured' => 'DateImageCaptured',
-        'storageAllocationBytes' => 'StorageAllocationBytes'
+        'storageAllocationBytes' => 'StorageAllocationBytes',
+        'audioDurationSeconds' => 'AudioDurationSeconds'
     ];
 
     /**
@@ -245,7 +248,8 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         'longitude' => 'setLongitude',
         'dateUploaded' => 'setDateUploaded',
         'dateImageCaptured' => 'setDateImageCaptured',
-        'storageAllocationBytes' => 'setStorageAllocationBytes'
+        'storageAllocationBytes' => 'setStorageAllocationBytes',
+        'audioDurationSeconds' => 'setAudioDurationSeconds'
     ];
 
     /**
@@ -289,7 +293,8 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         'longitude' => 'getLongitude',
         'dateUploaded' => 'getDateUploaded',
         'dateImageCaptured' => 'getDateImageCaptured',
-        'storageAllocationBytes' => 'getStorageAllocationBytes'
+        'storageAllocationBytes' => 'getStorageAllocationBytes',
+        'audioDurationSeconds' => 'getAudioDurationSeconds'
     ];
 
     /**
@@ -474,6 +479,7 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
         $this->container['dateUploaded'] = isset($data['dateUploaded']) ? $data['dateUploaded'] : null;
         $this->container['dateImageCaptured'] = isset($data['dateImageCaptured']) ? $data['dateImageCaptured'] : null;
         $this->container['storageAllocationBytes'] = isset($data['storageAllocationBytes']) ? $data['storageAllocationBytes'] : null;
+        $this->container['audioDurationSeconds'] = isset($data['audioDurationSeconds']) ? $data['audioDurationSeconds'] : null;
     }
 
     /**
@@ -1445,6 +1451,30 @@ class CSOrgReportTranscript implements ModelInterface, ArrayAccess
     public function setStorageAllocationBytes($storageAllocationBytes)
     {
         $this->container['storageAllocationBytes'] = $storageAllocationBytes;
+
+        return $this;
+    }
+
+    /**
+     * Gets audioDurationSeconds
+     *
+     * @return int
+     */
+    public function getAudioDurationSeconds()
+    {
+        return $this->container['audioDurationSeconds'];
+    }
+
+    /**
+     * Sets audioDurationSeconds
+     *
+     * @param int $audioDurationSeconds audioDurationSeconds
+     *
+     * @return $this
+     */
+    public function setAudioDurationSeconds($audioDurationSeconds)
+    {
+        $this->container['audioDurationSeconds'] = $audioDurationSeconds;
 
         return $this;
     }

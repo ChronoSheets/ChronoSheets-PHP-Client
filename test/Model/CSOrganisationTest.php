@@ -162,13 +162,6 @@ class CSOrganisationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "subscriptionPlanId"
-     */
-    public function testPropertySubscriptionPlanId()
-    {
-    }
-
-    /**
      * Test attribute "signupToken"
      */
     public function testPropertySignupToken()
@@ -176,9 +169,23 @@ class CSOrganisationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "numberSeatsAvailable"
+     * Test attribute "subscriptionCycleStart"
      */
-    public function testPropertyNumberSeatsAvailable()
+    public function testPropertySubscriptionCycleStart()
+    {
+    }
+
+    /**
+     * Test attribute "subscriptionCycleEnd"
+     */
+    public function testPropertySubscriptionCycleEnd()
+    {
+    }
+
+    /**
+     * Test attribute "pricingPlans"
+     */
+    public function testPropertyPricingPlans()
     {
     }
 }

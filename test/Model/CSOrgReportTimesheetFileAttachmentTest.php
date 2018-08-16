@@ -265,4 +265,11 @@ class CSOrgReportTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
     public function testPropertyStorageAllocationBytes()
     {
     }
+
+    /**
+     * Test attribute "audioDurationSeconds"
+     */
+    public function testPropertyAudioDurationSeconds()
+    {
+    }
 }
