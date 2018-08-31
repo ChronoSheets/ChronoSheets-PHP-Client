@@ -89,16 +89,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData
      */
-    public function reportsGetAllChartsDataAdmin($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        list($response) = $this->reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        list($response) = $this->reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds);
         return $response;
     }
 
@@ -109,17 +109,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData';
-        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -187,15 +187,15 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetAllChartsDataAdminAsync($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetAllChartsDataAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        return $this->reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+        return $this->reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -210,16 +210,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData';
-        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -263,13 +263,13 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetAllChartsDataAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    protected function reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -281,12 +281,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetAllChartsDataAdmin'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetAllChartsDataAdmin'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -680,16 +674,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem
      */
-    public function reportsGetFleetSummaryAdmin($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        list($response) = $this->reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        list($response) = $this->reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds);
         return $response;
     }
 
@@ -700,17 +694,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetFleetSummaryAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem';
-        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -778,15 +772,15 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetFleetSummaryAdminAsync($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetFleetSummaryAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        return $this->reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+        return $this->reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -801,16 +795,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsGetFleetSummaryAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem';
-        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetFleetSummaryAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -854,13 +848,13 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetFleetSummaryAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    protected function reportsGetFleetSummaryAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -872,12 +866,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetFleetSummaryAdmin'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetFleetSummaryAdmin'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -1256,18 +1244,18 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment
      */
-    public function reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
-        list($response) = $this->reportsGetOrganisationTimesheetFileAttachmentsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        list($response) = $this->reportsGetOrganisationTimesheetFileAttachmentsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
         return $response;
     }
 
@@ -1278,19 +1266,19 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetOrganisationTimesheetFileAttachmentsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTimesheetFileAttachmentsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment';
-        $request = $this->reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1358,17 +1346,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTimesheetFileAttachmentsAsync($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTimesheetFileAttachmentsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
-        return $this->reportsGetOrganisationTimesheetFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+        return $this->reportsGetOrganisationTimesheetFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1383,18 +1371,18 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTimesheetFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTimesheetFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment';
-        $request = $this->reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1438,15 +1426,15 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    protected function reportsGetOrganisationTimesheetFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -1458,24 +1446,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetOrganisationTimesheetFileAttachments'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling reportsGetOrganisationTimesheetFileAttachments'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling reportsGetOrganisationTimesheetFileAttachments'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetOrganisationTimesheetFileAttachments'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -1589,19 +1559,19 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $keywords Search the transcripts by keyword(s) (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $keywords Search the transcripts by keyword(s) (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript
      */
-    public function reportsGetOrganisationTranscripts($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    public function reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null, $keywords = null)
     {
-        list($response) = $this->reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+        list($response) = $this->reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords);
         return $response;
     }
 
@@ -1612,20 +1582,20 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $keywords Search the transcripts by keyword(s) (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $keywords Search the transcripts by keyword(s) (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    public function reportsGetOrganisationTranscriptsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null, $keywords = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
-        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1693,18 +1663,18 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $keywords Search the transcripts by keyword(s) (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $keywords Search the transcripts by keyword(s) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTranscriptsAsync($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    public function reportsGetOrganisationTranscriptsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null, $keywords = null)
     {
-        return $this->reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+        return $this->reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1719,19 +1689,19 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $keywords Search the transcripts by keyword(s) (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $keywords Search the transcripts by keyword(s) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    public function reportsGetOrganisationTranscriptsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null, $keywords = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
-        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1775,16 +1745,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $keywords Search the transcripts by keyword(s) (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $keywords Search the transcripts by keyword(s) (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $skip, $take, $userIds, $keywords, $xChronosheetsAuth)
+    protected function reportsGetOrganisationTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null, $keywords = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -1796,30 +1766,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetOrganisationTranscripts'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling reportsGetOrganisationTranscripts'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling reportsGetOrganisationTranscripts'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetOrganisationTranscripts'
-            );
-        }
-        // verify the required parameter 'keywords' is set
-        if ($keywords === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $keywords when calling reportsGetOrganisationTranscripts'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -1937,18 +1883,18 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip
      */
-    public function reportsGetOrganisationTrips($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
-        list($response) = $this->reportsGetOrganisationTripsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        list($response) = $this->reportsGetOrganisationTripsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
         return $response;
     }
 
@@ -1959,19 +1905,19 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetOrganisationTripsWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTripsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip';
-        $request = $this->reportsGetOrganisationTripsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2039,17 +1985,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTripsAsync($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTripsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
-        return $this->reportsGetOrganisationTripsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+        return $this->reportsGetOrganisationTripsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2064,18 +2010,18 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetOrganisationTripsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    public function reportsGetOrganisationTripsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip';
-        $request = $this->reportsGetOrganisationTripsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsGetOrganisationTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2119,15 +2065,15 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  int $skip Skip this many items (required)
-     * @param  int $take Take this many items (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many items (optional)
+     * @param  int $take Take this many items (optional)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetOrganisationTripsRequest($startDate, $endDate, $skip, $take, $userIds, $xChronosheetsAuth)
+    protected function reportsGetOrganisationTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $userIds = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -2139,24 +2085,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetOrganisationTrips'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling reportsGetOrganisationTrips'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling reportsGetOrganisationTrips'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetOrganisationTrips'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -2270,20 +2198,20 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $sort Decide which column to sort on (required)
-     * @param  string $order Decide which direction to sort the column (required)
-     * @param  int $skip Skip this many rows (required)
-     * @param  int $take Take this many rows (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $sort Decide which column to sort on (optional)
+     * @param  string $order Decide which direction to sort the column (optional)
+     * @param  int $skip Skip this many rows (optional)
+     * @param  int $take Take this many rows (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem
      */
-    public function reportsGetRawDataAdmin($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+    public function reportsGetRawDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $sort = null, $order = null, $skip = null, $take = null)
     {
-        list($response) = $this->reportsGetRawDataAdminWithHttpInfo($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth);
+        list($response) = $this->reportsGetRawDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take);
         return $response;
     }
 
@@ -2294,21 +2222,21 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $sort Decide which column to sort on (required)
-     * @param  string $order Decide which direction to sort the column (required)
-     * @param  int $skip Skip this many rows (required)
-     * @param  int $take Take this many rows (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $sort Decide which column to sort on (optional)
+     * @param  string $order Decide which direction to sort the column (optional)
+     * @param  int $skip Skip this many rows (optional)
+     * @param  int $take Take this many rows (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetRawDataAdminWithHttpInfo($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+    public function reportsGetRawDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $sort = null, $order = null, $skip = null, $take = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem';
-        $request = $this->reportsGetRawDataAdminRequest($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth);
+        $request = $this->reportsGetRawDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2376,19 +2304,19 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $sort Decide which column to sort on (required)
-     * @param  string $order Decide which direction to sort the column (required)
-     * @param  int $skip Skip this many rows (required)
-     * @param  int $take Take this many rows (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $sort Decide which column to sort on (optional)
+     * @param  string $order Decide which direction to sort the column (optional)
+     * @param  int $skip Skip this many rows (optional)
+     * @param  int $take Take this many rows (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetRawDataAdminAsync($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+    public function reportsGetRawDataAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $sort = null, $order = null, $skip = null, $take = null)
     {
-        return $this->reportsGetRawDataAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+        return $this->reportsGetRawDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2403,20 +2331,20 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $sort Decide which column to sort on (required)
-     * @param  string $order Decide which direction to sort the column (required)
-     * @param  int $skip Skip this many rows (required)
-     * @param  int $take Take this many rows (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $sort Decide which column to sort on (optional)
+     * @param  string $order Decide which direction to sort the column (optional)
+     * @param  int $skip Skip this many rows (optional)
+     * @param  int $take Take this many rows (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetRawDataAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+    public function reportsGetRawDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $sort = null, $order = null, $skip = null, $take = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem';
-        $request = $this->reportsGetRawDataAdminRequest($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth);
+        $request = $this->reportsGetRawDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2460,17 +2388,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
-     * @param  string $sort Decide which column to sort on (required)
-     * @param  string $order Decide which direction to sort the column (required)
-     * @param  int $skip Skip this many rows (required)
-     * @param  int $take Take this many rows (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $sort Decide which column to sort on (optional)
+     * @param  string $order Decide which direction to sort the column (optional)
+     * @param  int $skip Skip this many rows (optional)
+     * @param  int $take Take this many rows (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetRawDataAdminRequest($startDate, $endDate, $userIds, $sort, $order, $skip, $take, $xChronosheetsAuth)
+    protected function reportsGetRawDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $sort = null, $order = null, $skip = null, $take = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -2482,36 +2410,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsGetRawDataAdmin'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsGetRawDataAdmin'
-            );
-        }
-        // verify the required parameter 'sort' is set
-        if ($sort === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $sort when calling reportsGetRawDataAdmin'
-            );
-        }
-        // verify the required parameter 'order' is set
-        if ($order === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $order when calling reportsGetRawDataAdmin'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling reportsGetRawDataAdmin'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling reportsGetRawDataAdmin'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set
@@ -2633,16 +2531,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem
      */
-    public function reportsProjectCostingsAdmin($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        list($response) = $this->reportsProjectCostingsAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        list($response) = $this->reportsProjectCostingsAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds);
         return $response;
     }
 
@@ -2653,17 +2551,17 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsProjectCostingsAdminWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsProjectCostingsAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem';
-        $request = $this->reportsProjectCostingsAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsProjectCostingsAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         try {
             $options = $this->createHttpClientOption();
@@ -2731,15 +2629,15 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsProjectCostingsAdminAsync($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsProjectCostingsAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
-        return $this->reportsProjectCostingsAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+        return $this->reportsProjectCostingsAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -2754,16 +2652,16 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsProjectCostingsAdminAsyncWithHttpInfo($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    public function reportsProjectCostingsAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem';
-        $request = $this->reportsProjectCostingsAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth);
+        $request = $this->reportsProjectCostingsAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -2807,13 +2705,13 @@ class ReportsApi
      *
      * @param  \DateTime $startDate The start date for the date range.  Report data in the response is after this date (required)
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
-     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsProjectCostingsAdminRequest($startDate, $endDate, $userIds, $xChronosheetsAuth)
+    protected function reportsProjectCostingsAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -2825,12 +2723,6 @@ class ReportsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling reportsProjectCostingsAdmin'
-            );
-        }
-        // verify the required parameter 'userIds' is set
-        if ($userIds === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $userIds when calling reportsProjectCostingsAdmin'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set

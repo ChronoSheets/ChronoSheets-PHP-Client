@@ -634,18 +634,18 @@ class TripsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Trips after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Trips before this date will be obtained. (required)
-     * @param  int $skip Skip this many Trips (required)
-     * @param  int $take Take this many Trips (required)
-     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many Trips (optional)
+     * @param  int $take Take this many Trips (optional)
+     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip
      */
-    public function tripsGetMyTrips($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+    public function tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $vehicleId = null)
     {
-        list($response) = $this->tripsGetMyTripsWithHttpInfo($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth);
+        list($response) = $this->tripsGetMyTripsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId);
         return $response;
     }
 
@@ -656,19 +656,19 @@ class TripsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Trips after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Trips before this date will be obtained. (required)
-     * @param  int $skip Skip this many Trips (required)
-     * @param  int $take Take this many Trips (required)
-     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many Trips (optional)
+     * @param  int $take Take this many Trips (optional)
+     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip, HTTP status code, HTTP response headers (array of strings)
      */
-    public function tripsGetMyTripsWithHttpInfo($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+    public function tripsGetMyTripsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $vehicleId = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip';
-        $request = $this->tripsGetMyTripsRequest($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth);
+        $request = $this->tripsGetMyTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId);
 
         try {
             $options = $this->createHttpClientOption();
@@ -736,17 +736,17 @@ class TripsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Trips after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Trips before this date will be obtained. (required)
-     * @param  int $skip Skip this many Trips (required)
-     * @param  int $take Take this many Trips (required)
-     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many Trips (optional)
+     * @param  int $take Take this many Trips (optional)
+     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tripsGetMyTripsAsync($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+    public function tripsGetMyTripsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $vehicleId = null)
     {
-        return $this->tripsGetMyTripsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+        return $this->tripsGetMyTripsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -761,18 +761,18 @@ class TripsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Trips after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Trips before this date will be obtained. (required)
-     * @param  int $skip Skip this many Trips (required)
-     * @param  int $take Take this many Trips (required)
-     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many Trips (optional)
+     * @param  int $take Take this many Trips (optional)
+     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function tripsGetMyTripsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+    public function tripsGetMyTripsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $vehicleId = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip';
-        $request = $this->tripsGetMyTripsRequest($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth);
+        $request = $this->tripsGetMyTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -816,15 +816,15 @@ class TripsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Trips after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Trips before this date will be obtained. (required)
-     * @param  int $skip Skip this many Trips (required)
-     * @param  int $take Take this many Trips (required)
-     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many Trips (optional)
+     * @param  int $take Take this many Trips (optional)
+     * @param  int $vehicleId Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function tripsGetMyTripsRequest($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+    protected function tripsGetMyTripsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $vehicleId = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -836,24 +836,6 @@ class TripsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling tripsGetMyTrips'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling tripsGetMyTrips'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling tripsGetMyTrips'
-            );
-        }
-        // verify the required parameter 'vehicleId' is set
-        if ($vehicleId === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $vehicleId when calling tripsGetMyTrips'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set

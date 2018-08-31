@@ -58,7 +58,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **fileAttachmentsGetMyFileAttachments**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment fileAttachmentsGetMyFileAttachments($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take)
 
 Get my file attachments.  Get files you've attached to timesheets.
 
@@ -74,12 +74,12 @@ $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The Start date of the date range.  File attachments after this date will be obtained.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The End date of the date range.  File attachments before this date will be obtained.
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many File attachments
 $take = 56; // int | Take this many File attachments
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
-    $result = $apiInstance->fileAttachmentsGetMyFileAttachments($startDate, $endDate, $skip, $take, $xChronosheetsAuth);
+    $result = $apiInstance->fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FileAttachmentsApi->fileAttachmentsGetMyFileAttachments: ', $e->getMessage(), PHP_EOL;
@@ -93,9 +93,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The Start date of the date range.  File attachments after this date will be obtained. |
  **endDate** | **\DateTime**| The End date of the date range.  File attachments before this date will be obtained. |
- **skip** | **int**| Skip this many File attachments |
- **take** | **int**| Take this many File attachments |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **skip** | **int**| Skip this many File attachments | [optional]
+ **take** | **int**| Take this many File attachments | [optional]
 
 ### Return type
 

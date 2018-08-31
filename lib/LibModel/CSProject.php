@@ -62,6 +62,7 @@ class CSProject implements ModelInterface, ArrayAccess
         'organisationId' => 'int',
         'projectName' => 'string',
         'costEstimation' => 'double',
+        'costActual' => 'double',
         'startDate' => '\DateTime',
         'endDate' => '\DateTime'
     ];
@@ -77,6 +78,7 @@ class CSProject implements ModelInterface, ArrayAccess
         'organisationId' => 'int32',
         'projectName' => null,
         'costEstimation' => 'double',
+        'costActual' => 'double',
         'startDate' => 'date-time',
         'endDate' => 'date-time'
     ];
@@ -113,6 +115,7 @@ class CSProject implements ModelInterface, ArrayAccess
         'organisationId' => 'OrganisationId',
         'projectName' => 'ProjectName',
         'costEstimation' => 'CostEstimation',
+        'costActual' => 'CostActual',
         'startDate' => 'StartDate',
         'endDate' => 'EndDate'
     ];
@@ -128,6 +131,7 @@ class CSProject implements ModelInterface, ArrayAccess
         'organisationId' => 'setOrganisationId',
         'projectName' => 'setProjectName',
         'costEstimation' => 'setCostEstimation',
+        'costActual' => 'setCostActual',
         'startDate' => 'setStartDate',
         'endDate' => 'setEndDate'
     ];
@@ -143,6 +147,7 @@ class CSProject implements ModelInterface, ArrayAccess
         'organisationId' => 'getOrganisationId',
         'projectName' => 'getProjectName',
         'costEstimation' => 'getCostEstimation',
+        'costActual' => 'getCostActual',
         'startDate' => 'getStartDate',
         'endDate' => 'getEndDate'
     ];
@@ -212,6 +217,7 @@ class CSProject implements ModelInterface, ArrayAccess
         $this->container['organisationId'] = isset($data['organisationId']) ? $data['organisationId'] : null;
         $this->container['projectName'] = isset($data['projectName']) ? $data['projectName'] : null;
         $this->container['costEstimation'] = isset($data['costEstimation']) ? $data['costEstimation'] : null;
+        $this->container['costActual'] = isset($data['costActual']) ? $data['costActual'] : null;
         $this->container['startDate'] = isset($data['startDate']) ? $data['startDate'] : null;
         $this->container['endDate'] = isset($data['endDate']) ? $data['endDate'] : null;
     }
@@ -357,6 +363,30 @@ class CSProject implements ModelInterface, ArrayAccess
     public function setCostEstimation($costEstimation)
     {
         $this->container['costEstimation'] = $costEstimation;
+
+        return $this;
+    }
+
+    /**
+     * Gets costActual
+     *
+     * @return double
+     */
+    public function getCostActual()
+    {
+        return $this->container['costActual'];
+    }
+
+    /**
+     * Sets costActual
+     *
+     * @param double $costActual costActual
+     *
+     * @return $this
+     */
+    public function setCostActual($costActual)
+    {
+        $this->container['costActual'] = $costActual;
 
         return $this;
     }

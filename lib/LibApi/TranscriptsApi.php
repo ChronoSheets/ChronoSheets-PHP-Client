@@ -89,18 +89,18 @@ class TranscriptsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Transcripts after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Transcripts before this date will be obtained. (required)
-     * @param  int $skip Skip this many transcripts (required)
-     * @param  int $take Take this many transcripts (required)
-     * @param  string $keyword Search the text content of the transcript keywords (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many transcripts (optional)
+     * @param  int $take Take this many transcripts (optional)
+     * @param  string $keyword Search the text content of the transcript keywords (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript
      */
-    public function transcriptsGetMyTranscripts($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+    public function transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $keyword = null)
     {
-        list($response) = $this->transcriptsGetMyTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth);
+        list($response) = $this->transcriptsGetMyTranscriptsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword);
         return $response;
     }
 
@@ -111,19 +111,19 @@ class TranscriptsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Transcripts after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Transcripts before this date will be obtained. (required)
-     * @param  int $skip Skip this many transcripts (required)
-     * @param  int $take Take this many transcripts (required)
-     * @param  string $keyword Search the text content of the transcript keywords (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many transcripts (optional)
+     * @param  int $take Take this many transcripts (optional)
+     * @param  string $keyword Search the text content of the transcript keywords (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript, HTTP status code, HTTP response headers (array of strings)
      */
-    public function transcriptsGetMyTranscriptsWithHttpInfo($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+    public function transcriptsGetMyTranscriptsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $keyword = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
-        $request = $this->transcriptsGetMyTranscriptsRequest($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth);
+        $request = $this->transcriptsGetMyTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword);
 
         try {
             $options = $this->createHttpClientOption();
@@ -191,17 +191,17 @@ class TranscriptsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Transcripts after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Transcripts before this date will be obtained. (required)
-     * @param  int $skip Skip this many transcripts (required)
-     * @param  int $take Take this many transcripts (required)
-     * @param  string $keyword Search the text content of the transcript keywords (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many transcripts (optional)
+     * @param  int $take Take this many transcripts (optional)
+     * @param  string $keyword Search the text content of the transcript keywords (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transcriptsGetMyTranscriptsAsync($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+    public function transcriptsGetMyTranscriptsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $keyword = null)
     {
-        return $this->transcriptsGetMyTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+        return $this->transcriptsGetMyTranscriptsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -216,18 +216,18 @@ class TranscriptsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Transcripts after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Transcripts before this date will be obtained. (required)
-     * @param  int $skip Skip this many transcripts (required)
-     * @param  int $take Take this many transcripts (required)
-     * @param  string $keyword Search the text content of the transcript keywords (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many transcripts (optional)
+     * @param  int $take Take this many transcripts (optional)
+     * @param  string $keyword Search the text content of the transcript keywords (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function transcriptsGetMyTranscriptsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+    public function transcriptsGetMyTranscriptsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $keyword = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript';
-        $request = $this->transcriptsGetMyTranscriptsRequest($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth);
+        $request = $this->transcriptsGetMyTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -271,15 +271,15 @@ class TranscriptsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  Transcripts after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  Transcripts before this date will be obtained. (required)
-     * @param  int $skip Skip this many transcripts (required)
-     * @param  int $take Take this many transcripts (required)
-     * @param  string $keyword Search the text content of the transcript keywords (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many transcripts (optional)
+     * @param  int $take Take this many transcripts (optional)
+     * @param  string $keyword Search the text content of the transcript keywords (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function transcriptsGetMyTranscriptsRequest($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+    protected function transcriptsGetMyTranscriptsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null, $keyword = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -291,24 +291,6 @@ class TranscriptsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling transcriptsGetMyTranscripts'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling transcriptsGetMyTranscripts'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling transcriptsGetMyTranscripts'
-            );
-        }
-        // verify the required parameter 'keyword' is set
-        if ($keyword === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $keyword when calling transcriptsGetMyTranscripts'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set

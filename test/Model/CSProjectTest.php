@@ -113,6 +113,13 @@ class CSProjectTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "costActual"
+     */
+    public function testPropertyCostActual()
+    {
+    }
+
+    /**
      * Test attribute "startDate"
      */
     public function testPropertyStartDate()

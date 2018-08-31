@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **transcriptsGetMyTranscripts**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript transcriptsGetMyTranscripts($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword)
 
 Get my file transcripts.  Get audio to text transcripts that you've created.
 
@@ -24,13 +24,13 @@ $apiInstance = new ChronoSheetsClient\Api\TranscriptsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The Start date of the date range.  Transcripts after this date will be obtained.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The End date of the date range.  Transcripts before this date will be obtained.
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many transcripts
 $take = 56; // int | Take this many transcripts
 $keyword = "keyword_example"; // string | Search the text content of the transcript keywords
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
-    $result = $apiInstance->transcriptsGetMyTranscripts($startDate, $endDate, $skip, $take, $keyword, $xChronosheetsAuth);
+    $result = $apiInstance->transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TranscriptsApi->transcriptsGetMyTranscripts: ', $e->getMessage(), PHP_EOL;
@@ -44,10 +44,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The Start date of the date range.  Transcripts after this date will be obtained. |
  **endDate** | **\DateTime**| The End date of the date range.  Transcripts before this date will be obtained. |
- **skip** | **int**| Skip this many transcripts |
- **take** | **int**| Take this many transcripts |
- **keyword** | **string**| Search the text content of the transcript keywords |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **skip** | **int**| Skip this many transcripts | [optional]
+ **take** | **int**| Take this many transcripts | [optional]
+ **keyword** | **string**| Search the text content of the transcript keywords | [optional]
 
 ### Return type
 

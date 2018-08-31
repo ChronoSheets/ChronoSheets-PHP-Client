@@ -108,7 +108,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **tripsGetMyTrips**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip tripsGetMyTrips($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId)
 
 Get my trips.  Get the GPS trips you've recorded and submitted.    Requires the 'ViewMyTrips' permission.
 
@@ -124,13 +124,13 @@ $apiInstance = new ChronoSheetsClient\Api\TripsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The Start date of the date range.  Trips after this date will be obtained.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The End date of the date range.  Trips before this date will be obtained.
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many Trips
 $take = 56; // int | Take this many Trips
 $vehicleId = 56; // int | Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
-    $result = $apiInstance->tripsGetMyTrips($startDate, $endDate, $skip, $take, $vehicleId, $xChronosheetsAuth);
+    $result = $apiInstance->tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TripsApi->tripsGetMyTrips: ', $e->getMessage(), PHP_EOL;
@@ -144,10 +144,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The Start date of the date range.  Trips after this date will be obtained. |
  **endDate** | **\DateTime**| The End date of the date range.  Trips before this date will be obtained. |
- **skip** | **int**| Skip this many Trips |
- **take** | **int**| Take this many Trips |
- **vehicleId** | **int**| Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **skip** | **int**| Skip this many Trips | [optional]
+ **take** | **int**| Take this many Trips | [optional]
+ **vehicleId** | **int**| Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId | [optional]
 
 ### Return type
 

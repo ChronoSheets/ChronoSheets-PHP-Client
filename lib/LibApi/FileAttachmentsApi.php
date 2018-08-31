@@ -362,17 +362,17 @@ class FileAttachmentsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  File attachments after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  File attachments before this date will be obtained. (required)
-     * @param  int $skip Skip this many File attachments (required)
-     * @param  int $take Take this many File attachments (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many File attachments (optional)
+     * @param  int $take Take this many File attachments (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment
      */
-    public function fileAttachmentsGetMyFileAttachments($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+    public function fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null)
     {
-        list($response) = $this->fileAttachmentsGetMyFileAttachmentsWithHttpInfo($startDate, $endDate, $skip, $take, $xChronosheetsAuth);
+        list($response) = $this->fileAttachmentsGetMyFileAttachmentsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take);
         return $response;
     }
 
@@ -383,18 +383,18 @@ class FileAttachmentsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  File attachments after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  File attachments before this date will be obtained. (required)
-     * @param  int $skip Skip this many File attachments (required)
-     * @param  int $take Take this many File attachments (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many File attachments (optional)
+     * @param  int $take Take this many File attachments (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileAttachmentsGetMyFileAttachmentsWithHttpInfo($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+    public function fileAttachmentsGetMyFileAttachmentsWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment';
-        $request = $this->fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $skip, $take, $xChronosheetsAuth);
+        $request = $this->fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take);
 
         try {
             $options = $this->createHttpClientOption();
@@ -462,16 +462,16 @@ class FileAttachmentsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  File attachments after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  File attachments before this date will be obtained. (required)
-     * @param  int $skip Skip this many File attachments (required)
-     * @param  int $take Take this many File attachments (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many File attachments (optional)
+     * @param  int $take Take this many File attachments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fileAttachmentsGetMyFileAttachmentsAsync($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+    public function fileAttachmentsGetMyFileAttachmentsAsync($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null)
     {
-        return $this->fileAttachmentsGetMyFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+        return $this->fileAttachmentsGetMyFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip, $take)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -486,17 +486,17 @@ class FileAttachmentsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  File attachments after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  File attachments before this date will be obtained. (required)
-     * @param  int $skip Skip this many File attachments (required)
-     * @param  int $take Take this many File attachments (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many File attachments (optional)
+     * @param  int $take Take this many File attachments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fileAttachmentsGetMyFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+    public function fileAttachmentsGetMyFileAttachmentsAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment';
-        $request = $this->fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $skip, $take, $xChronosheetsAuth);
+        $request = $this->fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip, $take);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -540,14 +540,14 @@ class FileAttachmentsApi
      *
      * @param  \DateTime $startDate The Start date of the date range.  File attachments after this date will be obtained. (required)
      * @param  \DateTime $endDate The End date of the date range.  File attachments before this date will be obtained. (required)
-     * @param  int $skip Skip this many File attachments (required)
-     * @param  int $take Take this many File attachments (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  int $skip Skip this many File attachments (optional)
+     * @param  int $take Take this many File attachments (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $skip, $take, $xChronosheetsAuth)
+    protected function fileAttachmentsGetMyFileAttachmentsRequest($startDate, $endDate, $xChronosheetsAuth, $skip = null, $take = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -559,18 +559,6 @@ class FileAttachmentsApi
         if ($endDate === null) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $endDate when calling fileAttachmentsGetMyFileAttachments'
-            );
-        }
-        // verify the required parameter 'skip' is set
-        if ($skip === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $skip when calling fileAttachmentsGetMyFileAttachments'
-            );
-        }
-        // verify the required parameter 'take' is set
-        if ($take === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $take when calling fileAttachmentsGetMyFileAttachments'
             );
         }
         // verify the required parameter 'xChronosheetsAuth' is set

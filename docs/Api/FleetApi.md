@@ -109,7 +109,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **fleetGetVehicles**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle fleetGetVehicles($includeDeleted, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle fleetGetVehicles($xChronosheetsAuth, $includeDeleted)
 
 Get a collection of vehicles that are under your organisation.    Does not require any special permission.
 
@@ -123,11 +123,11 @@ $apiInstance = new ChronoSheetsClient\Api\FleetApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$includeDeleted = true; // bool | Whether or not to include deleted vehicles
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$includeDeleted = true; // bool | Whether or not to include deleted vehicles
 
 try {
-    $result = $apiInstance->fleetGetVehicles($includeDeleted, $xChronosheetsAuth);
+    $result = $apiInstance->fleetGetVehicles($xChronosheetsAuth, $includeDeleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetGetVehicles: ', $e->getMessage(), PHP_EOL;
@@ -139,8 +139,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **includeDeleted** | **bool**| Whether or not to include deleted vehicles |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **includeDeleted** | **bool**| Whether or not to include deleted vehicles | [optional]
 
 ### Return type
 

@@ -632,16 +632,16 @@ class FleetApi
      *
      * Get a collection of vehicles that are under your organisation.    Does not require any special permission.
      *
-     * @param  bool $includeDeleted Whether or not to include deleted vehicles (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  bool $includeDeleted Whether or not to include deleted vehicles (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle
      */
-    public function fleetGetVehicles($includeDeleted, $xChronosheetsAuth)
+    public function fleetGetVehicles($xChronosheetsAuth, $includeDeleted = null)
     {
-        list($response) = $this->fleetGetVehiclesWithHttpInfo($includeDeleted, $xChronosheetsAuth);
+        list($response) = $this->fleetGetVehiclesWithHttpInfo($xChronosheetsAuth, $includeDeleted);
         return $response;
     }
 
@@ -650,17 +650,17 @@ class FleetApi
      *
      * Get a collection of vehicles that are under your organisation.    Does not require any special permission.
      *
-     * @param  bool $includeDeleted Whether or not to include deleted vehicles (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  bool $includeDeleted Whether or not to include deleted vehicles (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fleetGetVehiclesWithHttpInfo($includeDeleted, $xChronosheetsAuth)
+    public function fleetGetVehiclesWithHttpInfo($xChronosheetsAuth, $includeDeleted = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle';
-        $request = $this->fleetGetVehiclesRequest($includeDeleted, $xChronosheetsAuth);
+        $request = $this->fleetGetVehiclesRequest($xChronosheetsAuth, $includeDeleted);
 
         try {
             $options = $this->createHttpClientOption();
@@ -726,15 +726,15 @@ class FleetApi
      *
      * Get a collection of vehicles that are under your organisation.    Does not require any special permission.
      *
-     * @param  bool $includeDeleted Whether or not to include deleted vehicles (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  bool $includeDeleted Whether or not to include deleted vehicles (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fleetGetVehiclesAsync($includeDeleted, $xChronosheetsAuth)
+    public function fleetGetVehiclesAsync($xChronosheetsAuth, $includeDeleted = null)
     {
-        return $this->fleetGetVehiclesAsyncWithHttpInfo($includeDeleted, $xChronosheetsAuth)
+        return $this->fleetGetVehiclesAsyncWithHttpInfo($xChronosheetsAuth, $includeDeleted)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -747,16 +747,16 @@ class FleetApi
      *
      * Get a collection of vehicles that are under your organisation.    Does not require any special permission.
      *
-     * @param  bool $includeDeleted Whether or not to include deleted vehicles (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  bool $includeDeleted Whether or not to include deleted vehicles (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function fleetGetVehiclesAsyncWithHttpInfo($includeDeleted, $xChronosheetsAuth)
+    public function fleetGetVehiclesAsyncWithHttpInfo($xChronosheetsAuth, $includeDeleted = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetVehicle';
-        $request = $this->fleetGetVehiclesRequest($includeDeleted, $xChronosheetsAuth);
+        $request = $this->fleetGetVehiclesRequest($xChronosheetsAuth, $includeDeleted);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -798,20 +798,14 @@ class FleetApi
     /**
      * Create request for operation 'fleetGetVehicles'
      *
-     * @param  bool $includeDeleted Whether or not to include deleted vehicles (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
+     * @param  bool $includeDeleted Whether or not to include deleted vehicles (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function fleetGetVehiclesRequest($includeDeleted, $xChronosheetsAuth)
+    protected function fleetGetVehiclesRequest($xChronosheetsAuth, $includeDeleted = null)
     {
-        // verify the required parameter 'includeDeleted' is set
-        if ($includeDeleted === null) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $includeDeleted when calling fleetGetVehicles'
-            );
-        }
         // verify the required parameter 'xChronosheetsAuth' is set
         if ($xChronosheetsAuth === null) {
             throw new \InvalidArgumentException(

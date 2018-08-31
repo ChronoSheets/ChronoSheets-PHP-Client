@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **organisationId** | **int** |  | [optional] 
 **projectName** | **string** |  | [optional] 
 **costEstimation** | **double** |  | [optional] 
+**costActual** | **double** |  | [optional] 
 **startDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **endDate** | [**\DateTime**](\DateTime.md) |  | [optional] 
 
