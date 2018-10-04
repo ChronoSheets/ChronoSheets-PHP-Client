@@ -920,7 +920,7 @@ class TimesheetsApi
      *
      * Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -938,7 +938,7 @@ class TimesheetsApi
      *
      * Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -1014,7 +1014,7 @@ class TimesheetsApi
      *
      * Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -1035,7 +1035,7 @@ class TimesheetsApi
      *
      * Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -1086,7 +1086,7 @@ class TimesheetsApi
     /**
      * Create request for operation 'timesheetsUpdateTimesheets'
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest $request A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException

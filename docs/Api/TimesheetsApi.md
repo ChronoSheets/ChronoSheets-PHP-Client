@@ -174,7 +174,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest | A BatchUpdateTimesheet Request object containing values for the new Timesheets to create
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest | A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created.
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -190,7 +190,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest**](../Model/CSBatchUpdateTimesheetRequest.md)| A BatchUpdateTimesheet Request object containing values for the new Timesheets to create |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest**](../Model/CSBatchUpdateTimesheetRequest.md)| A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type

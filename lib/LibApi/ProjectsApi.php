@@ -87,7 +87,7 @@ class ProjectsApi
      *
      * Create a project.    Requires the 'ManageClientsAndProjects' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class ProjectsApi
      *
      * Create a project.    Requires the 'ManageClientsAndProjects' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -181,7 +181,7 @@ class ProjectsApi
      *
      * Create a project.    Requires the 'ManageClientsAndProjects' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -202,7 +202,7 @@ class ProjectsApi
      *
      * Create a project.    Requires the 'ManageClientsAndProjects' permission.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -253,7 +253,7 @@ class ProjectsApi
     /**
      * Create request for operation 'projectsCreateProject'
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest $request An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException

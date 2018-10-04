@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **timezone** | **string** |  | [optional] 
 **subscriptionCustomerId** | **string** |  | [optional] 
 **signupToken** | **string** |  | [optional] 
+**isActive** | **bool** |  | [optional] 
 **subscriptionCycleStart** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **subscriptionCycleEnd** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **pricingPlans** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]**](CSOrganisationPricingPlan.md) |  | [optional] 

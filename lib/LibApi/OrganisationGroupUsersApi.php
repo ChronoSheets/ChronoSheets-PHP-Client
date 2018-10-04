@@ -87,7 +87,7 @@ class OrganisationGroupUsersApi
      *
      * Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
      *
-     * @param  int $orgGroupId An OrganisatioGroup Id (required)
+     * @param  int $orgGroupId An OrganisationGroup Id (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -105,7 +105,7 @@ class OrganisationGroupUsersApi
      *
      * Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
      *
-     * @param  int $orgGroupId An OrganisatioGroup Id (required)
+     * @param  int $orgGroupId An OrganisationGroup Id (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -181,7 +181,7 @@ class OrganisationGroupUsersApi
      *
      * Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
      *
-     * @param  int $orgGroupId An OrganisatioGroup Id (required)
+     * @param  int $orgGroupId An OrganisationGroup Id (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -202,7 +202,7 @@ class OrganisationGroupUsersApi
      *
      * Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
      *
-     * @param  int $orgGroupId An OrganisatioGroup Id (required)
+     * @param  int $orgGroupId An OrganisationGroup Id (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -253,7 +253,7 @@ class OrganisationGroupUsersApi
     /**
      * Create request for operation 'organisationGroupUsersGetOrganisationGroupUsers'
      *
-     * @param  int $orgGroupId An OrganisatioGroup Id (required)
+     * @param  int $orgGroupId An OrganisationGroup Id (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -360,7 +360,7 @@ class OrganisationGroupUsersApi
      *
      * Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -378,7 +378,7 @@ class OrganisationGroupUsersApi
      *
      * Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
@@ -454,7 +454,7 @@ class OrganisationGroupUsersApi
      *
      * Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -475,7 +475,7 @@ class OrganisationGroupUsersApi
      *
      * Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException
@@ -526,7 +526,7 @@ class OrganisationGroupUsersApi
     /**
      * Create request for operation 'organisationGroupUsersUpdateOrganisationGroupUsers'
      *
-     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update (required)
+     * @param  \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest $request A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      *
      * @throws \InvalidArgumentException

@@ -169,6 +169,13 @@ class CSOrganisationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "isActive"
+     */
+    public function testPropertyIsActive()
+    {
+    }
+
+    /**
      * Test attribute "subscriptionCycleStart"
      */
     public function testPropertySubscriptionCycleStart()

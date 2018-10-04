@@ -70,6 +70,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'timezone' => 'string',
         'subscriptionCustomerId' => 'string',
         'signupToken' => 'string',
+        'isActive' => 'bool',
         'subscriptionCycleStart' => '\DateTime',
         'subscriptionCycleEnd' => '\DateTime',
         'pricingPlans' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]'
@@ -94,6 +95,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'timezone' => null,
         'subscriptionCustomerId' => null,
         'signupToken' => null,
+        'isActive' => null,
         'subscriptionCycleStart' => 'date-time',
         'subscriptionCycleEnd' => 'date-time',
         'pricingPlans' => null
@@ -139,6 +141,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'timezone' => 'Timezone',
         'subscriptionCustomerId' => 'SubscriptionCustomerId',
         'signupToken' => 'SignupToken',
+        'isActive' => 'IsActive',
         'subscriptionCycleStart' => 'SubscriptionCycleStart',
         'subscriptionCycleEnd' => 'SubscriptionCycleEnd',
         'pricingPlans' => 'PricingPlans'
@@ -163,6 +166,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'timezone' => 'setTimezone',
         'subscriptionCustomerId' => 'setSubscriptionCustomerId',
         'signupToken' => 'setSignupToken',
+        'isActive' => 'setIsActive',
         'subscriptionCycleStart' => 'setSubscriptionCycleStart',
         'subscriptionCycleEnd' => 'setSubscriptionCycleEnd',
         'pricingPlans' => 'setPricingPlans'
@@ -187,6 +191,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'timezone' => 'getTimezone',
         'subscriptionCustomerId' => 'getSubscriptionCustomerId',
         'signupToken' => 'getSignupToken',
+        'isActive' => 'getIsActive',
         'subscriptionCycleStart' => 'getSubscriptionCycleStart',
         'subscriptionCycleEnd' => 'getSubscriptionCycleEnd',
         'pricingPlans' => 'getPricingPlans'
@@ -265,6 +270,7 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         $this->container['timezone'] = isset($data['timezone']) ? $data['timezone'] : null;
         $this->container['subscriptionCustomerId'] = isset($data['subscriptionCustomerId']) ? $data['subscriptionCustomerId'] : null;
         $this->container['signupToken'] = isset($data['signupToken']) ? $data['signupToken'] : null;
+        $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
         $this->container['subscriptionCycleStart'] = isset($data['subscriptionCycleStart']) ? $data['subscriptionCycleStart'] : null;
         $this->container['subscriptionCycleEnd'] = isset($data['subscriptionCycleEnd']) ? $data['subscriptionCycleEnd'] : null;
         $this->container['pricingPlans'] = isset($data['pricingPlans']) ? $data['pricingPlans'] : null;
@@ -603,6 +609,30 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     public function setSignupToken($signupToken)
     {
         $this->container['signupToken'] = $signupToken;
+
+        return $this;
+    }
+
+    /**
+     * Gets isActive
+     *
+     * @return bool
+     */
+    public function getIsActive()
+    {
+        return $this->container['isActive'];
+    }
+
+    /**
+     * Sets isActive
+     *
+     * @param bool $isActive isActive
+     *
+     * @return $this
+     */
+    public function setIsActive($isActive)
+    {
+        $this->container['isActive'] = $isActive;
 
         return $this;
     }

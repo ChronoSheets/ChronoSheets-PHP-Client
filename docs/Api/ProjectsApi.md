@@ -25,7 +25,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest | An Insert Project Request object containing values for the new Project to create
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest | An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client.
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 
 try {
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest**](../Model/CSInsertProjectRequest.md)| An Insert Project Request object containing values for the new Project to create |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest**](../Model/CSInsertProjectRequest.md)| An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
