@@ -230,7 +230,7 @@ class CSAggregateJobTask implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param int $id The Id of the task
      *
      * @return $this
      */
@@ -254,7 +254,7 @@ class CSAggregateJobTask implements ModelInterface, ArrayAccess
     /**
      * Sets label
      *
-     * @param string $label label
+     * @param string $label The label of the task
      *
      * @return $this
      */
@@ -278,7 +278,7 @@ class CSAggregateJobTask implements ModelInterface, ArrayAccess
     /**
      * Sets isDeleted
      *
-     * @param bool $isDeleted isDeleted
+     * @param bool $isDeleted A flag indicating that this task has been marked as deleted
      *
      * @return $this
      */

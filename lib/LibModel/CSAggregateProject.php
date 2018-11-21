@@ -254,7 +254,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param int $id The ID of the project
      *
      * @return $this
      */
@@ -278,7 +278,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets clientId
      *
-     * @param int $clientId clientId
+     * @param int $clientId The ID of the client that this project is assigned to
      *
      * @return $this
      */
@@ -302,7 +302,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets organisationId
      *
-     * @param int $organisationId organisationId
+     * @param int $organisationId The ID of your organisation
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets projectName
      *
-     * @param string $projectName projectName
+     * @param string $projectName The name of the project (can be viewed in PROJECT TIMELINES)
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets costEstimation
      *
-     * @param double $costEstimation costEstimation
+     * @param double $costEstimation The estimated cost of the project (can be viewed in PROJECT TIMELINES)
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets startDate
      *
-     * @param \DateTime $startDate startDate
+     * @param \DateTime $startDate The start date of the project (can be viewed in PROJECT TIMELINES)
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class CSAggregateProject implements ModelInterface, ArrayAccess
     /**
      * Sets endDate
      *
-     * @param \DateTime $endDate endDate
+     * @param \DateTime $endDate The end date of the project (can be viewed in PROJECT TIMELINES)
      *
      * @return $this
      */

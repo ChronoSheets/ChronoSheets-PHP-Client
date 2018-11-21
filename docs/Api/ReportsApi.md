@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **reportsGetAllChartsDataAdmin**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart)
 
 Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These are the organisation wide reports, with data from potentially all employees.    Requires the 'ReportAdmin' permission.
 
@@ -35,9 +35,10 @@ $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The star
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
 $xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
 $userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$forceOnlyThisChart = "forceOnlyThisChart_example"; // string | A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the 'NotForced' option.
 
 try {
-    $result = $apiInstance->reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds);
+    $result = $apiInstance->reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetAllChartsDataAdmin: ', $e->getMessage(), PHP_EOL;
@@ -53,6 +54,7 @@ Name | Type | Description  | Notes
  **endDate** | **\DateTime**| The end date for the date range.  Report data in the response is before this date |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
  **userIds** | **string**| A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. | [optional]
+ **forceOnlyThisChart** | **string**| A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. | [optional]
 
 ### Return type
 

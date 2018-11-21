@@ -91,14 +91,15 @@ class ReportsApi
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $forceOnlyThisChart A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData
      */
-    public function reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
+    public function reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $forceOnlyThisChart = null)
     {
-        list($response) = $this->reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds);
+        list($response) = $this->reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart);
         return $response;
     }
 
@@ -111,15 +112,16 @@ class ReportsApi
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $forceOnlyThisChart A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. (optional)
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
+    public function reportsGetAllChartsDataAdminWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $forceOnlyThisChart = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData';
-        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
+        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart);
 
         try {
             $options = $this->createHttpClientOption();
@@ -189,13 +191,14 @@ class ReportsApi
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $forceOnlyThisChart A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetAllChartsDataAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
+    public function reportsGetAllChartsDataAdminAsync($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $forceOnlyThisChart = null)
     {
-        return $this->reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds)
+        return $this->reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -212,14 +215,15 @@ class ReportsApi
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $forceOnlyThisChart A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
+    public function reportsGetAllChartsDataAdminAsyncWithHttpInfo($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $forceOnlyThisChart = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData';
-        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds);
+        $request = $this->reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -265,11 +269,12 @@ class ReportsApi
      * @param  \DateTime $endDate The end date for the date range.  Report data in the response is before this date (required)
      * @param  string $xChronosheetsAuth The ChronoSheets Auth Token (required)
      * @param  string $userIds A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string. (optional)
+     * @param  string $forceOnlyThisChart A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the &#39;NotForced&#39; option. (optional)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null)
+    protected function reportsGetAllChartsDataAdminRequest($startDate, $endDate, $xChronosheetsAuth, $userIds = null, $forceOnlyThisChart = null)
     {
         // verify the required parameter 'startDate' is set
         if ($startDate === null) {
@@ -308,6 +313,10 @@ class ReportsApi
         // query params
         if ($userIds !== null) {
             $queryParams['UserIds'] = ObjectSerializer::toQueryValue($userIds);
+        }
+        // query params
+        if ($forceOnlyThisChart !== null) {
+            $queryParams['ForceOnlyThisChart'] = ObjectSerializer::toQueryValue($forceOnlyThisChart);
         }
         // header params
         if ($xChronosheetsAuth !== null) {

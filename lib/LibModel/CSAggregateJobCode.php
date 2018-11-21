@@ -272,7 +272,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets availableTasks
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateJobTask[] $availableTasks availableTasks
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateJobTask[] $availableTasks The list of available tasks under this job code
      *
      * @return $this
      */
@@ -296,7 +296,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets permittedEmployees
      *
-     * @param int[] $permittedEmployees permittedEmployees
+     * @param int[] $permittedEmployees The list of employee IDs that are permitted to record timesheets with this job code (empty means everyone)
      *
      * @return $this
      */
@@ -320,7 +320,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param int $id The ID of the job code (not the code itself)
      *
      * @return $this
      */
@@ -344,7 +344,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets code
      *
-     * @param string $code code
+     * @param string $code The job code itself
      *
      * @return $this
      */
@@ -368,7 +368,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets client
      *
-     * @param string $client client
+     * @param string $client The name of the client
      *
      * @return $this
      */
@@ -392,7 +392,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets clientId
      *
-     * @param int $clientId clientId
+     * @param int $clientId The ID of the client
      *
      * @return $this
      */
@@ -416,7 +416,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets project
      *
-     * @param string $project project
+     * @param string $project The name of the project
      *
      * @return $this
      */
@@ -440,7 +440,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets projectId
      *
-     * @param int $projectId projectId
+     * @param int $projectId The ID of the project
      *
      * @return $this
      */
@@ -464,7 +464,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets organisationId
      *
-     * @param int $organisationId organisationId
+     * @param int $organisationId Your organisation ID
      *
      * @return $this
      */
@@ -488,7 +488,7 @@ class CSAggregateJobCode implements ModelInterface, ArrayAccess
     /**
      * Sets isDeleted
      *
-     * @param bool $isDeleted isDeleted
+     * @param bool $isDeleted A flag indicating whether or not the job code has been marked as deleted
      *
      * @return $this
      */

@@ -302,7 +302,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientProjects
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateProject[] $clientProjects clientProjects
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSAggregateProject[] $clientProjects A list of projects that are under this client
      *
      * @return $this
      */
@@ -326,7 +326,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets id
      *
-     * @param int $id id
+     * @param int $id The ID of the client
      *
      * @return $this
      */
@@ -350,7 +350,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets organisationId
      *
-     * @param int $organisationId organisationId
+     * @param int $organisationId The ID of your organisation
      *
      * @return $this
      */
@@ -374,7 +374,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientName
      *
-     * @param string $clientName clientName
+     * @param string $clientName The name of the client
      *
      * @return $this
      */
@@ -398,7 +398,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientAddressLine1
      *
-     * @param string $clientAddressLine1 clientAddressLine1
+     * @param string $clientAddressLine1 The address line 1 of the client
      *
      * @return $this
      */
@@ -422,7 +422,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientAddressLine2
      *
-     * @param string $clientAddressLine2 clientAddressLine2
+     * @param string $clientAddressLine2 The address line 2 of the client
      *
      * @return $this
      */
@@ -446,7 +446,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientSuburb
      *
-     * @param string $clientSuburb clientSuburb
+     * @param string $clientSuburb The address suburb of the client
      *
      * @return $this
      */
@@ -470,7 +470,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientState
      *
-     * @param string $clientState clientState
+     * @param string $clientState The address state of the client
      *
      * @return $this
      */
@@ -494,7 +494,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientPostCode
      *
-     * @param string $clientPostCode clientPostCode
+     * @param string $clientPostCode The postcode of the client
      *
      * @return $this
      */
@@ -518,7 +518,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets personOfContact
      *
-     * @param string $personOfContact personOfContact
+     * @param string $personOfContact The contact person working under the client
      *
      * @return $this
      */
@@ -542,7 +542,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientPhoneNumber
      *
-     * @param string $clientPhoneNumber clientPhoneNumber
+     * @param string $clientPhoneNumber The phone number of the client
      *
      * @return $this
      */
@@ -566,7 +566,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientMobileNumber
      *
-     * @param string $clientMobileNumber clientMobileNumber
+     * @param string $clientMobileNumber The mobile phone number of the client
      *
      * @return $this
      */
@@ -590,7 +590,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientEmailAddress
      *
-     * @param string $clientEmailAddress clientEmailAddress
+     * @param string $clientEmailAddress The email address of the client
      *
      * @return $this
      */
@@ -614,7 +614,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets clientWebURL
      *
-     * @param string $clientWebURL clientWebURL
+     * @param string $clientWebURL The website URL of the client
      *
      * @return $this
      */
@@ -638,7 +638,7 @@ class CSAggregateClient implements ModelInterface, ArrayAccess
     /**
      * Sets projectCount
      *
-     * @param int $projectCount projectCount
+     * @param int $projectCount The number of projects under the client
      *
      * @return $this
      */
