@@ -176,6 +176,34 @@ class CSOrganisationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test attribute "stripeCouponCode"
+     */
+    public function testPropertyStripeCouponCode()
+    {
+    }
+
+    /**
+     * Test attribute "subscriptionSource"
+     */
+    public function testPropertySubscriptionSource()
+    {
+    }
+
+    /**
+     * Test attribute "signUpSource"
+     */
+    public function testPropertySignUpSource()
+    {
+    }
+
+    /**
+     * Test attribute "mobileSignUpCode"
+     */
+    public function testPropertyMobileSignUpCode()
+    {
+    }
+
+    /**
      * Test attribute "subscriptionCycleStart"
      */
     public function testPropertySubscriptionCycleStart()

@@ -72,6 +72,16 @@ class TranscriptsApiTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test case for transcriptsGetMyTranscript
+     *
+     * Get an audio to text transcript for a particular audio file attachment.
+     *
+     */
+    public function testTranscriptsGetMyTranscript()
+    {
+    }
+
+    /**
      * Test case for transcriptsGetMyTranscripts
      *
      * Get my file transcripts.  Get audio to text transcripts that you've created..

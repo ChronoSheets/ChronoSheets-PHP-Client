@@ -160,4 +160,11 @@ class CSUserForManagementTest extends \PHPUnit_Framework_TestCase
     public function testPropertyOrganisation()
     {
     }
+
+    /**
+     * Test attribute "isPrimaryAccount"
+     */
+    public function testPropertyIsPrimaryAccount()
+    {
+    }
 }

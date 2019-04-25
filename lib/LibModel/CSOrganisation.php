@@ -71,6 +71,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'subscriptionCustomerId' => 'string',
         'signupToken' => 'string',
         'isActive' => 'bool',
+        'stripeCouponCode' => 'string',
+        'subscriptionSource' => 'string',
+        'signUpSource' => 'string',
+        'mobileSignUpCode' => 'string',
         'subscriptionCycleStart' => '\DateTime',
         'subscriptionCycleEnd' => '\DateTime',
         'pricingPlans' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisationPricingPlan[]'
@@ -96,6 +100,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'subscriptionCustomerId' => null,
         'signupToken' => null,
         'isActive' => null,
+        'stripeCouponCode' => null,
+        'subscriptionSource' => null,
+        'signUpSource' => null,
+        'mobileSignUpCode' => null,
         'subscriptionCycleStart' => 'date-time',
         'subscriptionCycleEnd' => 'date-time',
         'pricingPlans' => null
@@ -142,6 +150,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'subscriptionCustomerId' => 'SubscriptionCustomerId',
         'signupToken' => 'SignupToken',
         'isActive' => 'IsActive',
+        'stripeCouponCode' => 'StripeCouponCode',
+        'subscriptionSource' => 'SubscriptionSource',
+        'signUpSource' => 'SignUpSource',
+        'mobileSignUpCode' => 'MobileSignUpCode',
         'subscriptionCycleStart' => 'SubscriptionCycleStart',
         'subscriptionCycleEnd' => 'SubscriptionCycleEnd',
         'pricingPlans' => 'PricingPlans'
@@ -167,6 +179,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'subscriptionCustomerId' => 'setSubscriptionCustomerId',
         'signupToken' => 'setSignupToken',
         'isActive' => 'setIsActive',
+        'stripeCouponCode' => 'setStripeCouponCode',
+        'subscriptionSource' => 'setSubscriptionSource',
+        'signUpSource' => 'setSignUpSource',
+        'mobileSignUpCode' => 'setMobileSignUpCode',
         'subscriptionCycleStart' => 'setSubscriptionCycleStart',
         'subscriptionCycleEnd' => 'setSubscriptionCycleEnd',
         'pricingPlans' => 'setPricingPlans'
@@ -192,6 +208,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         'subscriptionCustomerId' => 'getSubscriptionCustomerId',
         'signupToken' => 'getSignupToken',
         'isActive' => 'getIsActive',
+        'stripeCouponCode' => 'getStripeCouponCode',
+        'subscriptionSource' => 'getSubscriptionSource',
+        'signUpSource' => 'getSignUpSource',
+        'mobileSignUpCode' => 'getMobileSignUpCode',
         'subscriptionCycleStart' => 'getSubscriptionCycleStart',
         'subscriptionCycleEnd' => 'getSubscriptionCycleEnd',
         'pricingPlans' => 'getPricingPlans'
@@ -238,8 +258,44 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         return self::$swaggerModelName;
     }
 
+    const CS_SUBSCRIPTION_SOURCE_NONE = 'None';
+    const CS_SUBSCRIPTION_SOURCE_STRIPE = 'Stripe';
+    const CS_SUBSCRIPTION_SOURCE_APPLE_IN_APP = 'AppleInApp';
+    const CS_SUBSCRIPTION_SOURCE_GOOGLE_IN_APP = 'GoogleInApp';
+    const CS_SIGN_UP_SOURCE_DESKTOP = 'Desktop';
+    const CS_SIGN_UP_SOURCE_MOBILEI_OS = 'MobileiOS';
+    const CS_SIGN_UP_SOURCE_MOBILE_ANDROID = 'MobileAndroid';
     
 
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSubscriptionSourceAllowableValues()
+    {
+        return [
+            self::CS_SUBSCRIPTION_SOURCE_NONE,
+            self::CS_SUBSCRIPTION_SOURCE_STRIPE,
+            self::CS_SUBSCRIPTION_SOURCE_APPLE_IN_APP,
+            self::CS_SUBSCRIPTION_SOURCE_GOOGLE_IN_APP,
+        ];
+    }
+    
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getSignUpSourceAllowableValues()
+    {
+        return [
+            self::CS_SIGN_UP_SOURCE_DESKTOP,
+            self::CS_SIGN_UP_SOURCE_MOBILEI_OS,
+            self::CS_SIGN_UP_SOURCE_MOBILE_ANDROID,
+        ];
+    }
     
 
     /**
@@ -271,6 +327,10 @@ class CSOrganisation implements ModelInterface, ArrayAccess
         $this->container['subscriptionCustomerId'] = isset($data['subscriptionCustomerId']) ? $data['subscriptionCustomerId'] : null;
         $this->container['signupToken'] = isset($data['signupToken']) ? $data['signupToken'] : null;
         $this->container['isActive'] = isset($data['isActive']) ? $data['isActive'] : null;
+        $this->container['stripeCouponCode'] = isset($data['stripeCouponCode']) ? $data['stripeCouponCode'] : null;
+        $this->container['subscriptionSource'] = isset($data['subscriptionSource']) ? $data['subscriptionSource'] : null;
+        $this->container['signUpSource'] = isset($data['signUpSource']) ? $data['signUpSource'] : null;
+        $this->container['mobileSignUpCode'] = isset($data['mobileSignUpCode']) ? $data['mobileSignUpCode'] : null;
         $this->container['subscriptionCycleStart'] = isset($data['subscriptionCycleStart']) ? $data['subscriptionCycleStart'] : null;
         $this->container['subscriptionCycleEnd'] = isset($data['subscriptionCycleEnd']) ? $data['subscriptionCycleEnd'] : null;
         $this->container['pricingPlans'] = isset($data['pricingPlans']) ? $data['pricingPlans'] : null;
@@ -285,6 +345,22 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     {
         $invalidProperties = [];
 
+        $allowedValues = $this->getSubscriptionSourceAllowableValues();
+        if (!in_array($this->container['subscriptionSource'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'subscriptionSource', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getSignUpSourceAllowableValues();
+        if (!in_array($this->container['signUpSource'], $allowedValues)) {
+            $invalidProperties[] = sprintf(
+                "invalid value for 'signUpSource', must be one of '%s'",
+                implode("', '", $allowedValues)
+            );
+        }
+
         return $invalidProperties;
     }
 
@@ -297,6 +373,14 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     public function valid()
     {
 
+        $allowedValues = $this->getSubscriptionSourceAllowableValues();
+        if (!in_array($this->container['subscriptionSource'], $allowedValues)) {
+            return false;
+        }
+        $allowedValues = $this->getSignUpSourceAllowableValues();
+        if (!in_array($this->container['signUpSource'], $allowedValues)) {
+            return false;
+        }
         return true;
     }
 
@@ -633,6 +717,120 @@ class CSOrganisation implements ModelInterface, ArrayAccess
     public function setIsActive($isActive)
     {
         $this->container['isActive'] = $isActive;
+
+        return $this;
+    }
+
+    /**
+     * Gets stripeCouponCode
+     *
+     * @return string
+     */
+    public function getStripeCouponCode()
+    {
+        return $this->container['stripeCouponCode'];
+    }
+
+    /**
+     * Sets stripeCouponCode
+     *
+     * @param string $stripeCouponCode stripeCouponCode
+     *
+     * @return $this
+     */
+    public function setStripeCouponCode($stripeCouponCode)
+    {
+        $this->container['stripeCouponCode'] = $stripeCouponCode;
+
+        return $this;
+    }
+
+    /**
+     * Gets subscriptionSource
+     *
+     * @return string
+     */
+    public function getSubscriptionSource()
+    {
+        return $this->container['subscriptionSource'];
+    }
+
+    /**
+     * Sets subscriptionSource
+     *
+     * @param string $subscriptionSource subscriptionSource
+     *
+     * @return $this
+     */
+    public function setSubscriptionSource($subscriptionSource)
+    {
+        $allowedValues = $this->getSubscriptionSourceAllowableValues();
+        if (!is_null($subscriptionSource) && !in_array($subscriptionSource, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'subscriptionSource', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['subscriptionSource'] = $subscriptionSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets signUpSource
+     *
+     * @return string
+     */
+    public function getSignUpSource()
+    {
+        return $this->container['signUpSource'];
+    }
+
+    /**
+     * Sets signUpSource
+     *
+     * @param string $signUpSource signUpSource
+     *
+     * @return $this
+     */
+    public function setSignUpSource($signUpSource)
+    {
+        $allowedValues = $this->getSignUpSourceAllowableValues();
+        if (!is_null($signUpSource) && !in_array($signUpSource, $allowedValues)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value for 'signUpSource', must be one of '%s'",
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['signUpSource'] = $signUpSource;
+
+        return $this;
+    }
+
+    /**
+     * Gets mobileSignUpCode
+     *
+     * @return string
+     */
+    public function getMobileSignUpCode()
+    {
+        return $this->container['mobileSignUpCode'];
+    }
+
+    /**
+     * Sets mobileSignUpCode
+     *
+     * @param string $mobileSignUpCode mobileSignUpCode
+     *
+     * @return $this
+     */
+    public function setMobileSignUpCode($mobileSignUpCode)
+    {
+        $this->container['mobileSignUpCode'] = $mobileSignUpCode;
 
         return $this;
     }

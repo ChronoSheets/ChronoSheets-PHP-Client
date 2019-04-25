@@ -1,6 +1,6 @@
 <?php
 /**
- * CSClientSideUserTest
+ * CSTranscriptionTest
  *
  * PHP version 5
  *
@@ -30,16 +30,16 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSClientSideUserTest Class Doc Comment
+ * CSTranscriptionTest Class Doc Comment
  *
  * @category    Class */
-// * @description CSClientSideUser
+// * @description CSTranscription
 /**
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSClientSideUserTest extends \PHPUnit_Framework_TestCase
+class CSTranscriptionTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class CSClientSideUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSClientSideUser"
+     * Test "CSTranscription"
      */
-    public function testCSClientSideUser()
+    public function testCSTranscription()
     {
     }
 
@@ -85,79 +85,44 @@ class CSClientSideUserTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test attribute "organisationId"
+     * Test attribute "orgId"
      */
-    public function testPropertyOrganisationId()
+    public function testPropertyOrgId()
     {
     }
 
     /**
-     * Test attribute "userName"
+     * Test attribute "fileAttachmentId"
      */
-    public function testPropertyUserName()
+    public function testPropertyFileAttachmentId()
     {
     }
 
     /**
-     * Test attribute "firstName"
+     * Test attribute "created"
      */
-    public function testPropertyFirstName()
+    public function testPropertyCreated()
     {
     }
 
     /**
-     * Test attribute "lastName"
+     * Test attribute "status"
      */
-    public function testPropertyLastName()
+    public function testPropertyStatus()
     {
     }
 
     /**
-     * Test attribute "emailAddress"
+     * Test attribute "mediaType"
      */
-    public function testPropertyEmailAddress()
+    public function testPropertyMediaType()
     {
     }
 
     /**
-     * Test attribute "roles"
+     * Test attribute "contents"
      */
-    public function testPropertyRoles()
-    {
-    }
-
-    /**
-     * Test attribute "alertSettings"
-     */
-    public function testPropertyAlertSettings()
-    {
-    }
-
-    /**
-     * Test attribute "setupWizardRequired"
-     */
-    public function testPropertySetupWizardRequired()
-    {
-    }
-
-    /**
-     * Test attribute "isSubscribedToNewsletter"
-     */
-    public function testPropertyIsSubscribedToNewsletter()
-    {
-    }
-
-    /**
-     * Test attribute "organisation"
-     */
-    public function testPropertyOrganisation()
-    {
-    }
-
-    /**
-     * Test attribute "isPrimaryAccount"
-     */
-    public function testPropertyIsPrimaryAccount()
+    public function testPropertyContents()
     {
     }
 }

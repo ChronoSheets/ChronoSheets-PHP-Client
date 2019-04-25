@@ -68,7 +68,8 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         'alertSettings' => 'int',
         'setupWizardRequired' => 'bool',
         'isSubscribedToNewsletter' => 'bool',
-        'organisation' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisation'
+        'organisation' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSOrganisation',
+        'isPrimaryAccount' => 'bool'
     ];
 
     /**
@@ -88,7 +89,8 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         'alertSettings' => 'int64',
         'setupWizardRequired' => null,
         'isSubscribedToNewsletter' => null,
-        'organisation' => null
+        'organisation' => null,
+        'isPrimaryAccount' => null
     ];
 
     /**
@@ -129,7 +131,8 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         'alertSettings' => 'AlertSettings',
         'setupWizardRequired' => 'SetupWizardRequired',
         'isSubscribedToNewsletter' => 'IsSubscribedToNewsletter',
-        'organisation' => 'Organisation'
+        'organisation' => 'Organisation',
+        'isPrimaryAccount' => 'IsPrimaryAccount'
     ];
 
     /**
@@ -149,7 +152,8 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         'alertSettings' => 'setAlertSettings',
         'setupWizardRequired' => 'setSetupWizardRequired',
         'isSubscribedToNewsletter' => 'setIsSubscribedToNewsletter',
-        'organisation' => 'setOrganisation'
+        'organisation' => 'setOrganisation',
+        'isPrimaryAccount' => 'setIsPrimaryAccount'
     ];
 
     /**
@@ -169,7 +173,8 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         'alertSettings' => 'getAlertSettings',
         'setupWizardRequired' => 'getSetupWizardRequired',
         'isSubscribedToNewsletter' => 'getIsSubscribedToNewsletter',
-        'organisation' => 'getOrganisation'
+        'organisation' => 'getOrganisation',
+        'isPrimaryAccount' => 'getIsPrimaryAccount'
     ];
 
     /**
@@ -244,6 +249,7 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
         $this->container['setupWizardRequired'] = isset($data['setupWizardRequired']) ? $data['setupWizardRequired'] : null;
         $this->container['isSubscribedToNewsletter'] = isset($data['isSubscribedToNewsletter']) ? $data['isSubscribedToNewsletter'] : null;
         $this->container['organisation'] = isset($data['organisation']) ? $data['organisation'] : null;
+        $this->container['isPrimaryAccount'] = isset($data['isPrimaryAccount']) ? $data['isPrimaryAccount'] : null;
     }
 
     /**
@@ -555,6 +561,30 @@ class CSUserForManagement implements ModelInterface, ArrayAccess
     public function setOrganisation($organisation)
     {
         $this->container['organisation'] = $organisation;
+
+        return $this;
+    }
+
+    /**
+     * Gets isPrimaryAccount
+     *
+     * @return bool
+     */
+    public function getIsPrimaryAccount()
+    {
+        return $this->container['isPrimaryAccount'];
+    }
+
+    /**
+     * Sets isPrimaryAccount
+     *
+     * @param bool $isPrimaryAccount isPrimaryAccount
+     *
+     * @return $this
+     */
+    public function setIsPrimaryAccount($isPrimaryAccount)
+    {
+        $this->container['isPrimaryAccount'] = $isPrimaryAccount;
 
         return $this;
     }

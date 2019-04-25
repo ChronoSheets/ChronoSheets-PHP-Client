@@ -4,8 +4,58 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**transcriptsGetMyTranscript**](TranscriptsApi.md#transcriptsGetMyTranscript) | **GET** /api/Transcripts/GetMyTranscript | Get an audio to text transcript for a particular audio file attachment
 [**transcriptsGetMyTranscripts**](TranscriptsApi.md#transcriptsGetMyTranscripts) | **GET** /api/Transcripts/GetMyTranscripts | Get my file transcripts.  Get audio to text transcripts that you&#39;ve created.
 
+
+# **transcriptsGetMyTranscript**
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth)
+
+Get an audio to text transcript for a particular audio file attachment
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new ChronoSheetsClient\Api\TranscriptsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$fileAttachmentId = 56; // int | The ID of the file attachment that has a transcript.  It should be an audio file attachment.
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+
+try {
+    $result = $apiInstance->transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TranscriptsApi->transcriptsGetMyTranscript: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileAttachmentId** | **int**| The ID of the file attachment that has a transcript.  It should be an audio file attachment. |
+ **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+
+### Return type
+
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription**](../Model/CSApiResponseForPaginatedTranscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **transcriptsGetMyTranscripts**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword)
