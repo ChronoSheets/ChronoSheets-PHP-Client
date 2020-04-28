@@ -4,14 +4,15 @@ All URIs are relative to *https://www.chronosheets.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fileAttachmentsDeleteTimesheetFileAttachment**](FileAttachmentsApi.md#fileAttachmentsDeleteTimesheetFileAttachment) | **DELETE** /api/FileAttachments/DeleteTimesheetFileAttachment | Delete a particular timesheet file attachment
+[**fileAttachmentsDeleteTimesheetFileAttachment**](FileAttachmentsApi.md#fileAttachmentsDeleteTimesheetFileAttachment) | **DELETE** /api/FileAttachments/DeleteTimesheetFileAttachment | Delete a particular timesheet file attachment  Requires the &#39;SubmitTimesheets&#39; permission.
+[**fileAttachmentsGetFileAttachmentById**](FileAttachmentsApi.md#fileAttachmentsGetFileAttachmentById) | **GET** /api/FileAttachments/GetFileAttachmentById | Get a particular file attachment by ID.  User must own the file attachment for access.
 [**fileAttachmentsGetMyFileAttachments**](FileAttachmentsApi.md#fileAttachmentsGetMyFileAttachments) | **GET** /api/FileAttachments/GetMyFileAttachments | Get my file attachments.  Get files you&#39;ve attached to timesheets.
 
 
 # **fileAttachmentsDeleteTimesheetFileAttachment**
 > \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth)
 
-Delete a particular timesheet file attachment
+Delete a particular timesheet file attachment  Requires the 'SubmitTimesheets' permission.
 
 ### Example
 ```php
@@ -45,6 +46,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **fileAttachmentsGetFileAttachmentById**
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetFileAttachment fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth)
+
+Get a particular file attachment by ID.  User must own the file attachment for access.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$fileAttachmentId = 56; // int | The ID of the file attachment
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+
+try {
+    $result = $apiInstance->fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FileAttachmentsApi->fileAttachmentsGetFileAttachmentById: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **fileAttachmentId** | **int**| The ID of the file attachment |
+ **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+
+### Return type
+
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetFileAttachment**](../Model/CSApiResponseTimesheetFileAttachment.md)
 
 ### Authorization
 

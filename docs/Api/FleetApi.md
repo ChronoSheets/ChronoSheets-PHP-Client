@@ -5,6 +5,7 @@ All URIs are relative to *https://www.chronosheets.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**fleetCreateVehicle**](FleetApi.md#fleetCreateVehicle) | **POST** /api/Fleet/CreateVehicle | Create a vehicle.    Requires the &#39;ManageFleet&#39; permission.
+[**fleetDeleteVehicle**](FleetApi.md#fleetDeleteVehicle) | **DELETE** /api/Fleet/DeleteVehicle | Delete a vehicle from the fleet.  Requires the &#39;ManageFleet&#39; permission.
 [**fleetGetVehicleById**](FleetApi.md#fleetGetVehicleById) | **GET** /api/Fleet/GetVehicleById | Get a particular vehicle.  Does not require any special permission.
 [**fleetGetVehicles**](FleetApi.md#fleetGetVehicles) | **GET** /api/Fleet/GetVehicles | Get a collection of vehicles that are under your organisation.    Does not require any special permission.
 [**fleetUpdateVehicle**](FleetApi.md#fleetUpdateVehicle) | **PUT** /api/Fleet/UpdateVehicle | Update a vehicle.    Requires the &#39;ManageFleet&#39; permission.
@@ -55,6 +56,55 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+ - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **fleetDeleteVehicle**
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean fleetDeleteVehicle($vehicleId, $xChronosheetsAuth)
+
+Delete a vehicle from the fleet.  Requires the 'ManageFleet' permission.
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new ChronoSheetsClient\Api\FleetApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$vehicleId = 56; // int | The unique ID of the vehicle you wish to delete
+$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+
+try {
+    $result = $apiInstance->fleetDeleteVehicle($vehicleId, $xChronosheetsAuth);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling FleetApi->fleetDeleteVehicle: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **vehicleId** | **int**| The unique ID of the vehicle you wish to delete |
+ **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+
+### Return type
+
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)

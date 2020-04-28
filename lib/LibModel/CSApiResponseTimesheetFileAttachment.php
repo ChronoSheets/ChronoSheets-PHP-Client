@@ -1,6 +1,6 @@
 <?php
 /**
- * CSApiResponseProject
+ * CSApiResponseTimesheetFileAttachment
  *
  * PHP version 5
  *
@@ -33,14 +33,14 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSApiResponseProject Class Doc Comment
+ * CSApiResponseTimesheetFileAttachment Class Doc Comment
  *
  * @category Class
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSApiResponseProject implements ModelInterface, ArrayAccess
+class CSApiResponseTimesheetFileAttachment implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CSApiResponseProject implements ModelInterface, ArrayAccess
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiResponse[Project]';
+    protected static $swaggerModelName = 'ApiResponse[TimesheetFileAttachment]';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,7 @@ class CSApiResponseProject implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'data' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSProject',
+        'data' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheetFileAttachment',
         'status' => 'string',
         'message' => 'string'
     ];
@@ -250,7 +250,7 @@ class CSApiResponseProject implements ModelInterface, ArrayAccess
     /**
      * Gets data
      *
-     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSProject
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheetFileAttachment
      */
     public function getData()
     {
@@ -260,7 +260,7 @@ class CSApiResponseProject implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSProject $data data
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheetFileAttachment $data data
      *
      * @return $this
      */

@@ -1,6 +1,6 @@
 <?php
 /**
- * CSApiResponseInsertUserResponseTest
+ * CSApiResponseTimesheetFileAttachmentTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSApiResponseInsertUserResponseTest Class Doc Comment
+ * CSApiResponseTimesheetFileAttachmentTest Class Doc Comment
  *
  * @category    Class
- * @description CSApiResponseInsertUserResponse
+ * @description CSApiResponseTimesheetFileAttachment
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSApiResponseInsertUserResponseTest extends \PHPUnit_Framework_TestCase
+class CSApiResponseTimesheetFileAttachmentTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class CSApiResponseInsertUserResponseTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test "CSApiResponseInsertUserResponse"
+     * Test "CSApiResponseTimesheetFileAttachment"
      */
-    public function testCSApiResponseInsertUserResponse()
+    public function testCSApiResponseTimesheetFileAttachment()
     {
     }
 
