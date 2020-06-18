@@ -1,6 +1,6 @@
 <?php
 /**
- * CSApiResponseForPaginatedTranscriptionTest
+ * CSApiResponseForPaginatedListExtendedGeofenceTest
  *
  * PHP version 5
  *
@@ -30,15 +30,15 @@
 namespace ChronoSheetsClient;
 
 /**
- * CSApiResponseForPaginatedTranscriptionTest Class Doc Comment
+ * CSApiResponseForPaginatedListExtendedGeofenceTest Class Doc Comment
  *
  * @category    Class
- * @description CSApiResponseForPaginatedTranscription
+ * @description A paginated API repsonse
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CSApiResponseForPaginatedTranscriptionTest extends \PHPUnit_Framework_TestCase
+class CSApiResponseForPaginatedListExtendedGeofenceTest extends \PHPUnit_Framework_TestCase
 {
 
     /**
@@ -70,9 +70,9 @@ class CSApiResponseForPaginatedTranscriptionTest extends \PHPUnit_Framework_Test
     }
 
     /**
-     * Test "CSApiResponseForPaginatedTranscription"
+     * Test "CSApiResponseForPaginatedListExtendedGeofence"
      */
-    public function testCSApiResponseForPaginatedTranscription()
+    public function testCSApiResponseForPaginatedListExtendedGeofence()
     {
     }
 

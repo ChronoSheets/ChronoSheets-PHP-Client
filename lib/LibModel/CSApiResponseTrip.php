@@ -36,6 +36,7 @@ use \ChronoSheetsClient\ObjectSerializer;
  * CSApiResponseTrip Class Doc Comment
  *
  * @category Class
+ * @description A standard API response
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -260,7 +261,7 @@ class CSApiResponseTrip implements ModelInterface, ArrayAccess
     /**
      * Sets data
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTrip $data data
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTrip $data The main Data of the response
      *
      * @return $this
      */
@@ -284,7 +285,7 @@ class CSApiResponseTrip implements ModelInterface, ArrayAccess
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status The API response status. Indicates if the request was successful, failed or was unauthorised.
      *
      * @return $this
      */
@@ -317,7 +318,7 @@ class CSApiResponseTrip implements ModelInterface, ArrayAccess
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message A message to accompany the response status.  If the Status is failed, this message will hint why it failed and what you need to do.
      *
      * @return $this
      */

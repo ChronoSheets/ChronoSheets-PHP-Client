@@ -1,6 +1,6 @@
 <?php
 /**
- * CSApiResponseForPaginatedTranscription
+ * CSApiResponseTranscription
  *
  * PHP version 5
  *
@@ -33,14 +33,15 @@ use \ArrayAccess;
 use \ChronoSheetsClient\ObjectSerializer;
 
 /**
- * CSApiResponseForPaginatedTranscription Class Doc Comment
+ * CSApiResponseTranscription Class Doc Comment
  *
  * @category Class
+ * @description A standard API response
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAccess
+class CSApiResponseTranscription implements ModelInterface, ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
       *
       * @var string
       */
-    protected static $swaggerModelName = 'ApiResponseForPaginated[Transcription]';
+    protected static $swaggerModelName = 'ApiResponse[Transcription]';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +58,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'totalSetCount' => 'int',
         'data' => '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSTranscription',
         'status' => 'string',
         'message' => 'string'
@@ -69,7 +69,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'totalSetCount' => 'int32',
         'data' => null,
         'status' => null,
         'message' => null
@@ -102,7 +101,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $attributeMap = [
-        'totalSetCount' => 'TotalSetCount',
         'data' => 'Data',
         'status' => 'Status',
         'message' => 'Message'
@@ -114,7 +112,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $setters = [
-        'totalSetCount' => 'setTotalSetCount',
         'data' => 'setData',
         'status' => 'setStatus',
         'message' => 'setMessage'
@@ -126,7 +123,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
      * @var string[]
      */
     protected static $getters = [
-        'totalSetCount' => 'getTotalSetCount',
         'data' => 'getData',
         'status' => 'getStatus',
         'message' => 'getMessage'
@@ -215,7 +211,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalSetCount'] = isset($data['totalSetCount']) ? $data['totalSetCount'] : null;
         $this->container['data'] = isset($data['data']) ? $data['data'] : null;
         $this->container['status'] = isset($data['status']) ? $data['status'] : null;
         $this->container['message'] = isset($data['message']) ? $data['message'] : null;
@@ -254,30 +249,6 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
 
 
     /**
-     * Gets totalSetCount
-     *
-     * @return int
-     */
-    public function getTotalSetCount()
-    {
-        return $this->container['totalSetCount'];
-    }
-
-    /**
-     * Sets totalSetCount
-     *
-     * @param int $totalSetCount totalSetCount
-     *
-     * @return $this
-     */
-    public function setTotalSetCount($totalSetCount)
-    {
-        $this->container['totalSetCount'] = $totalSetCount;
-
-        return $this;
-    }
-
-    /**
      * Gets data
      *
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTranscription
@@ -290,7 +261,7 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
     /**
      * Sets data
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTranscription $data data
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTranscription $data The main Data of the response
      *
      * @return $this
      */
@@ -314,7 +285,7 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status The API response status. Indicates if the request was successful, failed or was unauthorised.
      *
      * @return $this
      */
@@ -347,7 +318,7 @@ class CSApiResponseForPaginatedTranscription implements ModelInterface, ArrayAcc
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message A message to accompany the response status.  If the Status is failed, this message will hint why it failed and what you need to do.
      *
      * @return $this
      */

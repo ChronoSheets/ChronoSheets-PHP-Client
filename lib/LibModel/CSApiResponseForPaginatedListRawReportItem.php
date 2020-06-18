@@ -36,6 +36,7 @@ use \ChronoSheetsClient\ObjectSerializer;
  * CSApiResponseForPaginatedListRawReportItem Class Doc Comment
  *
  * @category Class
+ * @description A paginated API repsonse
  * @package  ChronoSheetsClient
  * @author   Swagger Codegen team
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -266,7 +267,7 @@ class CSApiResponseForPaginatedListRawReportItem implements ModelInterface, Arra
     /**
      * Sets totalSetCount
      *
-     * @param int $totalSetCount totalSetCount
+     * @param int $totalSetCount The count of total records that are being paginated
      *
      * @return $this
      */
@@ -290,7 +291,7 @@ class CSApiResponseForPaginatedListRawReportItem implements ModelInterface, Arra
     /**
      * Sets data
      *
-     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSRawReportItem[] $data data
+     * @param \ChronoSheetsClient\ChronoSheetsClientLibModel\CSRawReportItem[] $data The main Data of the response
      *
      * @return $this
      */
@@ -314,7 +315,7 @@ class CSApiResponseForPaginatedListRawReportItem implements ModelInterface, Arra
     /**
      * Sets status
      *
-     * @param string $status status
+     * @param string $status The API response status. Indicates if the request was successful, failed or was unauthorised.
      *
      * @return $this
      */
@@ -347,7 +348,7 @@ class CSApiResponseForPaginatedListRawReportItem implements ModelInterface, Arra
     /**
      * Sets message
      *
-     * @param string $message message
+     * @param string $message A message to accompany the response status.  If the Status is failed, this message will hint why it failed and what you need to do.
      *
      * @return $this
      */

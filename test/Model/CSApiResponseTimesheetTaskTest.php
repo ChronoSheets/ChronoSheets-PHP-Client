@@ -33,7 +33,7 @@ namespace ChronoSheetsClient;
  * CSApiResponseTimesheetTaskTest Class Doc Comment
  *
  * @category    Class
- * @description CSApiResponseTimesheetTask
+ * @description A standard API response
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

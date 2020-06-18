@@ -33,7 +33,7 @@ namespace ChronoSheetsClient;
  * CSApiResponseProjectTest Class Doc Comment
  *
  * @category    Class
- * @description CSApiResponseProject
+ * @description A standard API response
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen

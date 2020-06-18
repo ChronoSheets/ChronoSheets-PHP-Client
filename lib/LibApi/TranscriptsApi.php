@@ -97,7 +97,7 @@ class TranscriptsApi
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription
+     * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription
      */
     public function transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth)
     {
@@ -115,11 +115,11 @@ class TranscriptsApi
      *
      * @throws \ChronoSheetsClient\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription, HTTP status code, HTTP response headers (array of strings)
      */
     public function transcriptsGetMyTranscriptWithHttpInfo($fileAttachmentId, $xChronosheetsAuth)
     {
-        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription';
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription';
         $request = $this->transcriptsGetMyTranscriptRequest($fileAttachmentId, $xChronosheetsAuth);
 
         try {
@@ -171,7 +171,7 @@ class TranscriptsApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription',
+                        '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -215,7 +215,7 @@ class TranscriptsApi
      */
     public function transcriptsGetMyTranscriptAsyncWithHttpInfo($fileAttachmentId, $xChronosheetsAuth)
     {
-        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription';
+        $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription';
         $request = $this->transcriptsGetMyTranscriptRequest($fileAttachmentId, $xChronosheetsAuth);
 
         return $this->client

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **transcriptsGetMyTranscript**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth)
 
 Get an audio to text transcript for a particular audio file attachment
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedTranscription**](../Model/CSApiResponseForPaginatedTranscription.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTranscription**](../Model/CSApiResponseTranscription.md)
 
 ### Authorization
 

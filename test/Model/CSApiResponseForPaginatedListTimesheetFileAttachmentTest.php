@@ -33,7 +33,7 @@ namespace ChronoSheetsClient;
  * CSApiResponseForPaginatedListTimesheetFileAttachmentTest Class Doc Comment
  *
  * @category    Class
- * @description CSApiResponseForPaginatedListTimesheetFileAttachment
+ * @description A paginated API repsonse
  * @package     ChronoSheetsClient
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
