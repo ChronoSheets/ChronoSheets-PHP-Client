@@ -67,7 +67,7 @@ No authorization required
 
 ## timesheetAutomationGetTimesheetAutomationAuditTrail
 
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take)
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take)
 
 Retrieve the timesheet automation / alerts for geofences activities or NFC tap on/off.  Requires the 'ManageGeofencing' permission.
 
@@ -84,6 +84,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetAutomationApi(
     new GuzzleHttp\Client()
 );
 $geofenceId = 56; // int | The ID of the Geofence
+$nfcId = 56; // int | 
 $userId = 56; // int | 
 $sort = 'sort_example'; // string | 
 $order = 'order_example'; // string | 
@@ -92,7 +93,7 @@ $skip = 56; // int | Skip this many records
 $take = 56; // int | Take this many records
 
 try {
-    $result = $apiInstance->timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
+    $result = $apiInstance->timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetAutomationApi->timesheetAutomationGetTimesheetAutomationAuditTrail: ', $e->getMessage(), PHP_EOL;
@@ -106,6 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **geofenceId** | **int**| The ID of the Geofence |
+ **nfcId** | **int**|  |
  **userId** | **int**|  |
  **sort** | **string**|  |
  **order** | **string**|  |

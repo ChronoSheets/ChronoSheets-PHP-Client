@@ -404,6 +404,7 @@ class TimesheetAutomationApi
      * Retrieve the timesheet automation / alerts for geofences activities or NFC tap on/off.  Requires the 'ManageGeofencing' permission.
      *
      * @param  int $geofenceId The ID of the Geofence (required)
+     * @param  int $nfcId nfcId (required)
      * @param  int $userId userId (required)
      * @param  string $sort sort (required)
      * @param  string $order order (required)
@@ -415,9 +416,9 @@ class TimesheetAutomationApi
      * @throws \InvalidArgumentException
      * @return \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence
      */
-    public function timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
+    public function timesheetAutomationGetTimesheetAutomationAuditTrail($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
     {
-        list($response) = $this->timesheetAutomationGetTimesheetAutomationAuditTrailWithHttpInfo($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
+        list($response) = $this->timesheetAutomationGetTimesheetAutomationAuditTrailWithHttpInfo($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
         return $response;
     }
 
@@ -427,6 +428,7 @@ class TimesheetAutomationApi
      * Retrieve the timesheet automation / alerts for geofences activities or NFC tap on/off.  Requires the 'ManageGeofencing' permission.
      *
      * @param  int $geofenceId The ID of the Geofence (required)
+     * @param  int $nfcId (required)
      * @param  int $userId (required)
      * @param  string $sort (required)
      * @param  string $order (required)
@@ -438,9 +440,9 @@ class TimesheetAutomationApi
      * @throws \InvalidArgumentException
      * @return array of \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence, HTTP status code, HTTP response headers (array of strings)
      */
-    public function timesheetAutomationGetTimesheetAutomationAuditTrailWithHttpInfo($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
+    public function timesheetAutomationGetTimesheetAutomationAuditTrailWithHttpInfo($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
     {
-        $request = $this->timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
+        $request = $this->timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
 
         try {
             $options = $this->createHttpClientOption();
@@ -521,6 +523,7 @@ class TimesheetAutomationApi
      * Retrieve the timesheet automation / alerts for geofences activities or NFC tap on/off.  Requires the 'ManageGeofencing' permission.
      *
      * @param  int $geofenceId The ID of the Geofence (required)
+     * @param  int $nfcId (required)
      * @param  int $userId (required)
      * @param  string $sort (required)
      * @param  string $order (required)
@@ -531,9 +534,9 @@ class TimesheetAutomationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function timesheetAutomationGetTimesheetAutomationAuditTrailAsync($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
+    public function timesheetAutomationGetTimesheetAutomationAuditTrailAsync($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
     {
-        return $this->timesheetAutomationGetTimesheetAutomationAuditTrailAsyncWithHttpInfo($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take)
+        return $this->timesheetAutomationGetTimesheetAutomationAuditTrailAsyncWithHttpInfo($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -547,6 +550,7 @@ class TimesheetAutomationApi
      * Retrieve the timesheet automation / alerts for geofences activities or NFC tap on/off.  Requires the 'ManageGeofencing' permission.
      *
      * @param  int $geofenceId The ID of the Geofence (required)
+     * @param  int $nfcId (required)
      * @param  int $userId (required)
      * @param  string $sort (required)
      * @param  string $order (required)
@@ -557,10 +561,10 @@ class TimesheetAutomationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function timesheetAutomationGetTimesheetAutomationAuditTrailAsyncWithHttpInfo($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
+    public function timesheetAutomationGetTimesheetAutomationAuditTrailAsyncWithHttpInfo($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
     {
         $returnType = '\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetAutomationWithOrgAndGeofence';
-        $request = $this->timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
+        $request = $this->timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip, $take);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -600,6 +604,7 @@ class TimesheetAutomationApi
      * Create request for operation 'timesheetAutomationGetTimesheetAutomationAuditTrail'
      *
      * @param  int $geofenceId The ID of the Geofence (required)
+     * @param  int $nfcId (required)
      * @param  int $userId (required)
      * @param  string $sort (required)
      * @param  string $order (required)
@@ -610,12 +615,18 @@ class TimesheetAutomationApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
+    protected function timesheetAutomationGetTimesheetAutomationAuditTrailRequest($geofenceId, $nfcId, $userId, $sort, $order, $xChronosheetsAuth, $skip = null, $take = null)
     {
         // verify the required parameter 'geofenceId' is set
         if ($geofenceId === null || (is_array($geofenceId) && count($geofenceId) === 0)) {
             throw new \InvalidArgumentException(
                 'Missing the required parameter $geofenceId when calling timesheetAutomationGetTimesheetAutomationAuditTrail'
+            );
+        }
+        // verify the required parameter 'nfcId' is set
+        if ($nfcId === null || (is_array($nfcId) && count($nfcId) === 0)) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $nfcId when calling timesheetAutomationGetTimesheetAutomationAuditTrail'
             );
         }
         // verify the required parameter 'userId' is set
@@ -656,6 +667,13 @@ class TimesheetAutomationApi
         }
         if ($geofenceId !== null) {
             $queryParams['GeofenceId'] = $geofenceId;
+        }
+        // query params
+        if (is_array($nfcId)) {
+            $nfcId = ObjectSerializer::serializeCollection($nfcId, '', true);
+        }
+        if ($nfcId !== null) {
+            $queryParams['NfcId'] = $nfcId;
         }
         // query params
         if (is_array($userId)) {
