@@ -13,26 +13,30 @@ Method | HTTP request | Description
 [**organisationGroupsUpdateOrganisationGroup**](OrganisationGroupsApi.md#organisationGroupsUpdateOrganisationGroup) | **PUT** /OrganisationGroups/UpdateOrganisationGroup | Update an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
 
 
-# **organisationGroupsCreateOrganisationGroup**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 organisationGroupsCreateOrganisationGroup($request, $xChronosheetsAuth)
+
+## organisationGroupsCreateOrganisationGroup
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 organisationGroupsCreateOrganisationGroup($xChronosheetsAuth, $request)
 
 Create an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertOrganisationGroupRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertOrganisationGroupRequest | An Insert OrganisationGroup Request object containing values for the new OrganisationGroup to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertOrganisationGroupRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertOrganisationGroupRequest | An Insert OrganisationGroup Request object containing values for the new OrganisationGroup to create
 
 try {
-    $result = $apiInstance->organisationGroupsCreateOrganisationGroup($request, $xChronosheetsAuth);
+    $result = $apiInstance->organisationGroupsCreateOrganisationGroup($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsCreateOrganisationGroup: ', $e->getMessage(), PHP_EOL;
@@ -42,14 +46,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertOrganisationGroupRequest**](../Model/CSInsertOrganisationGroupRequest.md)| An Insert OrganisationGroup Request object containing values for the new OrganisationGroup to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\InsertOrganisationGroupRequest**](../Model/InsertOrganisationGroupRequest.md)| An Insert OrganisationGroup Request object containing values for the new OrganisationGroup to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -57,20 +62,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsDeleteOrganisationGroup**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean organisationGroupsDeleteOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
+
+## organisationGroupsDeleteOrganisationGroup
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupsDeleteOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
 
 
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -78,7 +89,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     new GuzzleHttp\Client()
 );
 $organisationGroupId = 56; // int | 
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupsDeleteOrganisationGroup($organisationGroupId, $xChronosheetsAuth);
@@ -91,6 +102,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationGroupId** | **int**|  |
@@ -98,7 +110,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -106,20 +118,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsGetOrganisationGroup**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseOrganisationGroup organisationGroupsGetOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
+
+## organisationGroupsGetOrganisationGroup
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseOrganisationGroup organisationGroupsGetOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
 
 Get a particular organisation group.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -127,7 +145,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     new GuzzleHttp\Client()
 );
 $organisationGroupId = 56; // int | The ID of the OrganisationGroup you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupsGetOrganisationGroup($organisationGroupId, $xChronosheetsAuth);
@@ -140,6 +158,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **organisationGroupId** | **int**| The ID of the OrganisationGroup you want to get |
@@ -147,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseOrganisationGroup**](../Model/CSApiResponseOrganisationGroup.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseOrganisationGroup**](../Model/ApiResponseOrganisationGroup.md)
 
 ### Authorization
 
@@ -155,27 +174,33 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsGetOrganisationGroups**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroups($xChronosheetsAuth)
+
+## organisationGroupsGetOrganisationGroups
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroups($xChronosheetsAuth)
 
 Get a collection of organisation groups that are under your organisation.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupsGetOrganisationGroups($xChronosheetsAuth);
@@ -188,13 +213,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup**](../Model/CSApiResponseListOrganisationGroup.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup**](../Model/ApiResponseListOrganisationGroup.md)
 
 ### Authorization
 
@@ -202,20 +228,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsGetOrganisationGroupsForJob**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForJob($jobId, $xChronosheetsAuth)
+
+## organisationGroupsGetOrganisationGroupsForJob
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForJob($jobId, $xChronosheetsAuth)
 
 Get org groups for a particular job.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -223,7 +255,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     new GuzzleHttp\Client()
 );
 $jobId = 56; // int | The ID of the job
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupsGetOrganisationGroupsForJob($jobId, $xChronosheetsAuth);
@@ -236,6 +268,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobId** | **int**| The ID of the job |
@@ -243,7 +276,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup**](../Model/CSApiResponseListOrganisationGroup.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup**](../Model/ApiResponseListOrganisationGroup.md)
 
 ### Authorization
 
@@ -251,20 +284,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsGetOrganisationGroupsForVehicle**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForVehicle($vehicleId, $xChronosheetsAuth)
+
+## organisationGroupsGetOrganisationGroupsForVehicle
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForVehicle($vehicleId, $xChronosheetsAuth)
 
 Get org groups for a particular vehicle.    Requires the 'ManageOrganisationGroups', 'ManageFleet' or 'ManageOrganisationUsers' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -272,7 +311,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     new GuzzleHttp\Client()
 );
 $vehicleId = 56; // int | The ID of the vehicle
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupsGetOrganisationGroupsForVehicle($vehicleId, $xChronosheetsAuth);
@@ -285,6 +324,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **vehicleId** | **int**| The ID of the vehicle |
@@ -292,7 +332,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListOrganisationGroup**](../Model/CSApiResponseListOrganisationGroup.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup**](../Model/ApiResponseListOrganisationGroup.md)
 
 ### Authorization
 
@@ -300,31 +340,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupsUpdateOrganisationGroup**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean organisationGroupsUpdateOrganisationGroup($request, $xChronosheetsAuth)
+
+## organisationGroupsUpdateOrganisationGroup
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupsUpdateOrganisationGroup($xChronosheetsAuth, $request)
 
 Update an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveOrganisationGroupRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveOrganisationGroupRequest | A Save OrganisationGroup Request object containing updated fields.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\SaveOrganisationGroupRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\SaveOrganisationGroupRequest | A Save OrganisationGroup Request object containing updated fields.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update
 
 try {
-    $result = $apiInstance->organisationGroupsUpdateOrganisationGroup($request, $xChronosheetsAuth);
+    $result = $apiInstance->organisationGroupsUpdateOrganisationGroup($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsUpdateOrganisationGroup: ', $e->getMessage(), PHP_EOL;
@@ -334,14 +380,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSaveOrganisationGroupRequest**](../Model/CSSaveOrganisationGroupRequest.md)| A Save OrganisationGroup Request object containing updated fields.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\SaveOrganisationGroupRequest**](../Model/SaveOrganisationGroupRequest.md)| A Save OrganisationGroup Request object containing updated fields.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -349,8 +396,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

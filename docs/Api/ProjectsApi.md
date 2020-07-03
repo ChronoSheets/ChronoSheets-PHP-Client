@@ -10,26 +10,30 @@ Method | HTTP request | Description
 [**projectsUpdateProject**](ProjectsApi.md#projectsUpdateProject) | **PUT** /Projects/UpdateProject | Update a project.    Requires the &#39;ManageClientsAndProjects&#39; permission.
 
 
-# **projectsCreateProject**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 projectsCreateProject($request, $xChronosheetsAuth)
+
+## projectsCreateProject
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 projectsCreateProject($xChronosheetsAuth, $request)
 
 Create a project.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest | An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client.
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertProjectRequest | An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client.
 
 try {
-    $result = $apiInstance->projectsCreateProject($request, $xChronosheetsAuth);
+    $result = $apiInstance->projectsCreateProject($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->projectsCreateProject: ', $e->getMessage(), PHP_EOL;
@@ -39,14 +43,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertProjectRequest**](../Model/CSInsertProjectRequest.md)| An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\InsertProjectRequest**](../Model/InsertProjectRequest.md)| An Insert Project Request object containing values for the new Project to create.  Make sure to specify a correct Client Id - this will be used to attach the new project under that client. |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -54,20 +59,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **projectsGetProjectById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseProject projectsGetProjectById($projectId, $xChronosheetsAuth)
+
+## projectsGetProjectById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseProject projectsGetProjectById($projectId, $xChronosheetsAuth)
 
 Get a project by its Id.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -75,7 +86,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     new GuzzleHttp\Client()
 );
 $projectId = 56; // int | The ID of the Project you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->projectsGetProjectById($projectId, $xChronosheetsAuth);
@@ -88,6 +99,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **projectId** | **int**| The ID of the Project you want to get |
@@ -95,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseProject**](../Model/CSApiResponseProject.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseProject**](../Model/ApiResponseProject.md)
 
 ### Authorization
 
@@ -103,20 +115,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **projectsGetProjectsForClient**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProject projectsGetProjectsForClient($clientId, $xChronosheetsAuth)
+
+## projectsGetProjectsForClient
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProject projectsGetProjectsForClient($clientId, $xChronosheetsAuth)
 
 Get projects for a particular client.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -124,7 +142,7 @@ $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     new GuzzleHttp\Client()
 );
 $clientId = 56; // int | The ID of the client
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->projectsGetProjectsForClient($clientId, $xChronosheetsAuth);
@@ -137,6 +155,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **clientId** | **int**| The ID of the client |
@@ -144,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProject**](../Model/CSApiResponseListProject.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProject**](../Model/ApiResponseListProject.md)
 
 ### Authorization
 
@@ -152,31 +171,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **projectsUpdateProject**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean projectsUpdateProject($request, $xChronosheetsAuth)
+
+## projectsUpdateProject
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean projectsUpdateProject($xChronosheetsAuth, $request)
 
 Update a project.    Requires the 'ManageClientsAndProjects' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ProjectsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest | An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateProjectRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateProjectRequest | An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update
 
 try {
-    $result = $apiInstance->projectsUpdateProject($request, $xChronosheetsAuth);
+    $result = $apiInstance->projectsUpdateProject($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ProjectsApi->projectsUpdateProject: ', $e->getMessage(), PHP_EOL;
@@ -186,14 +211,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateProjectRequest**](../Model/CSUpdateProjectRequest.md)| An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateProjectRequest**](../Model/UpdateProjectRequest.md)| An Update Project Request object containing updated fields.  Make sure to specify the Project Id in the request object so that ChronoSheets knows which Project to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -201,8 +227,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

@@ -12,26 +12,30 @@ Method | HTTP request | Description
 [**tasksUpdateTask**](TasksApi.md#tasksUpdateTask) | **PUT** /Tasks/UpdateTask | Update a task.    Requires the &#39;ManageJobsAndTask&#39; permission.
 
 
-# **tasksCreateTask**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 tasksCreateTask($request, $xChronosheetsAuth)
+
+## tasksCreateTask
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 tasksCreateTask($xChronosheetsAuth, $request)
 
 Create a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest | An Insert Task Request object containing values for the new Task to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertTaskRequest | An Insert Task Request object containing values for the new Task to create
 
 try {
-    $result = $apiInstance->tasksCreateTask($request, $xChronosheetsAuth);
+    $result = $apiInstance->tasksCreateTask($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TasksApi->tasksCreateTask: ', $e->getMessage(), PHP_EOL;
@@ -41,14 +45,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertTaskRequest**](../Model/CSInsertTaskRequest.md)| An Insert Task Request object containing values for the new Task to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\InsertTaskRequest**](../Model/InsertTaskRequest.md)| An Insert Task Request object containing values for the new Task to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -56,20 +61,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tasksDeleteTask**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean tasksDeleteTask($taskId, $xChronosheetsAuth)
+
+## tasksDeleteTask
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean tasksDeleteTask($taskId, $xChronosheetsAuth)
 
 Delete a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -77,7 +88,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     new GuzzleHttp\Client()
 );
 $taskId = 56; // int | The ID of the Task you want to delete
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->tasksDeleteTask($taskId, $xChronosheetsAuth);
@@ -90,6 +101,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **int**| The ID of the Task you want to delete |
@@ -97,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -105,20 +117,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tasksGetTaskById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetTask tasksGetTaskById($taskId, $xChronosheetsAuth)
+
+## tasksGetTaskById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetTask tasksGetTaskById($taskId, $xChronosheetsAuth)
 
 Get a particular task by Id.   Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -126,7 +144,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     new GuzzleHttp\Client()
 );
 $taskId = 56; // int | The ID of the TimesheetTask you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->tasksGetTaskById($taskId, $xChronosheetsAuth);
@@ -139,6 +157,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **taskId** | **int**| The ID of the TimesheetTask you want to get |
@@ -146,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetTask**](../Model/CSApiResponseTimesheetTask.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetTask**](../Model/ApiResponseTimesheetTask.md)
 
 ### Authorization
 
@@ -154,27 +173,33 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tasksGetTasks**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask tasksGetTasks($xChronosheetsAuth)
+
+## tasksGetTasks
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheetTask tasksGetTasks($xChronosheetsAuth)
 
 Get tasks in your organisation.   Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->tasksGetTasks($xChronosheetsAuth);
@@ -187,13 +212,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask**](../Model/CSApiResponseListTimesheetTask.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheetTask**](../Model/ApiResponseListTimesheetTask.md)
 
 ### Authorization
 
@@ -201,20 +227,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tasksGetTasksForJob**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask tasksGetTasksForJob($jobId, $xChronosheetsAuth)
+
+## tasksGetTasksForJob
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheetTask tasksGetTasksForJob($jobId, $xChronosheetsAuth)
 
 Get a collection of tasks for a particular Job, specified by JobId.    Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -222,7 +254,7 @@ $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     new GuzzleHttp\Client()
 );
 $jobId = 56; // int | The ID of the job
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->tasksGetTasksForJob($jobId, $xChronosheetsAuth);
@@ -235,6 +267,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobId** | **int**| The ID of the job |
@@ -242,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheetTask**](../Model/CSApiResponseListTimesheetTask.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheetTask**](../Model/ApiResponseListTimesheetTask.md)
 
 ### Authorization
 
@@ -250,31 +283,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tasksUpdateTask**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean tasksUpdateTask($request, $xChronosheetsAuth)
+
+## tasksUpdateTask
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean tasksUpdateTask($xChronosheetsAuth, $request)
 
 Update a task.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TasksApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest | An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateTaskRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateTaskRequest | An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update
 
 try {
-    $result = $apiInstance->tasksUpdateTask($request, $xChronosheetsAuth);
+    $result = $apiInstance->tasksUpdateTask($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TasksApi->tasksUpdateTask: ', $e->getMessage(), PHP_EOL;
@@ -284,14 +323,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateTaskRequest**](../Model/CSUpdateTaskRequest.md)| An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateTaskRequest**](../Model/UpdateTaskRequest.md)| An Update Task Request object containing updated fields.  Make sure to specify the Task Id in the request object so that ChronoSheets knows which Task to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -299,8 +339,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

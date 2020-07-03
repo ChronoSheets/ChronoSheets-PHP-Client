@@ -9,26 +9,30 @@ Method | HTTP request | Description
 [**tripsGetMyTrips**](TripsApi.md#tripsGetMyTrips) | **GET** /Trips/GetMyTrips | Get my trips.  Get the GPS trips you&#39;ve recorded and submitted.    Requires the &#39;ViewMyTrips&#39; permission.
 
 
-# **tripsCreateTrip**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 tripsCreateTrip($request, $xChronosheetsAuth)
+
+## tripsCreateTrip
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 tripsCreateTrip($xChronosheetsAuth, $request)
 
 Create a new trip.  Important: create a timesheet record before calling this, passing in the new timesheet record id as a reference.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateTripRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateTripRequest | A Create Trip Request object containing values for the new Trip to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CreateTripRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CreateTripRequest | A Create Trip Request object containing values for the new Trip to create
 
 try {
-    $result = $apiInstance->tripsCreateTrip($request, $xChronosheetsAuth);
+    $result = $apiInstance->tripsCreateTrip($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TripsApi->tripsCreateTrip: ', $e->getMessage(), PHP_EOL;
@@ -38,14 +42,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateTripRequest**](../Model/CSCreateTripRequest.md)| A Create Trip Request object containing values for the new Trip to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CreateTripRequest**](../Model/CreateTripRequest.md)| A Create Trip Request object containing values for the new Trip to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -53,20 +58,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tripsGetMyTripById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTrip tripsGetMyTripById($tripId, $xChronosheetsAuth)
+
+## tripsGetMyTripById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip tripsGetMyTripById($tripId, $xChronosheetsAuth)
 
 Get trip by Id.    Requires the 'ViewMyTrips' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -74,7 +85,7 @@ $apiInstance = new ChronoSheetsClient\Api\TripsApi(
     new GuzzleHttp\Client()
 );
 $tripId = 56; // int | The ID of the Trip you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->tripsGetMyTripById($tripId, $xChronosheetsAuth);
@@ -87,6 +98,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tripId** | **int**| The ID of the Trip you want to get |
@@ -94,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTrip**](../Model/CSApiResponseTrip.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip**](../Model/ApiResponseTrip.md)
 
 ### Authorization
 
@@ -102,20 +114,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **tripsGetMyTrips**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId)
+
+## tripsGetMyTrips
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTrip tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId)
 
 Get my trips.  Get the GPS trips you've recorded and submitted.    Requires the 'ViewMyTrips' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -124,7 +142,7 @@ $apiInstance = new ChronoSheetsClient\Api\TripsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The Start date of the date range.  Trips after this date will be obtained.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The End date of the date range.  Trips before this date will be obtained.
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many Trips
 $take = 56; // int | Take this many Trips
 $vehicleId = 56; // int | Filter by a particular Vehicle (get trips made with a particular vehicle), specified by VehicleId
@@ -140,6 +158,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The Start date of the date range.  Trips after this date will be obtained. |
@@ -151,7 +170,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTrip**](../Model/CSApiResponseForPaginatedListTrip.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTrip**](../Model/ApiResponseForPaginatedListTrip.md)
 
 ### Authorization
 
@@ -159,8 +178,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

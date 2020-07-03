@@ -10,26 +10,30 @@ Method | HTTP request | Description
 [**usersUpdateTimesheetUser**](UsersApi.md#usersUpdateTimesheetUser) | **PUT** /Users/UpdateTimesheetUser | Update a user account.  Requires the &#39;ManageOrganisationUsers&#39; permission.
 
 
-# **usersCreateTimesheetUser**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInsertUserResponse usersCreateTimesheetUser($request, $xChronosheetsAuth)
+
+## usersCreateTimesheetUser
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInsertUserResponse usersCreateTimesheetUser($xChronosheetsAuth, $request)
 
 Create a user account in your organisation.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest | An Insert User Request object containing values for the new User to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertUserRequest | An Insert User Request object containing values for the new User to create
 
 try {
-    $result = $apiInstance->usersCreateTimesheetUser($request, $xChronosheetsAuth);
+    $result = $apiInstance->usersCreateTimesheetUser($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersCreateTimesheetUser: ', $e->getMessage(), PHP_EOL;
@@ -39,14 +43,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertUserRequest**](../Model/CSInsertUserRequest.md)| An Insert User Request object containing values for the new User to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\InsertUserRequest**](../Model/InsertUserRequest.md)| An Insert User Request object containing values for the new User to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInsertUserResponse**](../Model/CSApiResponseInsertUserResponse.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInsertUserResponse**](../Model/ApiResponseInsertUserResponse.md)
 
 ### Authorization
 
@@ -54,20 +59,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersGetTimesheetUser**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUserForManagement usersGetTimesheetUser($userId, $xChronosheetsAuth)
+
+## usersGetTimesheetUser
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseUserForManagement usersGetTimesheetUser($userId, $xChronosheetsAuth)
 
 Get a particular user in your organisation.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationGroups' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -75,7 +86,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     new GuzzleHttp\Client()
 );
 $userId = 56; // int | The User ID of the UserForManagement you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->usersGetTimesheetUser($userId, $xChronosheetsAuth);
@@ -88,6 +99,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The User ID of the UserForManagement you want to get |
@@ -95,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUserForManagement**](../Model/CSApiResponseUserForManagement.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseUserForManagement**](../Model/ApiResponseUserForManagement.md)
 
 ### Authorization
 
@@ -103,27 +115,33 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersGetTimesheetUsers**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserForManagement usersGetTimesheetUsers($xChronosheetsAuth)
+
+## usersGetTimesheetUsers
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement usersGetTimesheetUsers($xChronosheetsAuth)
 
 Get users accounts in your organisation.  Requires the 'ManageOrganisationUsers' or 'ManageOrganisationGroups' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->usersGetTimesheetUsers($xChronosheetsAuth);
@@ -136,13 +154,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserForManagement**](../Model/CSApiResponseListUserForManagement.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement**](../Model/ApiResponseListUserForManagement.md)
 
 ### Authorization
 
@@ -150,31 +169,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usersUpdateTimesheetUser**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateUserResponse usersUpdateTimesheetUser($request, $xChronosheetsAuth)
+
+## usersUpdateTimesheetUser
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseUpdateUserResponse usersUpdateTimesheetUser($xChronosheetsAuth, $request)
 
 Update a user account.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest | A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateUserRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateUserRequest | A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update
 
 try {
-    $result = $apiInstance->usersUpdateTimesheetUser($request, $xChronosheetsAuth);
+    $result = $apiInstance->usersUpdateTimesheetUser($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsersApi->usersUpdateTimesheetUser: ', $e->getMessage(), PHP_EOL;
@@ -184,14 +209,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateUserRequest**](../Model/CSUpdateUserRequest.md)| A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateUserRequest**](../Model/UpdateUserRequest.md)| A Update User Request object containing updated fields.  Make sure to specify the User Id in the request object so that ChronoSheets knows which User to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseUpdateUserResponse**](../Model/CSApiResponseUpdateUserResponse.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseUpdateUserResponse**](../Model/ApiResponseUpdateUserResponse.md)
 
 ### Authorization
 
@@ -199,8 +225,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

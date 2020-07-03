@@ -16,15 +16,19 @@ Method | HTTP request | Description
 [**reportsUserJobsOverTime**](ReportsApi.md#reportsUserJobsOverTime) | **GET** /Reports/UserJobsOverTime | Timeseries jobs data for the logged in user.    Requires the &#39;ViewOwnReports&#39; or &#39;SubmitTimesheets&#39;.
 
 
-# **reportsGetAllChartsDataAdmin**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart)
+
+## reportsGetAllChartsDataAdmin
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart)
 
 Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These are the organisation wide reports, with data from potentially all employees.    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -33,9 +37,9 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
-$forceOnlyThisChart = "forceOnlyThisChart_example"; // string | A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the 'NotForced' option.
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$forceOnlyThisChart = 'forceOnlyThisChart_example'; // string | A flag to indicate which report data you require.  Choose a particular set of data, or if you want all data use the 'NotForced' option.
 
 try {
     $result = $apiInstance->reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart);
@@ -48,6 +52,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -58,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData**](../Model/CSApiResponseCombinedReportsData.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData**](../Model/ApiResponseCombinedReportsData.md)
 
 ### Authorization
 
@@ -66,20 +71,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetAllChartsDataUser**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData reportsGetAllChartsDataUser($startDate, $endDate, $xChronosheetsAuth)
+
+## reportsGetAllChartsDataUser
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData reportsGetAllChartsDataUser($startDate, $endDate, $xChronosheetsAuth)
 
 Get Consolidated User Reports Data (Jobs, Tasks, Clients and Projects).  These are the user's own reports.    Requires the 'ViewOwnReports' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -88,7 +99,7 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->reportsGetAllChartsDataUser($startDate, $endDate, $xChronosheetsAuth);
@@ -101,6 +112,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -109,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseCombinedReportsData**](../Model/CSApiResponseCombinedReportsData.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData**](../Model/ApiResponseCombinedReportsData.md)
 
 ### Authorization
 
@@ -117,20 +129,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetFleetSummaryAdmin**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
+
+## reportsGetFleetSummaryAdmin
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetSummaryReportItem reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
 
 Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -139,8 +157,8 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
 
 try {
     $result = $apiInstance->reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds);
@@ -153,6 +171,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -162,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListFleetSummaryReportItem**](../Model/CSApiResponseListFleetSummaryReportItem.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetSummaryReportItem**](../Model/ApiResponseListFleetSummaryReportItem.md)
 
 ### Authorization
 
@@ -170,20 +189,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetOrgTripById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTrip reportsGetOrgTripById($tripId, $xChronosheetsAuth)
+
+## reportsGetOrgTripById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip reportsGetOrgTripById($tripId, $xChronosheetsAuth)
 
 Get trip by Id, for reporting purposes.    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -191,7 +216,7 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     new GuzzleHttp\Client()
 );
 $tripId = 56; // int | The ID of the Trip you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->reportsGetOrgTripById($tripId, $xChronosheetsAuth);
@@ -204,6 +229,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tripId** | **int**| The ID of the Trip you want to get |
@@ -211,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTrip**](../Model/CSApiResponseTrip.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip**](../Model/ApiResponseTrip.md)
 
 ### Authorization
 
@@ -219,20 +245,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetOrganisationTimesheetFileAttachments**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
+
+## reportsGetOrganisationTimesheetFileAttachments
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTimesheetFileAttachment reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
 
 Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -241,10 +273,10 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many items
 $take = 56; // int | Take this many items
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
 
 try {
     $result = $apiInstance->reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
@@ -257,6 +289,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -268,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment**](../Model/CSApiResponseForPaginatedListOrgReportTimesheetFileAttachment.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTimesheetFileAttachment**](../Model/ApiResponseForPaginatedListOrgReportTimesheetFileAttachment.md)
 
 ### Authorization
 
@@ -276,20 +309,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetOrganisationTranscripts**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords)
+
+## reportsGetOrganisationTranscripts
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords)
 
 Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -298,11 +337,11 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many items
 $take = 56; // int | Take this many items
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
-$keywords = "keywords_example"; // string | Search the transcripts by keyword(s)
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$keywords = 'keywords_example'; // string | Search the transcripts by keyword(s)
 
 try {
     $result = $apiInstance->reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords);
@@ -314,6 +353,7 @@ try {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -327,7 +367,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTranscript**](../Model/CSApiResponseForPaginatedListOrgReportTranscript.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript**](../Model/ApiResponseForPaginatedListOrgReportTranscript.md)
 
 ### Authorization
 
@@ -335,20 +375,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetOrganisationTrips**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
+
+## reportsGetOrganisationTrips
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTrip reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
 
 Reports on Organisation trips (GPS tracking from whole organisation).    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -357,10 +403,10 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many items
 $take = 56; // int | Take this many items
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
 
 try {
     $result = $apiInstance->reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds);
@@ -373,6 +419,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -384,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListOrgReportTrip**](../Model/CSApiResponseForPaginatedListOrgReportTrip.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTrip**](../Model/ApiResponseForPaginatedListOrgReportTrip.md)
 
 ### Authorization
 
@@ -392,20 +439,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsGetRawDataAdmin**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem reportsGetRawDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take)
+
+## reportsGetRawDataAdmin
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListRawReportItem reportsGetRawDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take)
 
 Get Timesheets Raw Data.  This data details each timesheet record.  These are the organisation wide timesheet records, with data from potentially all employees.    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -414,10 +467,10 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
-$sort = "sort_example"; // string | Decide which column to sort on
-$order = "order_example"; // string | Decide which direction to sort the column
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$sort = 'sort_example'; // string | Decide which column to sort on
+$order = 'order_example'; // string | Decide which direction to sort the column
 $skip = 56; // int | Skip this many rows
 $take = 56; // int | Take this many rows
 
@@ -432,6 +485,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -445,7 +499,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListRawReportItem**](../Model/CSApiResponseForPaginatedListRawReportItem.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListRawReportItem**](../Model/ApiResponseForPaginatedListRawReportItem.md)
 
 ### Authorization
 
@@ -453,20 +507,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsProjectCostingsAdmin**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
+
+## reportsProjectCostingsAdmin
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProjectCostingReportItem reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
 
 Gets project cost estimations VS actual cost for date range and users.    Requires the 'ReportAdmin' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -475,8 +535,8 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
-$userIds = "userIds_example"; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$userIds = 'userIds_example'; // string | A comma-separated list of user Ids, if you want to filter the report data to particular users.  If you want all, send a blank string.
 
 try {
     $result = $apiInstance->reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds);
@@ -489,6 +549,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -498,7 +559,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListProjectCostingReportItem**](../Model/CSApiResponseListProjectCostingReportItem.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProjectCostingReportItem**](../Model/ApiResponseListProjectCostingReportItem.md)
 
 ### Authorization
 
@@ -506,20 +567,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **reportsUserJobsOverTime**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListJobSeriesReportItem reportsUserJobsOverTime($startDate, $endDate, $xChronosheetsAuth)
+
+## reportsUserJobsOverTime
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobSeriesReportItem reportsUserJobsOverTime($startDate, $endDate, $xChronosheetsAuth)
 
 Timeseries jobs data for the logged in user.    Requires the 'ViewOwnReports' or 'SubmitTimesheets'.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -528,7 +595,7 @@ $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date for the date range.  Report data in the response is after this date
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date for the date range.  Report data in the response is before this date
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->reportsUserJobsOverTime($startDate, $endDate, $xChronosheetsAuth);
@@ -541,6 +608,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date for the date range.  Report data in the response is after this date |
@@ -549,7 +617,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListJobSeriesReportItem**](../Model/CSApiResponseListJobSeriesReportItem.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobSeriesReportItem**](../Model/ApiResponseListJobSeriesReportItem.md)
 
 ### Authorization
 
@@ -557,8 +625,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

@@ -9,15 +9,19 @@ Method | HTTP request | Description
 [**fileAttachmentsGetMyFileAttachments**](FileAttachmentsApi.md#fileAttachmentsGetMyFileAttachments) | **GET** /FileAttachments/GetMyFileAttachments | Get my file attachments.  Get files you&#39;ve attached to timesheets.
 
 
-# **fileAttachmentsDeleteTimesheetFileAttachment**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth)
+
+## fileAttachmentsDeleteTimesheetFileAttachment
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth)
 
 Delete a particular timesheet file attachment  Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -25,7 +29,7 @@ $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
     new GuzzleHttp\Client()
 );
 $fileAttachmentId = 56; // int | The Id of the file attachment to delete
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth);
@@ -38,6 +42,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileAttachmentId** | **int**| The Id of the file attachment to delete |
@@ -45,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -53,20 +58,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **fileAttachmentsGetFileAttachmentById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetFileAttachment fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth)
+
+## fileAttachmentsGetFileAttachmentById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetFileAttachment fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth)
 
 Get a particular file attachment by ID.  User must own the file attachment for access.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -74,7 +85,7 @@ $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
     new GuzzleHttp\Client()
 );
 $fileAttachmentId = 56; // int | The ID of the file attachment
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth);
@@ -87,6 +98,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileAttachmentId** | **int**| The ID of the file attachment |
@@ -94,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseTimesheetFileAttachment**](../Model/CSApiResponseTimesheetFileAttachment.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetFileAttachment**](../Model/ApiResponseTimesheetFileAttachment.md)
 
 ### Authorization
 
@@ -102,20 +114,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **fileAttachmentsGetMyFileAttachments**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take)
+
+## fileAttachmentsGetMyFileAttachments
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetFileAttachment fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take)
 
 Get my file attachments.  Get files you've attached to timesheets.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -124,7 +142,7 @@ $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The Start date of the date range.  File attachments after this date will be obtained.
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The End date of the date range.  File attachments before this date will be obtained.
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Skip this many File attachments
 $take = 56; // int | Take this many File attachments
 
@@ -139,6 +157,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The Start date of the date range.  File attachments after this date will be obtained. |
@@ -149,7 +168,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListTimesheetFileAttachment**](../Model/CSApiResponseForPaginatedListTimesheetFileAttachment.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetFileAttachment**](../Model/ApiResponseForPaginatedListTimesheetFileAttachment.md)
 
 ### Authorization
 
@@ -157,8 +176,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

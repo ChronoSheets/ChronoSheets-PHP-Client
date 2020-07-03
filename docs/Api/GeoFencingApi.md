@@ -11,26 +11,30 @@ Method | HTTP request | Description
 [**geoFencingUpdateGeofence**](GeoFencingApi.md#geoFencingUpdateGeofence) | **PUT** /GeoFencing/UpdateGeofence | Updates a geofencing with rules to be used for clock on/off automation.  Requires the &#39;ManageGeofencing&#39; permission.
 
 
-# **geoFencingCreateGeofence**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 geoFencingCreateGeofence($request, $xChronosheetsAuth)
+
+## geoFencingCreateGeofence
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 geoFencingCreateGeofence($xChronosheetsAuth, $request)
 
 Create a geofencing with rules to be used for clock on/off automation.  Requires the 'ManageGeofencing' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateGeoFenceRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateGeoFenceRequest | 
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CreateGeoFenceRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CreateGeoFenceRequest | 
 
 try {
-    $result = $apiInstance->geoFencingCreateGeofence($request, $xChronosheetsAuth);
+    $result = $apiInstance->geoFencingCreateGeofence($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeoFencingApi->geoFencingCreateGeofence: ', $e->getMessage(), PHP_EOL;
@@ -40,14 +44,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSCreateGeoFenceRequest**](../Model/CSCreateGeoFenceRequest.md)|  |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CreateGeoFenceRequest**](../Model/CreateGeoFenceRequest.md)|  |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -55,20 +60,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **geoFencingDeleteGeofence**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseGeofence geoFencingDeleteGeofence($geofenceId, $xChronosheetsAuth)
+
+## geoFencingDeleteGeofence
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseGeofence geoFencingDeleteGeofence($geofenceId, $xChronosheetsAuth)
 
 Deletes a geofence.  Requires the 'ManageGeofencing' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -76,7 +87,7 @@ $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     new GuzzleHttp\Client()
 );
 $geofenceId = 56; // int | Specify the geofence you want to delete with the geofence ID.
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->geoFencingDeleteGeofence($geofenceId, $xChronosheetsAuth);
@@ -89,6 +100,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **geofenceId** | **int**| Specify the geofence you want to delete with the geofence ID. |
@@ -96,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseGeofence**](../Model/CSApiResponseGeofence.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseGeofence**](../Model/ApiResponseGeofence.md)
 
 ### Authorization
 
@@ -104,20 +116,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **geoFencingGetGeofenceById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseGeofence geoFencingGetGeofenceById($geofenceId, $xChronosheetsAuth)
+
+## geoFencingGetGeofenceById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseGeofence geoFencingGetGeofenceById($geofenceId, $xChronosheetsAuth)
 
 Get a geofence by ID  Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -125,7 +143,7 @@ $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     new GuzzleHttp\Client()
 );
 $geofenceId = 56; // int | The ID of the geofence you want to obtain
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->geoFencingGetGeofenceById($geofenceId, $xChronosheetsAuth);
@@ -138,6 +156,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **geofenceId** | **int**| The ID of the geofence you want to obtain |
@@ -145,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseGeofence**](../Model/CSApiResponseGeofence.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseGeofence**](../Model/ApiResponseGeofence.md)
 
 ### Authorization
 
@@ -153,27 +172,33 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **geoFencingGetGeofences**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListExtendedGeofence geoFencingGetGeofences($xChronosheetsAuth, $skip, $take)
+
+## geoFencingGetGeofences
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListExtendedGeofence geoFencingGetGeofences($xChronosheetsAuth, $skip, $take)
 
 Get geofences belonging to your organisation  Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 $skip = 56; // int | Number of records to skip
 $take = 56; // int | Number of records to take
 
@@ -188,6 +213,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
@@ -196,7 +222,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseForPaginatedListExtendedGeofence**](../Model/CSApiResponseForPaginatedListExtendedGeofence.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListExtendedGeofence**](../Model/ApiResponseForPaginatedListExtendedGeofence.md)
 
 ### Authorization
 
@@ -204,31 +230,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **geoFencingUpdateGeofence**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 geoFencingUpdateGeofence($request, $xChronosheetsAuth)
+
+## geoFencingUpdateGeofence
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 geoFencingUpdateGeofence($xChronosheetsAuth, $request)
 
 Updates a geofencing with rules to be used for clock on/off automation.  Requires the 'ManageGeofencing' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\GeoFencingApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateGeoFenceRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateGeoFenceRequest | 
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateGeoFenceRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateGeoFenceRequest | 
 
 try {
-    $result = $apiInstance->geoFencingUpdateGeofence($request, $xChronosheetsAuth);
+    $result = $apiInstance->geoFencingUpdateGeofence($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling GeoFencingApi->geoFencingUpdateGeofence: ', $e->getMessage(), PHP_EOL;
@@ -238,14 +270,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateGeoFenceRequest**](../Model/CSUpdateGeoFenceRequest.md)|  |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateGeoFenceRequest**](../Model/UpdateGeoFenceRequest.md)|  |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -253,8 +286,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

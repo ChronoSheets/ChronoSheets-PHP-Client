@@ -10,26 +10,30 @@ Method | HTTP request | Description
 [**timesheetsUpdateTimesheets**](TimesheetsApi.md#timesheetsUpdateTimesheets) | **PUT** /Timesheets/UpdateTimesheets | Batch update timesheets.    Requires the &#39;SubmitTimesheets&#39; permission.
 
 
-# **timesheetsCreateSingleTimesheet**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 timesheetsCreateSingleTimesheet($request, $xChronosheetsAuth)
+
+## timesheetsCreateSingleTimesheet
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 timesheetsCreateSingleTimesheet($xChronosheetsAuth, $request)
 
 Inserts a single timesheet record.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet | A Timesheet Request object containing values for the new Timesheet to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\Timesheet(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\Timesheet | A Timesheet Request object containing values for the new Timesheet to create
 
 try {
-    $result = $apiInstance->timesheetsCreateSingleTimesheet($request, $xChronosheetsAuth);
+    $result = $apiInstance->timesheetsCreateSingleTimesheet($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsCreateSingleTimesheet: ', $e->getMessage(), PHP_EOL;
@@ -39,14 +43,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSTimesheet**](../Model/CSTimesheet.md)| A Timesheet Request object containing values for the new Timesheet to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\Timesheet**](../Model/Timesheet.md)| A Timesheet Request object containing values for the new Timesheet to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -54,20 +59,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **timesheetsDeleteTimesheet**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth)
+
+## timesheetsDeleteTimesheet
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth)
 
 Delete a timesheet.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -75,7 +86,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     new GuzzleHttp\Client()
 );
 $timesheetId = 56; // int | The ID of the Timesheet you want to delete
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth);
@@ -88,6 +99,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **timesheetId** | **int**| The ID of the Timesheet you want to delete |
@@ -95,7 +107,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -103,20 +115,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **timesheetsGetTimesheets**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheet timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth)
+
+## timesheetsGetTimesheets
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheet timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth)
 
 Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -125,7 +143,7 @@ $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
 );
 $startDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date of the date range
 $endDate = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date of the date range
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth);
@@ -138,6 +156,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **startDate** | **\DateTime**| The start date of the date range |
@@ -146,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListTimesheet**](../Model/CSApiResponseListTimesheet.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheet**](../Model/ApiResponseListTimesheet.md)
 
 ### Authorization
 
@@ -154,31 +173,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **timesheetsUpdateTimesheets**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListInt32 timesheetsUpdateTimesheets($request, $xChronosheetsAuth)
+
+## timesheetsUpdateTimesheets
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListInt32 timesheetsUpdateTimesheets($xChronosheetsAuth, $request)
 
 Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest | A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created.
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\BatchUpdateTimesheetRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\BatchUpdateTimesheetRequest | A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created.
 
 try {
-    $result = $apiInstance->timesheetsUpdateTimesheets($request, $xChronosheetsAuth);
+    $result = $apiInstance->timesheetsUpdateTimesheets($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsUpdateTimesheets: ', $e->getMessage(), PHP_EOL;
@@ -188,14 +213,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSBatchUpdateTimesheetRequest**](../Model/CSBatchUpdateTimesheetRequest.md)| A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\BatchUpdateTimesheetRequest**](../Model/BatchUpdateTimesheetRequest.md)| A BatchUpdateTimesheet Request object containing values for the new Timesheets to create or update.  If the timesheet Id is specified, then an update will be performed, else the timesheet record will be created. |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListInt32**](../Model/CSApiResponseListInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListInt32**](../Model/ApiResponseListInt32.md)
 
 ### Authorization
 
@@ -203,8 +229,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

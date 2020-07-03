@@ -8,15 +8,19 @@ Method | HTTP request | Description
 [**usualHoursSetUsualHours**](UsualHoursApi.md#usualHoursSetUsualHours) | **PUT** /UsualHours/SetUsualHours | Set usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; permission.
 
 
-# **usualHoursGetUsualHours**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUsualHoursDay usualHoursGetUsualHours($userId, $xChronosheetsAuth)
+
+## usualHoursGetUsualHours
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUsualHoursDay usualHoursGetUsualHours($userId, $xChronosheetsAuth)
 
 Get usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -24,7 +28,7 @@ $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
     new GuzzleHttp\Client()
 );
 $userId = 56; // int | The ID of the User for which you want to get UsualHours for
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->usualHoursGetUsualHours($userId, $xChronosheetsAuth);
@@ -37,6 +41,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **int**| The ID of the User for which you want to get UsualHours for |
@@ -44,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUsualHoursDay**](../Model/CSApiResponseListUsualHoursDay.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUsualHoursDay**](../Model/ApiResponseListUsualHoursDay.md)
 
 ### Authorization
 
@@ -52,31 +57,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **usualHoursSetUsualHours**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean usualHoursSetUsualHours($request, $xChronosheetsAuth)
+
+## usualHoursSetUsualHours
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean usualHoursSetUsualHours($xChronosheetsAuth, $request)
 
 Set usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest | A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\SetUsualHoursRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\SetUsualHoursRequest | A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update
 
 try {
-    $result = $apiInstance->usualHoursSetUsualHours($request, $xChronosheetsAuth);
+    $result = $apiInstance->usualHoursSetUsualHours($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling UsualHoursApi->usualHoursSetUsualHours: ', $e->getMessage(), PHP_EOL;
@@ -86,14 +97,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetUsualHoursRequest**](../Model/CSSetUsualHoursRequest.md)| A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\SetUsualHoursRequest**](../Model/SetUsualHoursRequest.md)| A Set UsualHours Request object containing updated data.  Make sure to specify the Day types in the request object so that ChronoSheets knows which Days to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -101,8 +113,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

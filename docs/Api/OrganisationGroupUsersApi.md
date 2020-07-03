@@ -8,15 +8,19 @@ Method | HTTP request | Description
 [**organisationGroupUsersUpdateOrganisationGroupUsers**](OrganisationGroupUsersApi.md#organisationGroupUsersUpdateOrganisationGroupUsers) | **PUT** /OrganisationGroupUsers/UpdateOrganisationGroupUsers | Set the users who belong to an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
 
 
-# **organisationGroupUsersGetOrganisationGroupUsers**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserForManagement organisationGroupUsersGetOrganisationGroupUsers($orgGroupId, $xChronosheetsAuth)
+
+## organisationGroupUsersGetOrganisationGroupUsers
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement organisationGroupUsersGetOrganisationGroupUsers($orgGroupId, $xChronosheetsAuth)
 
 Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupUsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -24,7 +28,7 @@ $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupUsersApi(
     new GuzzleHttp\Client()
 );
 $orgGroupId = 56; // int | An OrganisationGroup Id
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->organisationGroupUsersGetOrganisationGroupUsers($orgGroupId, $xChronosheetsAuth);
@@ -37,6 +41,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **orgGroupId** | **int**| An OrganisationGroup Id |
@@ -44,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListUserForManagement**](../Model/CSApiResponseListUserForManagement.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement**](../Model/ApiResponseListUserForManagement.md)
 
 ### Authorization
 
@@ -52,31 +57,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **organisationGroupUsersUpdateOrganisationGroupUsers**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean organisationGroupUsersUpdateOrganisationGroupUsers($request, $xChronosheetsAuth)
+
+## organisationGroupUsersUpdateOrganisationGroupUsers
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupUsersUpdateOrganisationGroupUsers($xChronosheetsAuth, $request)
 
 Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupUsersApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest | A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\SetOrganisationGroupUsersRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\SetOrganisationGroupUsersRequest | A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4
 
 try {
-    $result = $apiInstance->organisationGroupUsersUpdateOrganisationGroupUsers($request, $xChronosheetsAuth);
+    $result = $apiInstance->organisationGroupUsersUpdateOrganisationGroupUsers($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupUsersApi->organisationGroupUsersUpdateOrganisationGroupUsers: ', $e->getMessage(), PHP_EOL;
@@ -86,14 +97,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSSetOrganisationGroupUsersRequest**](../Model/CSSetOrganisationGroupUsersRequest.md)| A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\SetOrganisationGroupUsersRequest**](../Model/SetOrganisationGroupUsersRequest.md)| A request object specifying which users belong to an organisation group.  Make sure to specify the OrganisationGroup Id in the request object so that ChronoSheets knows which OrganisationGroup to update. CsvUserIds is a comma separated list of User Ids, e.g. 1,2,3,4 |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -101,8 +113,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 

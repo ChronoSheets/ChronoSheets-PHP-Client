@@ -11,26 +11,30 @@ Method | HTTP request | Description
 [**jobCodesUpdateJobCode**](JobCodesApi.md#jobCodesUpdateJobCode) | **PUT** /JobCodes/UpdateJobCode | Update a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
 
 
-# **jobCodesCreateJobCode**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32 jobCodesCreateJobCode($request, $xChronosheetsAuth)
+
+## jobCodesCreateJobCode
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 jobCodesCreateJobCode($xChronosheetsAuth, $request)
 
 Create a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest | An Insert JobCode Request object containing values for the new JobCode to create
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\InsertJobCodeRequest | An Insert JobCode Request object containing values for the new JobCode to create
 
 try {
-    $result = $apiInstance->jobCodesCreateJobCode($request, $xChronosheetsAuth);
+    $result = $apiInstance->jobCodesCreateJobCode($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesCreateJobCode: ', $e->getMessage(), PHP_EOL;
@@ -40,14 +44,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSInsertJobCodeRequest**](../Model/CSInsertJobCodeRequest.md)| An Insert JobCode Request object containing values for the new JobCode to create |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\InsertJobCodeRequest**](../Model/InsertJobCodeRequest.md)| An Insert JobCode Request object containing values for the new JobCode to create |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseInt32**](../Model/CSApiResponseInt32.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32**](../Model/ApiResponseInt32.md)
 
 ### Authorization
 
@@ -55,20 +60,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **jobCodesDeleteJobCode**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth)
+
+## jobCodesDeleteJobCode
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth)
 
 Delete a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -76,7 +87,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     new GuzzleHttp\Client()
 );
 $jobCodeId = 56; // int | The ID of the job code you want to delete
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth);
@@ -89,6 +100,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobCodeId** | **int**| The ID of the job code you want to delete |
@@ -96,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -104,20 +116,26 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **jobCodesGetJobCodeById**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseJobCode jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth)
+
+## jobCodesGetJobCodeById
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseJobCode jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth)
 
 Get a particular job code by job code id.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
@@ -125,7 +143,7 @@ $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     new GuzzleHttp\Client()
 );
 $jobCodeId = 56; // int | The ID of the JobCode you want to get
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth);
@@ -138,6 +156,7 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **jobCodeId** | **int**| The ID of the JobCode you want to get |
@@ -145,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseJobCode**](../Model/CSApiResponseJobCode.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseJobCode**](../Model/ApiResponseJobCode.md)
 
 ### Authorization
 
@@ -153,27 +172,33 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **jobCodesGetJobCodes**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListJobCode jobCodesGetJobCodes($xChronosheetsAuth)
+
+## jobCodesGetJobCodes
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobCode jobCodesGetJobCodes($xChronosheetsAuth)
 
 Get job codes for your organisation.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
     $result = $apiInstance->jobCodesGetJobCodes($xChronosheetsAuth);
@@ -186,13 +211,14 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseListJobCode**](../Model/CSApiResponseListJobCode.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobCode**](../Model/ApiResponseListJobCode.md)
 
 ### Authorization
 
@@ -200,31 +226,37 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: Not defined
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
-# **jobCodesUpdateJobCode**
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean jobCodesUpdateJobCode($request, $xChronosheetsAuth)
+
+## jobCodesUpdateJobCode
+
+> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean jobCodesUpdateJobCode($xChronosheetsAuth, $request)
 
 Update a job code.    Requires the 'ManageJobsAndTask' permission.
 
 ### Example
+
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest | A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update
-$xChronosheetsAuth = "xChronosheetsAuth_example"; // string | The ChronoSheets Auth Token
+$xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
+$request = new \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateJobCodeRequest(); // \ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateJobCodeRequest | A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update
 
 try {
-    $result = $apiInstance->jobCodesUpdateJobCode($request, $xChronosheetsAuth);
+    $result = $apiInstance->jobCodesUpdateJobCode($xChronosheetsAuth, $request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesUpdateJobCode: ', $e->getMessage(), PHP_EOL;
@@ -234,14 +266,15 @@ try {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSUpdateJobCodeRequest**](../Model/CSUpdateJobCodeRequest.md)| A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update |
  **xChronosheetsAuth** | **string**| The ChronoSheets Auth Token |
+ **request** | [**\ChronoSheetsClient\ChronoSheetsClientLibModel\UpdateJobCodeRequest**](../Model/UpdateJobCodeRequest.md)| A Update JobCode Request object containing updated fields.  Make sure to specify the JobCode Id in the request object so that ChronoSheets knows which JobCode to update |
 
 ### Return type
 
-[**\ChronoSheetsClient\ChronoSheetsClientLibModel\CSApiResponseBoolean**](../Model/CSApiResponseBoolean.md)
+[**\ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean**](../Model/ApiResponseBoolean.md)
 
 ### Authorization
 
@@ -249,8 +282,10 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
- - **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
+- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to README]](../../README.md)
 
