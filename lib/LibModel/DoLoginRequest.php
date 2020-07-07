@@ -59,7 +59,8 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
       */
     protected static $openAPITypes = [
         'usernameOrEmail' => 'string',
-        'password' => 'string'
+        'password' => 'string',
+        'rememberMe' => 'bool'
     ];
 
     /**
@@ -69,7 +70,8 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
       */
     protected static $openAPIFormats = [
         'usernameOrEmail' => null,
-        'password' => null
+        'password' => null,
+        'rememberMe' => null
     ];
 
     /**
@@ -100,7 +102,8 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
      */
     protected static $attributeMap = [
         'usernameOrEmail' => 'UsernameOrEmail',
-        'password' => 'Password'
+        'password' => 'Password',
+        'rememberMe' => 'RememberMe'
     ];
 
     /**
@@ -110,7 +113,8 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
      */
     protected static $setters = [
         'usernameOrEmail' => 'setUsernameOrEmail',
-        'password' => 'setPassword'
+        'password' => 'setPassword',
+        'rememberMe' => 'setRememberMe'
     ];
 
     /**
@@ -120,7 +124,8 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
      */
     protected static $getters = [
         'usernameOrEmail' => 'getUsernameOrEmail',
-        'password' => 'getPassword'
+        'password' => 'getPassword',
+        'rememberMe' => 'getRememberMe'
     ];
 
     /**
@@ -185,6 +190,7 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
     {
         $this->container['usernameOrEmail'] = isset($data['usernameOrEmail']) ? $data['usernameOrEmail'] : null;
         $this->container['password'] = isset($data['password']) ? $data['password'] : null;
+        $this->container['rememberMe'] = isset($data['rememberMe']) ? $data['rememberMe'] : null;
     }
 
     /**
@@ -255,6 +261,30 @@ class DoLoginRequest implements ModelInterface, ArrayAccess
     public function setPassword($password)
     {
         $this->container['password'] = $password;
+
+        return $this;
+    }
+
+    /**
+     * Gets rememberMe
+     *
+     * @return bool|null
+     */
+    public function getRememberMe()
+    {
+        return $this->container['rememberMe'];
+    }
+
+    /**
+     * Sets rememberMe
+     *
+     * @param bool|null $rememberMe Increase session expiry beyond default of 1 hour
+     *
+     * @return $this
+     */
+    public function setRememberMe($rememberMe)
+    {
+        $this->container['rememberMe'] = $rememberMe;
 
         return $this;
     }
