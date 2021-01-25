@@ -1,16 +1,17 @@
 # ChronoSheetsClient\AggregateJobTasksApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aggregateJobTasksGetAggregateJobTasks**](AggregateJobTasksApi.md#aggregateJobTasksGetAggregateJobTasks) | **GET** /AggregateJobTasks/GetAggregateJobTasks | Get jobs and tasks information, aggregated.    Requires the &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**aggregateJobTasksGetAggregateJobTasks()**](AggregateJobTasksApi.md#aggregateJobTasksGetAggregateJobTasks) | **GET** /AggregateJobTasks/GetAggregateJobTasks | Get jobs and tasks information, aggregated.    Requires the &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTask&#39; permissions.
 
 
+## `aggregateJobTasksGetAggregateJobTasks()`
 
-## aggregateJobTasksGetAggregateJobTasks
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListAggregateJobCode aggregateJobTasksGetAggregateJobTasks($xChronosheetsAuth)
+```php
+aggregateJobTasksGetAggregateJobTasks($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListAggregateJobCode
+```
 
 Get jobs and tasks information, aggregated.    Requires the 'SubmitTimesheets' or 'ManageJobsAndTask' permissions.
 
@@ -19,6 +20,7 @@ Get jobs and tasks information, aggregated.    Requires the 'SubmitTimesheets' o
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\AggregateJobTasksApi(
@@ -34,11 +36,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AggregateJobTasksApi->aggregateJobTasksGetAggregateJobTasks: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,9 +55,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

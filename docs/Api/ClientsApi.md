@@ -1,19 +1,20 @@
 # ChronoSheetsClient\ClientsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**clientsCreateClient**](ClientsApi.md#clientsCreateClient) | **POST** /Clients/CreateClient | Create a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
-[**clientsGetClient**](ClientsApi.md#clientsGetClient) | **GET** /Clients/GetClient | Get a particular client.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
-[**clientsGetClients**](ClientsApi.md#clientsGetClients) | **GET** /Clients/GetClients | Get a collection of clients that are under your organisation.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
-[**clientsUpdateClient**](ClientsApi.md#clientsUpdateClient) | **PUT** /Clients/UpdateClient | Update a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
+[**clientsCreateClient()**](ClientsApi.md#clientsCreateClient) | **POST** /Clients/CreateClient | Create a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
+[**clientsGetClient()**](ClientsApi.md#clientsGetClient) | **GET** /Clients/GetClient | Get a particular client.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**clientsGetClients()**](ClientsApi.md#clientsGetClients) | **GET** /Clients/GetClients | Get a collection of clients that are under your organisation.    Requires the &#39;ManageClientsAndProjects&#39; or &#39;ManageJobsAndTask&#39; permissions.
+[**clientsUpdateClient()**](ClientsApi.md#clientsUpdateClient) | **PUT** /Clients/UpdateClient | Update a client.    Requires the &#39;ManageClientsAndProjects&#39; permission.
 
 
+## `clientsCreateClient()`
 
-## clientsCreateClient
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 clientsCreateClient($xChronosheetsAuth, $request)
+```php
+clientsCreateClient($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create a client.    Requires the 'ManageClientsAndProjects' permission.
 
@@ -22,6 +23,7 @@ Create a client.    Requires the 'ManageClientsAndProjects' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
@@ -38,11 +40,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ClientsApi->clientsCreateClient: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -59,17 +59,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `clientsGetClient()`
 
-## clientsGetClient
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseClient clientsGetClient($clientId, $xChronosheetsAuth)
+```php
+clientsGetClient($clientId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseClient
+```
 
 Get a particular client.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
@@ -78,6 +79,7 @@ Get a particular client.    Requires the 'ManageClientsAndProjects' or 'ManageJo
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
@@ -94,11 +96,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ClientsApi->clientsGetClient: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -116,16 +116,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `clientsGetClients()`
 
-## clientsGetClients
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListClient clientsGetClients($xChronosheetsAuth)
+```php
+clientsGetClients($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListClient
+```
 
 Get a collection of clients that are under your organisation.    Requires the 'ManageClientsAndProjects' or 'ManageJobsAndTask' permissions.
 
@@ -134,6 +135,7 @@ Get a collection of clients that are under your organisation.    Requires the 'M
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
@@ -149,11 +151,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ClientsApi->clientsGetClients: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -170,16 +170,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `clientsUpdateClient()`
 
-## clientsUpdateClient
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean clientsUpdateClient($xChronosheetsAuth, $request)
+```php
+clientsUpdateClient($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Update a client.    Requires the 'ManageClientsAndProjects' permission.
 
@@ -188,6 +189,7 @@ Update a client.    Requires the 'ManageClientsAndProjects' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ClientsApi(
@@ -204,11 +206,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ClientsApi->clientsUpdateClient: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -225,10 +225,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

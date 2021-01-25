@@ -1,17 +1,18 @@
 # ChronoSheetsClient\TranscriptsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**transcriptsGetMyTranscript**](TranscriptsApi.md#transcriptsGetMyTranscript) | **GET** /Transcripts/GetMyTranscript | Get an audio to text transcript for a particular audio file attachment
-[**transcriptsGetMyTranscripts**](TranscriptsApi.md#transcriptsGetMyTranscripts) | **GET** /Transcripts/GetMyTranscripts | Get my file transcripts.  Get audio to text transcripts that you&#39;ve created.
+[**transcriptsGetMyTranscript()**](TranscriptsApi.md#transcriptsGetMyTranscript) | **GET** /Transcripts/GetMyTranscript | Get an audio to text transcript for a particular audio file attachment
+[**transcriptsGetMyTranscripts()**](TranscriptsApi.md#transcriptsGetMyTranscripts) | **GET** /Transcripts/GetMyTranscripts | Get my file transcripts.  Get audio to text transcripts that you&#39;ve created.
 
 
+## `transcriptsGetMyTranscript()`
 
-## transcriptsGetMyTranscript
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTranscription transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth)
+```php
+transcriptsGetMyTranscript($fileAttachmentId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTranscription
+```
 
 Get an audio to text transcript for a particular audio file attachment
 
@@ -20,6 +21,7 @@ Get an audio to text transcript for a particular audio file attachment
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TranscriptsApi(
@@ -36,11 +38,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TranscriptsApi->transcriptsGetMyTranscript: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,16 +58,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `transcriptsGetMyTranscripts()`
 
-## transcriptsGetMyTranscripts
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword)
+```php
+transcriptsGetMyTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $keyword): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript
+```
 
 Get my file transcripts.  Get audio to text transcripts that you've created.
 
@@ -76,6 +77,7 @@ Get my file transcripts.  Get audio to text transcripts that you've created.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TranscriptsApi(
@@ -96,11 +98,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TranscriptsApi->transcriptsGetMyTranscripts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -122,9 +122,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

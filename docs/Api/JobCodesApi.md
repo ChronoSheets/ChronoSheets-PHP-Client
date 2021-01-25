@@ -1,20 +1,21 @@
 # ChronoSheetsClient\JobCodesApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**jobCodesCreateJobCode**](JobCodesApi.md#jobCodesCreateJobCode) | **POST** /JobCodes/CreateJobCode | Create a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
-[**jobCodesDeleteJobCode**](JobCodesApi.md#jobCodesDeleteJobCode) | **DELETE** /JobCodes/DeleteJobCode | Delete a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
-[**jobCodesGetJobCodeById**](JobCodesApi.md#jobCodesGetJobCodeById) | **GET** /JobCodes/GetJobCodeById | Get a particular job code by job code id.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
-[**jobCodesGetJobCodes**](JobCodesApi.md#jobCodesGetJobCodes) | **GET** /JobCodes/GetJobCodes | Get job codes for your organisation.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
-[**jobCodesUpdateJobCode**](JobCodesApi.md#jobCodesUpdateJobCode) | **PUT** /JobCodes/UpdateJobCode | Update a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**jobCodesCreateJobCode()**](JobCodesApi.md#jobCodesCreateJobCode) | **POST** /JobCodes/CreateJobCode | Create a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**jobCodesDeleteJobCode()**](JobCodesApi.md#jobCodesDeleteJobCode) | **DELETE** /JobCodes/DeleteJobCode | Delete a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
+[**jobCodesGetJobCodeById()**](JobCodesApi.md#jobCodesGetJobCodeById) | **GET** /JobCodes/GetJobCodeById | Get a particular job code by job code id.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
+[**jobCodesGetJobCodes()**](JobCodesApi.md#jobCodesGetJobCodes) | **GET** /JobCodes/GetJobCodes | Get job codes for your organisation.    Requires &#39;SubmitTimesheets&#39; or &#39;ManageJobsAndTasks&#39; permissions.
+[**jobCodesUpdateJobCode()**](JobCodesApi.md#jobCodesUpdateJobCode) | **PUT** /JobCodes/UpdateJobCode | Update a job code.    Requires the &#39;ManageJobsAndTask&#39; permission.
 
 
+## `jobCodesCreateJobCode()`
 
-## jobCodesCreateJobCode
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 jobCodesCreateJobCode($xChronosheetsAuth, $request)
+```php
+jobCodesCreateJobCode($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create a job code.    Requires the 'ManageJobsAndTask' permission.
 
@@ -23,6 +24,7 @@ Create a job code.    Requires the 'ManageJobsAndTask' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
@@ -39,11 +41,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesCreateJobCode: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,17 +60,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `jobCodesDeleteJobCode()`
 
-## jobCodesDeleteJobCode
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth)
+```php
+jobCodesDeleteJobCode($jobCodeId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Delete a job code.    Requires the 'ManageJobsAndTask' permission.
 
@@ -79,6 +80,7 @@ Delete a job code.    Requires the 'ManageJobsAndTask' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
@@ -95,11 +97,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesDeleteJobCode: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -117,16 +117,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `jobCodesGetJobCodeById()`
 
-## jobCodesGetJobCodeById
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseJobCode jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth)
+```php
+jobCodesGetJobCodeById($jobCodeId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseJobCode
+```
 
 Get a particular job code by job code id.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
@@ -135,6 +136,7 @@ Get a particular job code by job code id.    Requires 'SubmitTimesheets' or 'Man
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
@@ -151,11 +153,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesGetJobCodeById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -173,16 +173,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `jobCodesGetJobCodes()`
 
-## jobCodesGetJobCodes
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobCode jobCodesGetJobCodes($xChronosheetsAuth)
+```php
+jobCodesGetJobCodes($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobCode
+```
 
 Get job codes for your organisation.    Requires 'SubmitTimesheets' or 'ManageJobsAndTasks' permissions.
 
@@ -191,6 +192,7 @@ Get job codes for your organisation.    Requires 'SubmitTimesheets' or 'ManageJo
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
@@ -206,11 +208,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesGetJobCodes: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -227,16 +227,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `jobCodesUpdateJobCode()`
 
-## jobCodesUpdateJobCode
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean jobCodesUpdateJobCode($xChronosheetsAuth, $request)
+```php
+jobCodesUpdateJobCode($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Update a job code.    Requires the 'ManageJobsAndTask' permission.
 
@@ -245,6 +246,7 @@ Update a job code.    Requires the 'ManageJobsAndTask' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\JobCodesApi(
@@ -261,11 +263,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling JobCodesApi->jobCodesUpdateJobCode: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -282,10 +282,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

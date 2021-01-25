@@ -1,18 +1,19 @@
 # ChronoSheetsClient\UserJobFavouritesApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**userJobFavouritesCreateJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesCreateJobFavourite) | **POST** /UserJobFavourites/CreateJobFavourite | Create a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**userJobFavouritesDeleteJobFavourite**](UserJobFavouritesApi.md#userJobFavouritesDeleteJobFavourite) | **DELETE** /UserJobFavourites/DeleteJobFavourite | Delete a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**userJobFavouritesGetJobFavourites**](UserJobFavouritesApi.md#userJobFavouritesGetJobFavourites) | **GET** /UserJobFavourites/GetJobFavourites | Get your job favourites.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**userJobFavouritesCreateJobFavourite()**](UserJobFavouritesApi.md#userJobFavouritesCreateJobFavourite) | **POST** /UserJobFavourites/CreateJobFavourite | Create a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**userJobFavouritesDeleteJobFavourite()**](UserJobFavouritesApi.md#userJobFavouritesDeleteJobFavourite) | **DELETE** /UserJobFavourites/DeleteJobFavourite | Delete a job favourite.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**userJobFavouritesGetJobFavourites()**](UserJobFavouritesApi.md#userJobFavouritesGetJobFavourites) | **GET** /UserJobFavourites/GetJobFavourites | Get your job favourites.    Requires the &#39;SubmitTimesheets&#39; permission.
 
 
+## `userJobFavouritesCreateJobFavourite()`
 
-## userJobFavouritesCreateJobFavourite
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 userJobFavouritesCreateJobFavourite($xChronosheetsAuth, $request)
+```php
+userJobFavouritesCreateJobFavourite($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create a job favourite.    Requires the 'SubmitTimesheets' permission.
 
@@ -21,6 +22,7 @@ Create a job favourite.    Requires the 'SubmitTimesheets' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\UserJobFavouritesApi(
@@ -37,11 +39,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UserJobFavouritesApi->userJobFavouritesCreateJobFavourite: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,17 +58,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `userJobFavouritesDeleteJobFavourite()`
 
-## userJobFavouritesDeleteJobFavourite
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean userJobFavouritesDeleteJobFavourite($jobId, $xChronosheetsAuth)
+```php
+userJobFavouritesDeleteJobFavourite($jobId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Delete a job favourite.    Requires the 'SubmitTimesheets' permission.
 
@@ -77,6 +78,7 @@ Delete a job favourite.    Requires the 'SubmitTimesheets' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\UserJobFavouritesApi(
@@ -93,11 +95,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UserJobFavouritesApi->userJobFavouritesDeleteJobFavourite: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,16 +115,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `userJobFavouritesGetJobFavourites()`
 
-## userJobFavouritesGetJobFavourites
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserJobFavourite userJobFavouritesGetJobFavourites($xChronosheetsAuth)
+```php
+userJobFavouritesGetJobFavourites($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserJobFavourite
+```
 
 Get your job favourites.    Requires the 'SubmitTimesheets' permission.
 
@@ -133,6 +134,7 @@ Get your job favourites.    Requires the 'SubmitTimesheets' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\UserJobFavouritesApi(
@@ -148,11 +150,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UserJobFavouritesApi->userJobFavouritesGetJobFavourites: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -169,9 +169,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

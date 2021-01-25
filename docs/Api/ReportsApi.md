@@ -1,25 +1,26 @@
 # ChronoSheetsClient\ReportsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**reportsGetAllChartsDataAdmin**](ReportsApi.md#reportsGetAllChartsDataAdmin) | **GET** /Reports/GetAllChartsDataAdmin | Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These are the organisation wide reports, with data from potentially all employees.    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetAllChartsDataUser**](ReportsApi.md#reportsGetAllChartsDataUser) | **GET** /Reports/GetAllChartsDataUser | Get Consolidated User Reports Data (Jobs, Tasks, Clients and Projects).  These are the user&#39;s own reports.    Requires the &#39;ViewOwnReports&#39; permission.
-[**reportsGetFleetSummaryAdmin**](ReportsApi.md#reportsGetFleetSummaryAdmin) | **GET** /Reports/GetFleetSummaryAdmin | Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetOrgTripById**](ReportsApi.md#reportsGetOrgTripById) | **GET** /Reports/GetOrgTripById | Get trip by Id, for reporting purposes.    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetOrganisationTimesheetFileAttachments**](ReportsApi.md#reportsGetOrganisationTimesheetFileAttachments) | **GET** /Reports/GetOrganisationTimesheetFileAttachments | Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetOrganisationTranscripts**](ReportsApi.md#reportsGetOrganisationTranscripts) | **GET** /Reports/GetOrganisationTranscripts | Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetOrganisationTrips**](ReportsApi.md#reportsGetOrganisationTrips) | **GET** /Reports/GetOrganisationTrips | Reports on Organisation trips (GPS tracking from whole organisation).    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsGetRawDataAdmin**](ReportsApi.md#reportsGetRawDataAdmin) | **GET** /Reports/GetRawDataAdmin | Get Timesheets Raw Data.  This data details each timesheet record.  These are the organisation wide timesheet records, with data from potentially all employees.    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsProjectCostingsAdmin**](ReportsApi.md#reportsProjectCostingsAdmin) | **GET** /Reports/ProjectCostingsAdmin | Gets project cost estimations VS actual cost for date range and users.    Requires the &#39;ReportAdmin&#39; permission.
-[**reportsUserJobsOverTime**](ReportsApi.md#reportsUserJobsOverTime) | **GET** /Reports/UserJobsOverTime | Timeseries jobs data for the logged in user.    Requires the &#39;ViewOwnReports&#39; or &#39;SubmitTimesheets&#39;.
+[**reportsGetAllChartsDataAdmin()**](ReportsApi.md#reportsGetAllChartsDataAdmin) | **GET** /Reports/GetAllChartsDataAdmin | Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These are the organisation wide reports, with data from potentially all employees.    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetAllChartsDataUser()**](ReportsApi.md#reportsGetAllChartsDataUser) | **GET** /Reports/GetAllChartsDataUser | Get Consolidated User Reports Data (Jobs, Tasks, Clients and Projects).  These are the user&#39;s own reports.    Requires the &#39;ViewOwnReports&#39; permission.
+[**reportsGetFleetSummaryAdmin()**](ReportsApi.md#reportsGetFleetSummaryAdmin) | **GET** /Reports/GetFleetSummaryAdmin | Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetOrgTripById()**](ReportsApi.md#reportsGetOrgTripById) | **GET** /Reports/GetOrgTripById | Get trip by Id, for reporting purposes.    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetOrganisationTimesheetFileAttachments()**](ReportsApi.md#reportsGetOrganisationTimesheetFileAttachments) | **GET** /Reports/GetOrganisationTimesheetFileAttachments | Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetOrganisationTranscripts()**](ReportsApi.md#reportsGetOrganisationTranscripts) | **GET** /Reports/GetOrganisationTranscripts | Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetOrganisationTrips()**](ReportsApi.md#reportsGetOrganisationTrips) | **GET** /Reports/GetOrganisationTrips | Reports on Organisation trips (GPS tracking from whole organisation).    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsGetRawDataAdmin()**](ReportsApi.md#reportsGetRawDataAdmin) | **GET** /Reports/GetRawDataAdmin | Get Timesheets Raw Data.  This data details each timesheet record.  These are the organisation wide timesheet records, with data from potentially all employees.    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsProjectCostingsAdmin()**](ReportsApi.md#reportsProjectCostingsAdmin) | **GET** /Reports/ProjectCostingsAdmin | Gets project cost estimations VS actual cost for date range and users.    Requires the &#39;ReportAdmin&#39; permission.
+[**reportsUserJobsOverTime()**](ReportsApi.md#reportsUserJobsOverTime) | **GET** /Reports/UserJobsOverTime | Timeseries jobs data for the logged in user.    Requires the &#39;ViewOwnReports&#39; or &#39;SubmitTimesheets&#39;.
 
 
+## `reportsGetAllChartsDataAdmin()`
 
-## reportsGetAllChartsDataAdmin
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart)
+```php
+reportsGetAllChartsDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $forceOnlyThisChart): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData
+```
 
 Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These are the organisation wide reports, with data from potentially all employees.    Requires the 'ReportAdmin' permission.
 
@@ -28,6 +29,7 @@ Get Consolidated Admin Reports Data (Jobs, Tasks, Clients and Projects).  These 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -47,11 +49,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetAllChartsDataAdmin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -72,16 +72,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetAllChartsDataUser()`
 
-## reportsGetAllChartsDataUser
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData reportsGetAllChartsDataUser($startDate, $endDate, $xChronosheetsAuth)
+```php
+reportsGetAllChartsDataUser($startDate, $endDate, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseCombinedReportsData
+```
 
 Get Consolidated User Reports Data (Jobs, Tasks, Clients and Projects).  These are the user's own reports.    Requires the 'ViewOwnReports' permission.
 
@@ -90,6 +91,7 @@ Get Consolidated User Reports Data (Jobs, Tasks, Clients and Projects).  These a
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -107,11 +109,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetAllChartsDataUser: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -130,16 +130,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetFleetSummaryAdmin()`
 
-## reportsGetFleetSummaryAdmin
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetSummaryReportItem reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
+```php
+reportsGetFleetSummaryAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetSummaryReportItem
+```
 
 Gets a summary report, which includes total distance travelled and total running costs, for vehicles within your organisation  Requires the 'ReportAdmin' permission.
 
@@ -148,6 +149,7 @@ Gets a summary report, which includes total distance travelled and total running
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -166,11 +168,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetFleetSummaryAdmin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -190,16 +190,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetOrgTripById()`
 
-## reportsGetOrgTripById
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip reportsGetOrgTripById($tripId, $xChronosheetsAuth)
+```php
+reportsGetOrgTripById($tripId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip
+```
 
 Get trip by Id, for reporting purposes.    Requires the 'ReportAdmin' permission.
 
@@ -208,6 +209,7 @@ Get trip by Id, for reporting purposes.    Requires the 'ReportAdmin' permission
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -224,11 +226,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetOrgTripById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -246,16 +246,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetOrganisationTimesheetFileAttachments()`
 
-## reportsGetOrganisationTimesheetFileAttachments
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTimesheetFileAttachment reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
+```php
+reportsGetOrganisationTimesheetFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTimesheetFileAttachment
+```
 
 Reports on Organisation timesheet file attachments (files uploaded and attached to timesheet records)  Requires the 'ReportAdmin' permission.
 
@@ -264,6 +265,7 @@ Reports on Organisation timesheet file attachments (files uploaded and attached 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -284,11 +286,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetOrganisationTimesheetFileAttachments: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -310,16 +310,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetOrganisationTranscripts()`
 
-## reportsGetOrganisationTranscripts
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords)
+```php
+reportsGetOrganisationTranscripts($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds, $keywords): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTranscript
+```
 
 Reports on Organisation transcripts (When an audio file is attached, it will be automatically transcribed, these are the transcriptions)    Requires the 'ReportAdmin' permission.
 
@@ -328,6 +329,7 @@ Reports on Organisation transcripts (When an audio file is attached, it will be 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -349,11 +351,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetOrganisationTranscripts: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -376,16 +376,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetOrganisationTrips()`
 
-## reportsGetOrganisationTrips
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTrip reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds)
+```php
+reportsGetOrganisationTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $userIds): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListOrgReportTrip
+```
 
 Reports on Organisation trips (GPS tracking from whole organisation).    Requires the 'ReportAdmin' permission.
 
@@ -394,6 +395,7 @@ Reports on Organisation trips (GPS tracking from whole organisation).    Require
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -414,11 +416,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetOrganisationTrips: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -440,16 +440,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsGetRawDataAdmin()`
 
-## reportsGetRawDataAdmin
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListRawReportItem reportsGetRawDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take)
+```php
+reportsGetRawDataAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds, $sort, $order, $skip, $take): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListRawReportItem
+```
 
 Get Timesheets Raw Data.  This data details each timesheet record.  These are the organisation wide timesheet records, with data from potentially all employees.    Requires the 'ReportAdmin' permission.
 
@@ -458,6 +459,7 @@ Get Timesheets Raw Data.  This data details each timesheet record.  These are th
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -480,11 +482,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsGetRawDataAdmin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -508,16 +508,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsProjectCostingsAdmin()`
 
-## reportsProjectCostingsAdmin
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProjectCostingReportItem reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds)
+```php
+reportsProjectCostingsAdmin($startDate, $endDate, $xChronosheetsAuth, $userIds): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListProjectCostingReportItem
+```
 
 Gets project cost estimations VS actual cost for date range and users.    Requires the 'ReportAdmin' permission.
 
@@ -526,6 +527,7 @@ Gets project cost estimations VS actual cost for date range and users.    Requir
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -544,11 +546,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsProjectCostingsAdmin: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -568,16 +568,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `reportsUserJobsOverTime()`
 
-## reportsUserJobsOverTime
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobSeriesReportItem reportsUserJobsOverTime($startDate, $endDate, $xChronosheetsAuth)
+```php
+reportsUserJobsOverTime($startDate, $endDate, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListJobSeriesReportItem
+```
 
 Timeseries jobs data for the logged in user.    Requires the 'ViewOwnReports' or 'SubmitTimesheets'.
 
@@ -586,6 +587,7 @@ Timeseries jobs data for the logged in user.    Requires the 'ViewOwnReports' or
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\ReportsApi(
@@ -603,11 +605,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling ReportsApi->reportsUserJobsOverTime: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -626,9 +626,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

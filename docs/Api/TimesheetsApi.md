@@ -1,19 +1,20 @@
 # ChronoSheetsClient\TimesheetsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**timesheetsCreateSingleTimesheet**](TimesheetsApi.md#timesheetsCreateSingleTimesheet) | **POST** /Timesheets/CreateSingleTimesheet | Inserts a single timesheet record.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**timesheetsDeleteTimesheet**](TimesheetsApi.md#timesheetsDeleteTimesheet) | **DELETE** /Timesheets/DeleteTimesheet | Delete a timesheet.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**timesheetsGetTimesheets**](TimesheetsApi.md#timesheetsGetTimesheets) | **GET** /Timesheets/GetTimesheets | Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**timesheetsUpdateTimesheets**](TimesheetsApi.md#timesheetsUpdateTimesheets) | **PUT** /Timesheets/UpdateTimesheets | Batch update timesheets.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsCreateSingleTimesheet()**](TimesheetsApi.md#timesheetsCreateSingleTimesheet) | **POST** /Timesheets/CreateSingleTimesheet | Inserts a single timesheet record.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsDeleteTimesheet()**](TimesheetsApi.md#timesheetsDeleteTimesheet) | **DELETE** /Timesheets/DeleteTimesheet | Delete a timesheet.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsGetTimesheets()**](TimesheetsApi.md#timesheetsGetTimesheets) | **GET** /Timesheets/GetTimesheets | Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**timesheetsUpdateTimesheets()**](TimesheetsApi.md#timesheetsUpdateTimesheets) | **PUT** /Timesheets/UpdateTimesheets | Batch update timesheets.    Requires the &#39;SubmitTimesheets&#39; permission.
 
 
+## `timesheetsCreateSingleTimesheet()`
 
-## timesheetsCreateSingleTimesheet
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 timesheetsCreateSingleTimesheet($xChronosheetsAuth, $request)
+```php
+timesheetsCreateSingleTimesheet($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Inserts a single timesheet record.    Requires the 'SubmitTimesheets' permission.
 
@@ -22,6 +23,7 @@ Inserts a single timesheet record.    Requires the 'SubmitTimesheets' permission
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
@@ -38,11 +40,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsCreateSingleTimesheet: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -59,17 +59,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `timesheetsDeleteTimesheet()`
 
-## timesheetsDeleteTimesheet
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth)
+```php
+timesheetsDeleteTimesheet($timesheetId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Delete a timesheet.    Requires the 'SubmitTimesheets' permission.
 
@@ -78,6 +79,7 @@ Delete a timesheet.    Requires the 'SubmitTimesheets' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
@@ -94,11 +96,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsDeleteTimesheet: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -116,16 +116,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `timesheetsGetTimesheets()`
 
-## timesheetsGetTimesheets
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheet timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth)
+```php
+timesheetsGetTimesheets($startDate, $endDate, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListTimesheet
+```
 
 Get timesheets between start and end dates.  Note: the date range cannot exceed 24 hours.  This method is generally used to get timesheets for a particular day.    Requires the 'SubmitTimesheets' permission.
 
@@ -134,6 +135,7 @@ Get timesheets between start and end dates.  Note: the date range cannot exceed 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
@@ -151,11 +153,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsGetTimesheets: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -174,16 +174,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `timesheetsUpdateTimesheets()`
 
-## timesheetsUpdateTimesheets
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListInt32 timesheetsUpdateTimesheets($xChronosheetsAuth, $request)
+```php
+timesheetsUpdateTimesheets($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListInt32
+```
 
 Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
 
@@ -192,6 +193,7 @@ Batch update timesheets.    Requires the 'SubmitTimesheets' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TimesheetsApi(
@@ -208,11 +210,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TimesheetsApi->timesheetsUpdateTimesheets: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -229,10 +229,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

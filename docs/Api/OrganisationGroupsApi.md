@@ -1,22 +1,23 @@
 # ChronoSheetsClient\OrganisationGroupsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organisationGroupsCreateOrganisationGroup**](OrganisationGroupsApi.md#organisationGroupsCreateOrganisationGroup) | **POST** /OrganisationGroups/CreateOrganisationGroup | Create an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
-[**organisationGroupsDeleteOrganisationGroup**](OrganisationGroupsApi.md#organisationGroupsDeleteOrganisationGroup) | **DELETE** /OrganisationGroups/DeleteOrganisationGroup | 
-[**organisationGroupsGetOrganisationGroup**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroup) | **GET** /OrganisationGroups/GetOrganisationGroup | Get a particular organisation group.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
-[**organisationGroupsGetOrganisationGroups**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroups) | **GET** /OrganisationGroups/GetOrganisationGroups | Get a collection of organisation groups that are under your organisation.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
-[**organisationGroupsGetOrganisationGroupsForJob**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroupsForJob) | **GET** /OrganisationGroups/GetOrganisationGroupsForJob | Get org groups for a particular job.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
-[**organisationGroupsGetOrganisationGroupsForVehicle**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroupsForVehicle) | **GET** /OrganisationGroups/GetOrganisationGroupsForVehicle | Get org groups for a particular vehicle.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageFleet&#39; or &#39;ManageOrganisationUsers&#39; permissions.
-[**organisationGroupsUpdateOrganisationGroup**](OrganisationGroupsApi.md#organisationGroupsUpdateOrganisationGroup) | **PUT** /OrganisationGroups/UpdateOrganisationGroup | Update an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
+[**organisationGroupsCreateOrganisationGroup()**](OrganisationGroupsApi.md#organisationGroupsCreateOrganisationGroup) | **POST** /OrganisationGroups/CreateOrganisationGroup | Create an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
+[**organisationGroupsDeleteOrganisationGroup()**](OrganisationGroupsApi.md#organisationGroupsDeleteOrganisationGroup) | **DELETE** /OrganisationGroups/DeleteOrganisationGroup | 
+[**organisationGroupsGetOrganisationGroup()**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroup) | **GET** /OrganisationGroups/GetOrganisationGroup | Get a particular organisation group.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**organisationGroupsGetOrganisationGroups()**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroups) | **GET** /OrganisationGroups/GetOrganisationGroups | Get a collection of organisation groups that are under your organisation.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**organisationGroupsGetOrganisationGroupsForJob()**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroupsForJob) | **GET** /OrganisationGroups/GetOrganisationGroupsForJob | Get org groups for a particular job.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageJobsAndTask&#39;, &#39;ManageClientsAndProjects&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**organisationGroupsGetOrganisationGroupsForVehicle()**](OrganisationGroupsApi.md#organisationGroupsGetOrganisationGroupsForVehicle) | **GET** /OrganisationGroups/GetOrganisationGroupsForVehicle | Get org groups for a particular vehicle.    Requires the &#39;ManageOrganisationGroups&#39;, &#39;ManageFleet&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**organisationGroupsUpdateOrganisationGroup()**](OrganisationGroupsApi.md#organisationGroupsUpdateOrganisationGroup) | **PUT** /OrganisationGroups/UpdateOrganisationGroup | Update an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
 
 
+## `organisationGroupsCreateOrganisationGroup()`
 
-## organisationGroupsCreateOrganisationGroup
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 organisationGroupsCreateOrganisationGroup($xChronosheetsAuth, $request)
+```php
+organisationGroupsCreateOrganisationGroup($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
@@ -25,6 +26,7 @@ Create an organisation group.    Requires the 'ManageOrganisationGroups' permiss
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -41,11 +43,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsCreateOrganisationGroup: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -62,17 +62,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsDeleteOrganisationGroup()`
 
-## organisationGroupsDeleteOrganisationGroup
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupsDeleteOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
+```php
+organisationGroupsDeleteOrganisationGroup($organisationGroupId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 
 
@@ -83,12 +84,13 @@ No authorization required
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
+
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$organisationGroupId = 56; // int | 
+$organisationGroupId = 56; // int
 $xChronosheetsAuth = 'xChronosheetsAuth_example'; // string | The ChronoSheets Auth Token
 
 try {
@@ -97,11 +99,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsDeleteOrganisationGroup: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -119,16 +119,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsGetOrganisationGroup()`
 
-## organisationGroupsGetOrganisationGroup
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseOrganisationGroup organisationGroupsGetOrganisationGroup($organisationGroupId, $xChronosheetsAuth)
+```php
+organisationGroupsGetOrganisationGroup($organisationGroupId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseOrganisationGroup
+```
 
 Get a particular organisation group.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
@@ -137,6 +138,7 @@ Get a particular organisation group.    Requires the 'ManageOrganisationGroups',
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -153,11 +155,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsGetOrganisationGroup: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -175,16 +175,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsGetOrganisationGroups()`
 
-## organisationGroupsGetOrganisationGroups
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroups($xChronosheetsAuth)
+```php
+organisationGroupsGetOrganisationGroups($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup
+```
 
 Get a collection of organisation groups that are under your organisation.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
@@ -193,6 +194,7 @@ Get a collection of organisation groups that are under your organisation.    Req
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -208,11 +210,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsGetOrganisationGroups: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -229,16 +229,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsGetOrganisationGroupsForJob()`
 
-## organisationGroupsGetOrganisationGroupsForJob
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForJob($jobId, $xChronosheetsAuth)
+```php
+organisationGroupsGetOrganisationGroupsForJob($jobId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup
+```
 
 Get org groups for a particular job.    Requires the 'ManageOrganisationGroups', 'ManageJobsAndTask', 'ManageClientsAndProjects' or 'ManageOrganisationUsers' permissions.
 
@@ -247,6 +248,7 @@ Get org groups for a particular job.    Requires the 'ManageOrganisationGroups',
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -263,11 +265,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsGetOrganisationGroupsForJob: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -285,16 +285,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsGetOrganisationGroupsForVehicle()`
 
-## organisationGroupsGetOrganisationGroupsForVehicle
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup organisationGroupsGetOrganisationGroupsForVehicle($vehicleId, $xChronosheetsAuth)
+```php
+organisationGroupsGetOrganisationGroupsForVehicle($vehicleId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListOrganisationGroup
+```
 
 Get org groups for a particular vehicle.    Requires the 'ManageOrganisationGroups', 'ManageFleet' or 'ManageOrganisationUsers' permissions.
 
@@ -303,6 +304,7 @@ Get org groups for a particular vehicle.    Requires the 'ManageOrganisationGrou
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -319,11 +321,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsGetOrganisationGroupsForVehicle: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -341,16 +341,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupsUpdateOrganisationGroup()`
 
-## organisationGroupsUpdateOrganisationGroup
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupsUpdateOrganisationGroup($xChronosheetsAuth, $request)
+```php
+organisationGroupsUpdateOrganisationGroup($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Update an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
@@ -359,6 +360,7 @@ Update an organisation group.    Requires the 'ManageOrganisationGroups' permiss
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupsApi(
@@ -375,11 +377,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupsApi->organisationGroupsUpdateOrganisationGroup: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -396,10 +396,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

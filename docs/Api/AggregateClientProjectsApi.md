@@ -1,16 +1,17 @@
 # ChronoSheetsClient\AggregateClientProjectsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**aggregateClientProjectsGetAggregateClientProjects**](AggregateClientProjectsApi.md#aggregateClientProjectsGetAggregateClientProjects) | **GET** /AggregateClientProjects/GetAggregateClientProjects | Get client and project information, aggregated.    Requires the &#39;SubmitTimesheets&#39; or &#39;ManageClientsAndProjects&#39; permissions.
+[**aggregateClientProjectsGetAggregateClientProjects()**](AggregateClientProjectsApi.md#aggregateClientProjectsGetAggregateClientProjects) | **GET** /AggregateClientProjects/GetAggregateClientProjects | Get client and project information, aggregated.    Requires the &#39;SubmitTimesheets&#39; or &#39;ManageClientsAndProjects&#39; permissions.
 
 
+## `aggregateClientProjectsGetAggregateClientProjects()`
 
-## aggregateClientProjectsGetAggregateClientProjects
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListAggregateClient aggregateClientProjectsGetAggregateClientProjects($xChronosheetsAuth)
+```php
+aggregateClientProjectsGetAggregateClientProjects($xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListAggregateClient
+```
 
 Get client and project information, aggregated.    Requires the 'SubmitTimesheets' or 'ManageClientsAndProjects' permissions.
 
@@ -19,6 +20,7 @@ Get client and project information, aggregated.    Requires the 'SubmitTimesheet
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\AggregateClientProjectsApi(
@@ -34,11 +36,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling AggregateClientProjectsApi->aggregateClientProjectsGetAggregateClientProjects: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,9 +55,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

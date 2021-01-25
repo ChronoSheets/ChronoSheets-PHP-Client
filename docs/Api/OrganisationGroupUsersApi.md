@@ -1,17 +1,18 @@
 # ChronoSheetsClient\OrganisationGroupUsersApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**organisationGroupUsersGetOrganisationGroupUsers**](OrganisationGroupUsersApi.md#organisationGroupUsersGetOrganisationGroupUsers) | **GET** /OrganisationGroupUsers/GetOrganisationGroupUsers | Get a collection of organisation group users that belong to an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; or &#39;ManageOrganisationUsers&#39; permissions.
-[**organisationGroupUsersUpdateOrganisationGroupUsers**](OrganisationGroupUsersApi.md#organisationGroupUsersUpdateOrganisationGroupUsers) | **PUT** /OrganisationGroupUsers/UpdateOrganisationGroupUsers | Set the users who belong to an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
+[**organisationGroupUsersGetOrganisationGroupUsers()**](OrganisationGroupUsersApi.md#organisationGroupUsersGetOrganisationGroupUsers) | **GET** /OrganisationGroupUsers/GetOrganisationGroupUsers | Get a collection of organisation group users that belong to an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; or &#39;ManageOrganisationUsers&#39; permissions.
+[**organisationGroupUsersUpdateOrganisationGroupUsers()**](OrganisationGroupUsersApi.md#organisationGroupUsersUpdateOrganisationGroupUsers) | **PUT** /OrganisationGroupUsers/UpdateOrganisationGroupUsers | Set the users who belong to an organisation group.    Requires the &#39;ManageOrganisationGroups&#39; permissions.
 
 
+## `organisationGroupUsersGetOrganisationGroupUsers()`
 
-## organisationGroupUsersGetOrganisationGroupUsers
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement organisationGroupUsersGetOrganisationGroupUsers($orgGroupId, $xChronosheetsAuth)
+```php
+organisationGroupUsersGetOrganisationGroupUsers($orgGroupId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUserForManagement
+```
 
 Get a collection of organisation group users that belong to an organisation group.    Requires the 'ManageOrganisationGroups' or 'ManageOrganisationUsers' permissions.
 
@@ -20,6 +21,7 @@ Get a collection of organisation group users that belong to an organisation grou
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupUsersApi(
@@ -36,11 +38,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupUsersApi->organisationGroupUsersGetOrganisationGroupUsers: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,16 +58,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `organisationGroupUsersUpdateOrganisationGroupUsers()`
 
-## organisationGroupUsersUpdateOrganisationGroupUsers
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean organisationGroupUsersUpdateOrganisationGroupUsers($xChronosheetsAuth, $request)
+```php
+organisationGroupUsersUpdateOrganisationGroupUsers($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Set the users who belong to an organisation group.    Requires the 'ManageOrganisationGroups' permissions.
 
@@ -76,6 +77,7 @@ Set the users who belong to an organisation group.    Requires the 'ManageOrgani
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\OrganisationGroupUsersApi(
@@ -92,11 +94,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling OrganisationGroupUsersApi->organisationGroupUsersUpdateOrganisationGroupUsers: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -113,10 +113,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

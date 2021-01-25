@@ -1,18 +1,19 @@
 # ChronoSheetsClient\FileAttachmentsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fileAttachmentsDeleteTimesheetFileAttachment**](FileAttachmentsApi.md#fileAttachmentsDeleteTimesheetFileAttachment) | **DELETE** /FileAttachments/DeleteTimesheetFileAttachment | Delete a particular timesheet file attachment  Requires the &#39;SubmitTimesheets&#39; permission.
-[**fileAttachmentsGetFileAttachmentById**](FileAttachmentsApi.md#fileAttachmentsGetFileAttachmentById) | **GET** /FileAttachments/GetFileAttachmentById | Get a particular file attachment by ID.  User must own the file attachment for access.
-[**fileAttachmentsGetMyFileAttachments**](FileAttachmentsApi.md#fileAttachmentsGetMyFileAttachments) | **GET** /FileAttachments/GetMyFileAttachments | Get my file attachments.  Get files you&#39;ve attached to timesheets.
+[**fileAttachmentsDeleteTimesheetFileAttachment()**](FileAttachmentsApi.md#fileAttachmentsDeleteTimesheetFileAttachment) | **DELETE** /FileAttachments/DeleteTimesheetFileAttachment | Delete a particular timesheet file attachment  Requires the &#39;SubmitTimesheets&#39; permission.
+[**fileAttachmentsGetFileAttachmentById()**](FileAttachmentsApi.md#fileAttachmentsGetFileAttachmentById) | **GET** /FileAttachments/GetFileAttachmentById | Get a particular file attachment by ID.  User must own the file attachment for access.
+[**fileAttachmentsGetMyFileAttachments()**](FileAttachmentsApi.md#fileAttachmentsGetMyFileAttachments) | **GET** /FileAttachments/GetMyFileAttachments | Get my file attachments.  Get files you&#39;ve attached to timesheets.
 
 
+## `fileAttachmentsDeleteTimesheetFileAttachment()`
 
-## fileAttachmentsDeleteTimesheetFileAttachment
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth)
+```php
+fileAttachmentsDeleteTimesheetFileAttachment($fileAttachmentId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Delete a particular timesheet file attachment  Requires the 'SubmitTimesheets' permission.
 
@@ -21,6 +22,7 @@ Delete a particular timesheet file attachment  Requires the 'SubmitTimesheets' p
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
@@ -37,11 +39,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FileAttachmentsApi->fileAttachmentsDeleteTimesheetFileAttachment: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -59,16 +59,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fileAttachmentsGetFileAttachmentById()`
 
-## fileAttachmentsGetFileAttachmentById
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetFileAttachment fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth)
+```php
+fileAttachmentsGetFileAttachmentById($fileAttachmentId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTimesheetFileAttachment
+```
 
 Get a particular file attachment by ID.  User must own the file attachment for access.
 
@@ -77,6 +78,7 @@ Get a particular file attachment by ID.  User must own the file attachment for a
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
@@ -93,11 +95,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FileAttachmentsApi->fileAttachmentsGetFileAttachmentById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,16 +115,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fileAttachmentsGetMyFileAttachments()`
 
-## fileAttachmentsGetMyFileAttachments
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetFileAttachment fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take)
+```php
+fileAttachmentsGetMyFileAttachments($startDate, $endDate, $xChronosheetsAuth, $skip, $take): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTimesheetFileAttachment
+```
 
 Get my file attachments.  Get files you've attached to timesheets.
 
@@ -133,6 +134,7 @@ Get my file attachments.  Get files you've attached to timesheets.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FileAttachmentsApi(
@@ -152,11 +154,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FileAttachmentsApi->fileAttachmentsGetMyFileAttachments: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -177,9 +177,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

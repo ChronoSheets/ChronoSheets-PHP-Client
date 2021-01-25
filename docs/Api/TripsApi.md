@@ -1,18 +1,19 @@
 # ChronoSheetsClient\TripsApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**tripsCreateTrip**](TripsApi.md#tripsCreateTrip) | **POST** /Trips/CreateTrip | Create a new trip.  Important: create a timesheet record before calling this, passing in the new timesheet record id as a reference.    Requires the &#39;SubmitTimesheets&#39; permission.
-[**tripsGetMyTripById**](TripsApi.md#tripsGetMyTripById) | **GET** /Trips/GetMyTripById | Get trip by Id.    Requires the &#39;ViewMyTrips&#39; permission.
-[**tripsGetMyTrips**](TripsApi.md#tripsGetMyTrips) | **GET** /Trips/GetMyTrips | Get my trips.  Get the GPS trips you&#39;ve recorded and submitted.    Requires the &#39;ViewMyTrips&#39; permission.
+[**tripsCreateTrip()**](TripsApi.md#tripsCreateTrip) | **POST** /Trips/CreateTrip | Create a new trip.  Important: create a timesheet record before calling this, passing in the new timesheet record id as a reference.    Requires the &#39;SubmitTimesheets&#39; permission.
+[**tripsGetMyTripById()**](TripsApi.md#tripsGetMyTripById) | **GET** /Trips/GetMyTripById | Get trip by Id.    Requires the &#39;ViewMyTrips&#39; permission.
+[**tripsGetMyTrips()**](TripsApi.md#tripsGetMyTrips) | **GET** /Trips/GetMyTrips | Get my trips.  Get the GPS trips you&#39;ve recorded and submitted.    Requires the &#39;ViewMyTrips&#39; permission.
 
 
+## `tripsCreateTrip()`
 
-## tripsCreateTrip
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 tripsCreateTrip($xChronosheetsAuth, $request)
+```php
+tripsCreateTrip($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create a new trip.  Important: create a timesheet record before calling this, passing in the new timesheet record id as a reference.    Requires the 'SubmitTimesheets' permission.
 
@@ -21,6 +22,7 @@ Create a new trip.  Important: create a timesheet record before calling this, pa
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
@@ -37,11 +39,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TripsApi->tripsCreateTrip: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,17 +58,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `tripsGetMyTripById()`
 
-## tripsGetMyTripById
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip tripsGetMyTripById($tripId, $xChronosheetsAuth)
+```php
+tripsGetMyTripById($tripId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseTrip
+```
 
 Get trip by Id.    Requires the 'ViewMyTrips' permission.
 
@@ -77,6 +78,7 @@ Get trip by Id.    Requires the 'ViewMyTrips' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
@@ -93,11 +95,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TripsApi->tripsGetMyTripById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -115,16 +115,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `tripsGetMyTrips()`
 
-## tripsGetMyTrips
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTrip tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId)
+```php
+tripsGetMyTrips($startDate, $endDate, $xChronosheetsAuth, $skip, $take, $vehicleId): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseForPaginatedListTrip
+```
 
 Get my trips.  Get the GPS trips you've recorded and submitted.    Requires the 'ViewMyTrips' permission.
 
@@ -133,6 +134,7 @@ Get my trips.  Get the GPS trips you've recorded and submitted.    Requires the 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\TripsApi(
@@ -153,11 +155,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling TripsApi->tripsGetMyTrips: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -179,9 +179,8 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

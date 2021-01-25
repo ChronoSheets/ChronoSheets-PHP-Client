@@ -1,20 +1,21 @@
 # ChronoSheetsClient\FleetApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**fleetCreateVehicle**](FleetApi.md#fleetCreateVehicle) | **POST** /Fleet/CreateVehicle | Create a vehicle.    Requires the &#39;ManageFleet&#39; permission.
-[**fleetDeleteVehicle**](FleetApi.md#fleetDeleteVehicle) | **DELETE** /Fleet/DeleteVehicle | Delete a vehicle from the fleet.  Requires the &#39;ManageFleet&#39; permission.
-[**fleetGetVehicleById**](FleetApi.md#fleetGetVehicleById) | **GET** /Fleet/GetVehicleById | Get a particular vehicle.  Does not require any special permission.
-[**fleetGetVehicles**](FleetApi.md#fleetGetVehicles) | **GET** /Fleet/GetVehicles | Get a collection of vehicles that are under your organisation.    Does not require any special permission.
-[**fleetUpdateVehicle**](FleetApi.md#fleetUpdateVehicle) | **PUT** /Fleet/UpdateVehicle | Update a vehicle.    Requires the &#39;ManageFleet&#39; permission.
+[**fleetCreateVehicle()**](FleetApi.md#fleetCreateVehicle) | **POST** /Fleet/CreateVehicle | Create a vehicle.    Requires the &#39;ManageFleet&#39; permission.
+[**fleetDeleteVehicle()**](FleetApi.md#fleetDeleteVehicle) | **DELETE** /Fleet/DeleteVehicle | Delete a vehicle from the fleet.  Requires the &#39;ManageFleet&#39; permission.
+[**fleetGetVehicleById()**](FleetApi.md#fleetGetVehicleById) | **GET** /Fleet/GetVehicleById | Get a particular vehicle.  Does not require any special permission.
+[**fleetGetVehicles()**](FleetApi.md#fleetGetVehicles) | **GET** /Fleet/GetVehicles | Get a collection of vehicles that are under your organisation.    Does not require any special permission.
+[**fleetUpdateVehicle()**](FleetApi.md#fleetUpdateVehicle) | **PUT** /Fleet/UpdateVehicle | Update a vehicle.    Requires the &#39;ManageFleet&#39; permission.
 
 
+## `fleetCreateVehicle()`
 
-## fleetCreateVehicle
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32 fleetCreateVehicle($xChronosheetsAuth, $request)
+```php
+fleetCreateVehicle($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseInt32
+```
 
 Create a vehicle.    Requires the 'ManageFleet' permission.
 
@@ -23,6 +24,7 @@ Create a vehicle.    Requires the 'ManageFleet' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FleetApi(
@@ -39,11 +41,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetCreateVehicle: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -60,17 +60,18 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fleetDeleteVehicle()`
 
-## fleetDeleteVehicle
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean fleetDeleteVehicle($vehicleId, $xChronosheetsAuth)
+```php
+fleetDeleteVehicle($vehicleId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Delete a vehicle from the fleet.  Requires the 'ManageFleet' permission.
 
@@ -79,6 +80,7 @@ Delete a vehicle from the fleet.  Requires the 'ManageFleet' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FleetApi(
@@ -95,11 +97,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetDeleteVehicle: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -117,16 +117,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fleetGetVehicleById()`
 
-## fleetGetVehicleById
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseFleetVehicle fleetGetVehicleById($vehicleId, $xChronosheetsAuth)
+```php
+fleetGetVehicleById($vehicleId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseFleetVehicle
+```
 
 Get a particular vehicle.  Does not require any special permission.
 
@@ -135,6 +136,7 @@ Get a particular vehicle.  Does not require any special permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FleetApi(
@@ -151,11 +153,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetGetVehicleById: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -173,16 +173,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fleetGetVehicles()`
 
-## fleetGetVehicles
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetVehicle fleetGetVehicles($xChronosheetsAuth, $includeDeleted)
+```php
+fleetGetVehicles($xChronosheetsAuth, $includeDeleted): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListFleetVehicle
+```
 
 Get a collection of vehicles that are under your organisation.    Does not require any special permission.
 
@@ -191,6 +192,7 @@ Get a collection of vehicles that are under your organisation.    Does not requi
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FleetApi(
@@ -207,11 +209,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetGetVehicles: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -229,16 +229,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `fleetUpdateVehicle()`
 
-## fleetUpdateVehicle
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean fleetUpdateVehicle($xChronosheetsAuth, $request)
+```php
+fleetUpdateVehicle($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Update a vehicle.    Requires the 'ManageFleet' permission.
 
@@ -247,6 +248,7 @@ Update a vehicle.    Requires the 'ManageFleet' permission.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\FleetApi(
@@ -263,11 +265,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling FleetApi->fleetUpdateVehicle: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -284,10 +284,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-

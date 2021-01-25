@@ -1,17 +1,18 @@
 # ChronoSheetsClient\UsualHoursApi
 
-All URIs are relative to *https://api.chronosheets.com*
+All URIs are relative to https://api.chronosheets.com.
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**usualHoursGetUsualHours**](UsualHoursApi.md#usualHoursGetUsualHours) | **GET** /UsualHours/GetUsualHours | Get usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; permission.
-[**usualHoursSetUsualHours**](UsualHoursApi.md#usualHoursSetUsualHours) | **PUT** /UsualHours/SetUsualHours | Set usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; permission.
+[**usualHoursGetUsualHours()**](UsualHoursApi.md#usualHoursGetUsualHours) | **GET** /UsualHours/GetUsualHours | Get usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; permission.
+[**usualHoursSetUsualHours()**](UsualHoursApi.md#usualHoursSetUsualHours) | **PUT** /UsualHours/SetUsualHours | Set usual hours (rostered hours) for an employee.  Requires the &#39;ManageOrganisationUsers&#39; permission.
 
 
+## `usualHoursGetUsualHours()`
 
-## usualHoursGetUsualHours
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUsualHoursDay usualHoursGetUsualHours($userId, $xChronosheetsAuth)
+```php
+usualHoursGetUsualHours($userId, $xChronosheetsAuth): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseListUsualHoursDay
+```
 
 Get usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' permission.
 
@@ -20,6 +21,7 @@ Get usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisat
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
@@ -36,11 +38,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UsualHoursApi->usualHoursGetUsualHours: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -58,16 +58,17 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `usualHoursSetUsualHours()`
 
-## usualHoursSetUsualHours
-
-> \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean usualHoursSetUsualHours($xChronosheetsAuth, $request)
+```php
+usualHoursSetUsualHours($xChronosheetsAuth, $request): \ChronoSheetsClient\ChronoSheetsClientLibModel\ApiResponseBoolean
+```
 
 Set usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisationUsers' permission.
 
@@ -76,6 +77,7 @@ Set usual hours (rostered hours) for an employee.  Requires the 'ManageOrganisat
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 $apiInstance = new ChronoSheetsClient\Api\UsualHoursApi(
@@ -92,11 +94,9 @@ try {
 } catch (Exception $e) {
     echo 'Exception when calling UsualHoursApi->usualHoursSetUsualHours: ', $e->getMessage(), PHP_EOL;
 }
-?>
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -113,10 +113,9 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded, multipart/form-data
-- **Accept**: application/json, text/json, application/xml, text/xml, multipart/form-data
+- **Content-Type**: `application/json`, `text/json`, `application/xml`, `text/xml`, `application/x-www-form-urlencoded`, `multipart/form-data`
+- **Accept**: `application/json`, `text/json`, `application/xml`, `text/xml`, `multipart/form-data`
 
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../../README.md#documentation-for-models)
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
-
